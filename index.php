@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentaciones Heladas</title>
 
-
-
-
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -481,7 +478,7 @@ footer{
                 <a href="sabores/Especiales.php"><img class="especiales" src="img/especiales.png" alt="especiales" width="300px"></a>
             </div>
             <div class="e">
-                <a href="sabores/Veganos.php"><img class="veganos" src="img/veganos.png" alt="veganos" width="300px"></a>
+                <a href="sabores/Vegano.php"><img class="veganos" src="img/veganos.png" alt="veganos" width="300px"></a>
             </div>
             <div class="f">
                 <a href="sabores/Celiacos.php"><img class="celiacos" src="img/celiacos.png" alt="celiacos" width="300px"></a>
@@ -496,7 +493,7 @@ footer{
             <div class="s4">
                 <nav>
                     <ul>
-                        <li><a href="sabores/Veganos.php"><b>VEGANOS</b></a></li>
+                        <li><a href="sabores/Vegano.php"><b>VEGANOS</b></a></li>
                     </ul>
                 </nav>
             </div>

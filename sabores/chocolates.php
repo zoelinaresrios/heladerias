@@ -182,7 +182,7 @@
                 <li class="dropdown">
                     <a href="#">Productos</a>
                     <ul class="dropdown-content">
-                        <li><a href="prodcutos/helados.php">Helados</a></li>
+                        <li><a href="productos/helados.php">Helados</a></li>
                         <li><a href="productos/tortas.php">Tortas</a></li>
                         <li><a href="productos/paletas.php">Paletas</a></li>
                     </ul>
