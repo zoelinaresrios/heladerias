@@ -23,7 +23,7 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['telefon
     }
 
 } else {
-    echo "Datos del formulario no recibidos";
+    echo "Datos del Formulario no recibidos";
 }
 
 $conn->close();
