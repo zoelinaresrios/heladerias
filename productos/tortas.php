@@ -177,7 +177,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.php">Inicio</a></li>
+                <li><a href="../index.php">Inicio</a></li>
     
                 <li class="dropdown">
                     <a href="#">Productos</a>
@@ -191,7 +191,9 @@
         </nav>
     </header>
     <body>
-     </br>
+     <br>
+     <h1>Nuestras tortas</h1>
+     <br>
      <div class=cajitamm>
      <div class="cho"><img class="publi" src="../img/torta_chocolate_dulce_de_leche.jpeg" height="250px"> </br> Chocolate y dulce de leche</div>
      <div class="cho"><img class="publi" src="../img/torta_tricolor.jpeg" height="250px"> </br> Tricolor</div>
