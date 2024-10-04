@@ -10,19 +10,34 @@
         align-items: center;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 60px;
-        margin: 75px;
+        grid-gap: 150px;
+        margin: 80px;
         text-align: center;
     }
     .cho{
-        border-radius: 8px;
-        border: 5px solid #f4abba;
+        border-radius: 18px;
+        border: 18px solid #f4abba;
         background-color: #f4abba;
+        width: 90%;
+        height: 100%;
+        padding-top: 20px;
+        padding-top: 60px;
     }
     .cho{
+
         text-align: center;
     }
+    .desc{
+    display: none;
+    }
+    .cho:hover .desc{
+    display: block;}
+    .publi{
+        border-radius:140px;
+    }
+    h2{
     
+    }
     body {
                 font-family: Arial, sans-serif;
                 margin: 0;
@@ -193,12 +208,27 @@
     <body>
      </br>
      <div class=cajitamm>
+<<<<<<< HEAD
+     <div class="cho"> <h2>Chocolate Amargo</h2><img class="publi" src= "../img/fru.jpeg" height="250px"></br></br> </br><div class="desc">   - Un helado rico y cremoso, elaborado con cacao de alta calidad para un sabor intenso.
+     </div></div>
+     <div class="cho">Chocolate con Naranja<img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
+     </div></div>
+     <div class="cho">Chocolate Blanco y Frambuesa<img class="publi" src="../img/fru.jpeg" height="250px"> </br><div class="desc">   - Fresco y revitalizante, este helado une el chocolate con un toque de menta.
+     </div></div>
+     <div class="cho">Chocolate al Café<img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - Un intenso sabor a chocolate con un toque de café, ideal para los amantes del café.
+     </div></div>
+     <div class="cho">Chocolate con Almendras<img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - Crema de chocolate con trozos crujientes de almendra, una combinación perfecta.
+     </div></div>
+     <div class="cho">Chocolate con Sal Marina<img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+     </div></div>
+=======
      <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
      <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
      <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
      <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
      <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
      <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
+>>>>>>> b1c44fc84540971017ebf30eab4a7a854aa4bf71
     </div>
     </body>
     </html>

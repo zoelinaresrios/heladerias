@@ -246,9 +246,10 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
-    padding-right: 60px;
-    padding-left: 165px;
-    
+    padding-right: 15%;
+    padding-left: 15%
+    max-width: 100%;
+    margin: auto;
     
 }
 .textorosa{
@@ -343,8 +344,11 @@ footer{
         .next {
             right: 10px;
         }
+<<<<<<< HEAD
+=======
     2
 
+>>>>>>> f3984d7a8d43e8b92c8d2d67a98bca1a2008264b
     </style>
 </head>
 <body>
@@ -380,7 +384,10 @@ footer{
             </form>
         </div>
         <div class="header-icons">
+<<<<<<< HEAD
+=======
             <a href="logeo.php" title="Iniciar Sesión">I</a>
+>>>>>>> f3984d7a8d43e8b92c8d2d67a98bca1a2008264b
             <a href="carrito.html" title="Carrito">C</a>
         </div>
     </header>
@@ -507,4 +514,8 @@ footer{
     </div>
     <footer> </footer>
 </body>
+<<<<<<< HEAD
 </html>  
+=======
+</html>  
+>>>>>>> f3984d7a8d43e8b92c8d2d67a98bca1a2008264b
