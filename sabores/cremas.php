@@ -177,14 +177,14 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.php">Inicio</a></li>
+                <li><a href="../index.php">Inicio</a></li>
     
                 <li class="dropdown">
                     <a href="#">Productos</a>
                     <ul class="dropdown-content">
-                        <li><a href="helados.php">Helados</a></li>
-                        <li><a href="tortas.php">Tortas</a></li>
-                        <li><a href="paletas.php">Paletas</a></li>
+                        <li><a href="../productos/helados.php">Helados</a></li>
+                        <li><a href="../productos/tortas.php">Tortas</a></li>
+                        <li><a href="../productos/paletas.php">Paletas</a></li>
                     </ul>
                 </li>
             </ul>
@@ -193,11 +193,11 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><img class="publi" src="img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="img/fru.jpeg" height="250px"> </br> Chocolate</div>
+     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
+     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
+     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
+     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
+     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
+     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
     </div>
     </body>
