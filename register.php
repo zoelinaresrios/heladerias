@@ -2,28 +2,23 @@
 include 'db.php'; // Incluye el archivo de conexión a la base de datos
 
 // Verificar que se han enviado datos del formulario
-if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['telefono'], $_POST['direccion'], $_POST['usuario'], $_POST['contraseña'])) {
+if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['contraseña'], $_POST['telefono'], $_POST['direccion'], $_POST['usuario'])) {
     // Obtener datos del formulario
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $email = $_POST['email'];
-    $telefono = $_POST['telefono'];
-    $direccion = $_POST['direccion'];
-    $usuario = $_POST['usuario'];
-    $contraseña = $_POST['contraseña'];
+    $telefono = $_POST['contraseña'];
+    $direccion = $_POST['telefono'];
+    $usuario = $_POST['direccion'];
+    $contraseña = $_POST['usuario'];
 
     // Preparar y ejecutar la consulta de inserción
-    $sql = "INSERT INTO cliente (nombre, apellido, email, telefono, direccion, usuario, contraseña) 
-            VALUES ('$nombre', '$apellido', '$email', '$telefono', '$direccion', '$usuario', '$contraseña')";
+    $sql = "INSERT INTO clientes (nombre, apellido, email, contraseña, telefono, direccion, usuario) 
+            VALUES ('$nombre', '$apellido', '$email', '$contraseña', '$telefono', '$direccion', '$usuario')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Registro exitoso";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
+        header("Location: index.php");
 
-} else {
-    echo "Datos del Formulario no recibidos";
 }
 
 $conn->close();
