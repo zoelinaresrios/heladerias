@@ -154,17 +154,17 @@ nav ul li .dropdown-content li a:hover {
     <header>
         <nav>
             <ul>
-                <li><a href="index.php">Inicio</a></li>
+                <li><a href="../index.php">Inicio</a></li>
 
                 <li class="dropdown">
                     <a href="#">Productos</a>
                     <ul class="dropdown-content">
-                        <li><a href="helados.html">Helados</a></li>
-                        <li><a href="tortas.html">Tortas</a></li>
-                        <li><a href="paletas.html">Paletas</a></li>
+                        <li><a href="helados.php">Helados</a></li>
+                        <li><a href="tortas.php">Tortas</a></li>
+                        <li><a href="paletas.php">Paletas</a></li>
                     </ul>
                 </li>
-                <li><a href="contacto.html">Cuenta</a></li>
+                <li><a href="../contacto.html">Cuenta</a></li>
             </ul>
         </nav>
     </header>
