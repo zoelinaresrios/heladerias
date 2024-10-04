@@ -7,18 +7,32 @@ if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['contras
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $email = $_POST['email'];
-    $telefono = $_POST['contraseña'];
-    $direccion = $_POST['telefono'];
-    $usuario = $_POST['direccion'];
-    $contraseña = $_POST['usuario'];
+    $telefono = $_POST['telefono'];
+    $direccion = $_POST['direccion'];
+    $usuario = $_POST['usuario'];
+    $contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT); // Encriptar la contraseña
 
     // Preparar y ejecutar la consulta de inserción
-    $sql = "INSERT INTO clientes (nombre, apellido, email, contraseña, telefono, direccion, usuario) 
-            VALUES ('$nombre', '$apellido', '$email', '$contraseña', '$telefono', '$direccion', '$usuario')";
+    $sql = "INSERT INTO Clientes (nombre, apellido, email, contraseña, 	telefono, direccion, rol) 
+            VALUES (?, ?, ?, ?, ?, ?, 'cliente')";  // Asignar el rol de cliente por defecto
+    $stmt = $conn->prepare($sql);
 
-    if ($conn->query($sql) === TRUE) {
-        header("Location: index.php");
+    if ($stmt === false) {
+        die("Error en la preparación de la consulta: " . $conn->error);
+    }
 
+    // Vincular parámetros
+    $stmt->bind_param("ssssss", $nombre, $apellido, $email, $contraseña, $telefono, $direccion);
+
+    // Ejecutar la consulta
+    if ($stmt->execute()) {
+        header("Location: index.php"); // Redirigir a la página principal después del registro exitoso
+        exit();
+    } else {
+        echo "Error al registrar el usuario: " . $stmt->error;
+    }
+
+    $stmt->close();
 }
 
 $conn->close();

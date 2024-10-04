@@ -1,57 +1,40 @@
 <?php
-session_start(); // Iniciar la sesión
-include 'db.php';
+session_start();
+
+// Conexión a la base de datos
+$mysqli = new mysqli("localhost", "usuario", "contraseña", "base_de_datos");
+
+if ($mysqli->connect_error) {
+    die("Conexión fallida: " . $mysqli->connect_error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los datos del formulario
     $usuario = $_POST['usuario'];
-    $contrasenia = $_POST['contraseñaa'];
+    $contraseña = $_POST['contraseña'];
 
-    // Preparar la consulta SQL
-    $sql = "SELECT id_cliente , email , contraseña, rol FROM clientes WHERE clientes = ?";
-    $stmt = $conn->prepare($sql);
-
-    // Verificar si la preparación de la consulta falló
-    if ($stmt === false) {
-        die("Error en la preparación de la consulta: " . $conn->error);
-    }
-
-    // La consulta SQL utiliza un parámetro de tipo string, así que "s" es el tipo correcto
+    $stmt = $mysqli->prepare("SELECT contraseña, rol FROM Clientes WHERE usuario = ?");
     $stmt->bind_param("s", $usuario);
-
-    // Ejecutar la consulta
     $stmt->execute();
     $stmt->store_result();
-
+    
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $gmail, $contrasenia_encriptada, $rol);
+        $stmt->bind_result($hashed_password, $rol);
         $stmt->fetch();
 
-        if (password_verify($contrasenia, $contrasenia_encriptada)) {
-            // Almacenar los datos del usuario en la sesión
-            $_SESSION['id_clientes'] = $id;
+        // Verificar la contraseña
+        if (password_verify($contraseña, $hashed_password)) {
             $_SESSION['usuario'] = $usuario;
-            $_SESSION['email'] = $email;
-            $_SESSION['rol'] = $rol;
-
-            // Redirigir al usuario según su rol
-            if ($rol === 'cliente') {
-                header("Location: ./views/cliente/index-cliente.php");
-            } elseif ($rol === 'admin') {
-                header("Location: ./views/jefe/index-jefe.php");
-            } else {
-                echo "Rol no reconocido.";
-            }
-            exit();
+            $_SESSION['rol'] = $rol; // Guardar rol en la sesión
+            echo "Login exitoso";
+            // Redireccionar o mostrar un mensaje
         } else {
-            echo "Usuario o contrasenia incorrectos.";
+            echo "Contraseña incorrecta";
         }
     } else {
-        echo "Usuario o contrasenia incorrectos.";
+        echo "Usuario no encontrado";
     }
 
     $stmt->close();
 }
-
-$conn->close();
+$mysqli->close();
 ?>

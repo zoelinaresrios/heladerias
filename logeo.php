@@ -306,7 +306,7 @@ button:hover {
 
         <!-- Formulario de Inicio de Sesión -->
         <div class="login">
-            <form action="./views/cliente/index-cliente.php" method="post">
+            <form action="index-cliente.php" method="post">
                 <label for="chk" aria-hidden="true">Iniciar Sesión</label>
                 <input type="text" id="usuario-login" name="usuario" placeholder="Usuario" required>
                 <input type="password" id="contraseña-login" name="contraseña" placeholder="Contraseña" required>
