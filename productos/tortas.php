@@ -164,6 +164,50 @@
     nav ul li .dropdown-content li a:hover {
         background-color: #8e6c;
     }
+
+    .contenedor{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .torta{
+        width: 30%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .torta img{
+        max-width: 100%;
+        height: auto;
+        border: 4px solid #4c4c4c;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .torta p{
+        margin-top: 10px;
+        font-size: 1.1em;
+        color:#333;
+    }
+
+    #padding-CyD{
+        padding-top: 52px;
+        padding-bottom: 52px;
+    }
+    #padding-T{
+        padding-top: 48px;
+        padding-bottom: 47px;
+    }
+    #padding-CyD2{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    #padding-L{
+        padding-top: 29px;
+        padding-bottom: 29px;
+    }
+    
+    
 </style>
 
 <!DOCTYPE html>
@@ -194,12 +238,32 @@
      <br>
      <h1>Nuestras tortas</h1>
      <br>
-     <div class=cajitamm>
-     <div class="cho"><img class="publi" src="../img/torta_chocolate_dulce_de_leche.jpeg" height="250px"> </br> Chocolate y dulce de leche</div>
-     <div class="cho"><img class="publi" src="../img/torta_tricolor.jpeg" height="250px"> </br> Tricolor</div>
-     <div class="cho"><img class="publi" src="../img/torta_frutilla.jpeg" height="250px"> </br> Frutilla</div>
-     <div class="cho"><img class="publi" src="../img/torta_limon.jpeg" height="250px"> </br> Limon</div>
-     <div class="cho"><img class="publi" src="../img/torta_oreo.jpeg" height="250px"> </br> Oreo</div>
+     <div class="contenedor">
+     <div class="torta">
+        <a href=""><img id="padding-CyD" src="../img/torta_chocolate_dulce_de_leche.jpeg" alt=""></a>
+        <p>Torta Chocolate y dulce de leche</p><p>Precio: $5000</p>
+     </div>
+     <div class="torta">
+        <a href=""><img id="padding-T" src="../img/torta_tricolor.jpeg" alt=""></a>
+        <p>Torta Tricolor</p><p>Precio: $9000</p>
     </div>
+    <div class="torta">
+        <a href=""><img src="../img/torta_frutilla.jpeg" alt=""></a>
+        <p>Torta de Frutilla</p><p>Precio: $10000</p>
+    </div>
+    <div class="torta">
+        <a href=""><img id="padding-L" src="../img/torta_limon.jpeg" alt=""></a>
+        <p>Torta de Limon</p><p>Precio: $6000</p>
+    </div>
+    <div class="torta">
+        <a href=""><img src="../img/torta_oreo.jpeg" alt=""></a>
+        <p>Torta Oreo</p><p>Precio: $7000</p>
+    </div>
+    <div class="torta">
+        <a href=""><img id="padding-CyD2" src="../img/torta_chocolate_dulce_de_leche.jpeg" alt=""></a>
+        <p>Torta Chocolate y dulce de leche</p><p>Precio: $5000</p>
+    </div>
+     </div>
+
     </body>
 </html>
