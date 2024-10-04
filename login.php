@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasenia = $_POST['contraseñaa'];
 
     // Preparar la consulta SQL
-    $sql = "SELECT id, gmail, contrasenia, rol FROM Usuarios WHERE usuario = ?";
+    $sql = "SELECT id_cliente , email , contraseña, rol FROM clientes WHERE clientes = ?";
     $stmt = $conn->prepare($sql);
 
     // Verificar si la preparación de la consulta falló
@@ -29,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($contrasenia, $contrasenia_encriptada)) {
             // Almacenar los datos del usuario en la sesión
-            $_SESSION['usuario_id'] = $id;
+            $_SESSION['id_clientes'] = $id;
             $_SESSION['usuario'] = $usuario;
-            $_SESSION['gmail'] = $gmail;
+            $_SESSION['email'] = $email;
             $_SESSION['rol'] = $rol;
 
             // Redirigir al usuario según su rol

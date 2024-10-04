@@ -307,7 +307,7 @@ footer{
         /* CSS para el carrusel */
         .carrusel {
             position: relative;
-            max-width: 1000px;
+            max-width: 100%;
             margin: 20px auto;
             overflow: hidden;
         }
