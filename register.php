@@ -1,37 +1,35 @@
 <?php
-include 'db.php'; // Incluye el archivo de conexión a la base de datos
+include 'db.php'; // Asegúrate de que la ruta sea correcta
 
-// Verificar que se han enviado datos del formulario
-if (isset($_POST['nombre'], $_POST['apellido'], $_POST['email'], $_POST['contraseña'], $_POST['telefono'], $_POST['direccion'], $_POST['usuario'])) {
-    // Obtener datos del formulario
+// Verificar si se envió el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recibir datos del formulario
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $email = $_POST['email'];
+    $usuario = $_POST['usuario'];
+    $contraseña = $_POST['contraseña'];
     $telefono = $_POST['telefono'];
     $direccion = $_POST['direccion'];
-    $usuario = $_POST['usuario'];
-    $contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT); // Encriptar la contraseña
 
-    // Preparar y ejecutar la consulta de inserción
-    $sql = "INSERT INTO Clientes (nombre, apellido, email, contraseña, 	telefono, direccion, rol) 
-            VALUES (?, ?, ?, ?, ?, ?, 'cliente')";  // Asignar el rol de cliente por defecto
+    // Hashear la contraseña
+    $contraseña_hashed = password_hash($contraseña, PASSWORD_DEFAULT);
+
+    // Preparar la consulta
+    $sql = "INSERT INTO Clientes (nombre, apellido, email, usuario, contraseña, telefono, direccion) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-
-    if ($stmt === false) {
-        die("Error en la preparación de la consulta: " . $conn->error);
-    }
-
-    // Vincular parámetros
-    $stmt->bind_param("ssssss", $nombre, $apellido, $email, $contraseña, $telefono, $direccion);
+    $stmt->bind_param("sssssss", $nombre, $apellido, $email, $usuario, $contraseña_hashed, $telefono, $direccion);
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        header("Location: index.php"); // Redirigir a la página principal después del registro exitoso
-        exit();
+        // Redirigir a index.php después de un registro exitoso
+        header("Location: index-cliente.php");
+        exit(); // Asegúrate de salir después de la redirección
     } else {
-        echo "Error al registrar el usuario: " . $stmt->error;
+        echo "Error: " . $stmt->error; // Manejo de errores
     }
 
+    // Cerrar la conexión
     $stmt->close();
 }
 

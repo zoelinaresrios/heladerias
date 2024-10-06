@@ -306,14 +306,22 @@ button:hover {
 
         <!-- Formulario de Inicio de Sesión -->
         <div class="login">
-            <form action="index-cliente.php" method="post">
-                <label for="chk" aria-hidden="true">Iniciar Sesión</label>
-                <input type="text" id="usuario-login" name="usuario" placeholder="Usuario" required>
-                <input type="password" id="contraseña-login" name="contraseña" placeholder="Contraseña" required>
-                <button type="submit">Entrar</button>
-                <button type="button" class="btn-register" onclick="document.getElementById('chk').checked = true;">¿No tienes cuenta? Regístrate</button>
-            </form>
-        </div>
+    <form action="login.php" method="post">
+    
+        <label for="chk" aria-hidden="true">Iniciar Sesión</label>
+        <?php if (isset($_GET['error'])): ?>
+            <div class="alert alert-danger" role="alert">
+                Usuario o contraseña incorrectos.
+            </div>
+        <?php endif; ?>
+        <input type="text" id="usuario-login" name="usuario" placeholder="Usuario" required>
+        <input type="password" id="contraseña-login" name="contraseña" placeholder="Contraseña" required>
+     
+        <button type="submit">Entrar</button>
+        <button type="button" class="btn-register" onclick="document.getElementById('chk').checked = true;">¿No tienes cuenta? Regístrate</button>
+    </form>
+</div>
+
 
         <!-- Formulario de Registro -->
         <div class="signup">
@@ -334,4 +342,4 @@ button:hover {
 </div>
 
 </body>
-</html>
+</html>    

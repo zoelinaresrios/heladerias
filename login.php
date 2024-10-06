@@ -1,40 +1,37 @@
 <?php
 session_start();
+require 'db.php'; // Asegúrate de que este archivo está en el mismo directorio
 
-// Conexión a la base de datos
-$mysqli = new mysqli("localhost", "usuario", "contraseña", "base_de_datos");
+// Recibir datos del formulario
+$usuario = $_POST['usuario'] ?? '';
+$contraseña = $_POST['contraseña'] ?? '';
 
-if ($mysqli->connect_error) {
-    die("Conexión fallida: " . $mysqli->connect_error);
-}
+// Consulta para buscar el usuario en la base de datos
+$stmt = $conn->prepare("SELECT contraseña FROM Clientes WHERE usuario = ?");
+$stmt->bind_param("s", $usuario);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = $_POST['usuario'];
-    $contraseña = $_POST['contraseña'];
+if ($result->num_rows > 0) {
+    // El usuario existe, ahora verifica la contraseña
+    $row = $result->fetch_assoc();
+    $hashed_password = $row['contraseña'];
 
-    $stmt = $mysqli->prepare("SELECT contraseña, rol FROM Clientes WHERE usuario = ?");
-    $stmt->bind_param("s", $usuario);
-    $stmt->execute();
-    $stmt->store_result();
-    
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($hashed_password, $rol);
-        $stmt->fetch();
-
-        // Verificar la contraseña
-        if (password_verify($contraseña, $hashed_password)) {
-            $_SESSION['usuario'] = $usuario;
-            $_SESSION['rol'] = $rol; // Guardar rol en la sesión
-            echo "Login exitoso";
-            // Redireccionar o mostrar un mensaje
-        } else {
-            echo "Contraseña incorrecta";
-        }
+    if (password_verify($contraseña, $hashed_password)) {
+        // Credenciales correctas, redirigir a index.php
+        header('Location: index-cliente.php');
+        exit();
     } else {
-        echo "Usuario no encontrado";
+        // Contraseña incorrecta
+        header('Location: logeo.php?error=1');
+        exit();
     }
-
-    $stmt->close();
+} else {
+    // Usuario no encontrado
+    header('Location: logeo.php?error=1');
+    exit();
 }
-$mysqli->close();
+
+$stmt->close();
+$conn->close();
 ?>

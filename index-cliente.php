@@ -344,11 +344,7 @@ footer{
         .next {
             right: 10px;
         }
-<<<<<<< HEAD
-=======
-    2
 
->>>>>>> f3984d7a8d43e8b92c8d2d67a98bca1a2008264b
     </style>
 </head>
 <body>
@@ -362,7 +358,7 @@ footer{
                     <div class="dropdown">
                         <a href="#">Productos</a>
                         <ul class="dropdown-content">
-                            <li><a href="productos/helados.php">Helados</a></li>
+                            <li><a href="helados_clientes.php">Helados</a></li>
                             <li><a href="productos/tortas.php">Tortas</a></li>
                             <li><a href="productos/paletas.php">Paletas</a></li>
                         </ul>
@@ -384,10 +380,9 @@ footer{
             </form>
         </div>
         <div class="header-icons">
-<<<<<<< HEAD
-=======
-            <a href="logeo.php" title="Iniciar Sesión">I</a>
->>>>>>> f3984d7a8d43e8b92c8d2d67a98bca1a2008264b
+
+          
+
             <a href="carrito.html" title="Carrito">C</a>
         </div>
     </header>

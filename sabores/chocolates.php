@@ -208,7 +208,6 @@
     <body>
      </br>
      <div class=cajitamm>
-<<<<<<< HEAD
      <div class="cho"> <h2>Chocolate Amargo</h2><img class="publi" src= "../img/fru.jpeg" height="250px"></br></br> </br><div class="desc">   - Un helado rico y cremoso, elaborado con cacao de alta calidad para un sabor intenso.
      </div></div>
      <div class="cho">Chocolate con Naranja<img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
@@ -221,14 +220,7 @@
      </div></div>
      <div class="cho">Chocolate con Sal Marina<img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
      </div></div>
-=======
-     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
-     <div class="cho"><img class="publi" src="../img/fru.jpeg" height="250px"> </br> Chocolate</div>
->>>>>>> b1c44fc84540971017ebf30eab4a7a854aa4bf71
+
     </div>
     </body>
     </html>
