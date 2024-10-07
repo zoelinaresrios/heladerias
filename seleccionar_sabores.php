@@ -16,7 +16,7 @@ if (isset($_GET['producto_id'])) {
         <head>
             <meta charset='UTF-8'>
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>Seleccionar Sabores - " . $producto['nombre'] . "</title>
+            <title>Seleccionar Sabores - " . htmlspecialchars($producto['nombre']) . "</title>
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -96,28 +96,25 @@ if (isset($_GET['producto_id'])) {
                 </nav>
               </header>";
 
-        echo "<h1>Seleccionar Sabores para " . $producto['nombre'] . "</h1>";
-        echo "<p style='text-align: center;'>Precio: $" . $producto['precio'] . "</p>";
-        
-        // Selección del número de sabores
+        echo "<h1>Seleccionar Sabores para " . htmlspecialchars($producto['nombre']) . "</h1>";
+        echo "<p style='text-align: center;'>Precio: $" . htmlspecialchars($producto['precio']) . "</p>";
+
+        // Número de sabores requeridos
+        $num_sabores_requeridos = ($producto_id == 21) ? 3 : (($producto_id == 20) ? 1 : 7);
+
         echo "<form action='agregar_al_carrito.php' method='POST'>";
-        echo "<label for='num_sabores'>Selecciona el número de sabores:</label><br>";
-        echo "<input type='radio' name='num_sabores' value='1' checked> 1 Sabor<br>";
-        echo "<input type='radio' name='num_sabores' value='2'> 2 Sabores<br>";
-        echo "<input type='radio' name='num_sabores' value='3'> 3 Sabores<br>";
-        echo "<input type='radio' name='num_sabores' value='4'> 4 Sabores<br><br>";
-        
+        echo "<h3>Elige $num_sabores_requeridos sabores:</h3>";
+
         // Consulta para obtener los sabores
         $query_sabores = "SELECT id, nombre, stock FROM sabores"; 
         $result_sabores = $conn->query($query_sabores);
 
         if ($result_sabores->num_rows > 0) {
-            echo "<h3>Elige los sabores:</h3>";
             echo "<div id='sabores-container'>";
             while ($row = $result_sabores->fetch_assoc()) {
                 echo "<div class='sabor' data-id='" . $row['id'] . "'>";
-                echo "<span>" . $row['nombre'] . " (Stock: " . $row['stock'] . ")</span>";
-                echo "<input type='checkbox' name='sabores[]' value='" . $row['id'] . "' disabled> Seleccionar<br>";
+                echo "<span>" . htmlspecialchars($row['nombre']) . " (Stock: " . htmlspecialchars($row['stock']) . ")</span>";
+                echo "<input type='checkbox' name='sabores[]' value='" . $row['id'] . "'> Seleccionar<br>";
                 echo "</div>";
             }
             echo "</div>";
@@ -127,75 +124,22 @@ if (isset($_GET['producto_id'])) {
 
         // Campo oculto para el producto
         echo "<input type='hidden' name='producto_id' value='" . $producto_id . "'>";
-        
+
         // Botón para agregar al carrito
         echo "<button type='submit' class='select-button'>Agregar al Carrito</button>";
         echo "</form>";
 
-        // Agregar el script para habilitar/limitar los sabores
+        // Agregar el script para validar selección
         echo "<script>
                 const saborCheckboxes = document.querySelectorAll('input[name=\"sabores[]\"]');
-                const numSaboresInputs = document.querySelectorAll('input[name=\"num_sabores\"]');
+                const numSaboresRequeridos = " . $num_sabores_requeridos . ";
 
-                numSaboresInputs.forEach(input => {
-                    input.addEventListener('change', () => {
-                        const maxSabores = parseInt(input.value);
-                        let selectedCount = 0;
-
-                        // Habilitar todos los checkboxes
-                        saborCheckboxes.forEach(checkbox => {
-                            checkbox.disabled = false;
-                            checkbox.checked = false; // Resetear selección
-                        });
-
-                        // Deshabilitar checkboxes según el número de sabores seleccionados
-                        saborCheckboxes.forEach(checkbox => {
-                            if (checkbox.checked) {
-                                selectedCount++;
-                            }
-                        });
-
-                        if (selectedCount >= maxSabores) {
-                            saborCheckboxes.forEach(checkbox => {
-                                if (!checkbox.checked) {
-                                    checkbox.disabled = true;
-                                }
-                            });
-                        }
-                    });
-                });
-
-                // Inicializa el evento para el cambio de número de sabores al cargar
-                numSaboresInputs.forEach(input => {
-                    if (input.checked) {
-                        input.dispatchEvent(new Event('change'));
+                document.querySelector('form').addEventListener('submit', function(event) {
+                    const selectedCount = Array.from(saborCheckboxes).filter(checkbox => checkbox.checked).length;
+                    if (selectedCount !== numSaboresRequeridos) {
+                        alert('Debes seleccionar exactamente ' + numSaboresRequeridos + ' sabores.');
+                        event.preventDefault(); // Evita que se envíe el formulario
                     }
-                });
-
-                // Evento para habilitar/deshabilitar checkboxes al seleccionar
-                saborCheckboxes.forEach(checkbox => {
-                    checkbox.addEventListener('change', () => {
-                        const maxSabores = parseInt(document.querySelector('input[name=\"num_sabores\"]:checked').value);
-                        let selectedCount = 0;
-
-                        saborCheckboxes.forEach(checkbox => {
-                            if (checkbox.checked) {
-                                selectedCount++;
-                            }
-                        });
-
-                        if (selectedCount >= maxSabores) {
-                            saborCheckboxes.forEach(checkbox => {
-                                if (!checkbox.checked) {
-                                    checkbox.disabled = true;
-                                }
-                            });
-                        } else {
-                            saborCheckboxes.forEach(checkbox => {
-                                checkbox.disabled = false;
-                            });
-                        }
-                    });
                 });
               </script>";
 

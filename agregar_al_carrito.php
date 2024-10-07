@@ -1,28 +1,24 @@
 <?php
 session_start();
-include 'db.php'; // Asegúrate de que la ruta a db.php sea correcta
+include 'db.php'; // Asegúrate de que la conexión a la base de datos sea correcta
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $producto_id = $_POST['producto_id'];
-    $num_sabores = $_POST['num_sabores'];
-    $sabores_seleccionados = isset($_POST['sabores']) ? $_POST['sabores'] : [];
+$producto_id = $_POST['producto_id'];
 
-    // Validar la cantidad de sabores seleccionados
-    if (count($sabores_seleccionados) > $num_sabores) {
-        echo "No puedes seleccionar más sabores de los permitidos.";
-        exit();
-    }
+// Consulta para obtener el producto de la base de datos
+$query = "SELECT nombre, Precio FROM productos WHERE ID = $producto_id"; // Cambia 'precio' a 'Precio'
+$result = $conn->query($query);
+$producto = $result->fetch_assoc();
 
-    // Aquí puedes agregar la lógica para manejar el carrito
-    // Ejemplo: almacenar el producto y los sabores en $_SESSION
+if ($producto) {
     $_SESSION['carrito'][] = [
         'producto_id' => $producto_id,
-        'num_sabores' => $num_sabores,
-        'sabores' => $sabores_seleccionados
+        'nombre' => $producto['nombre'],
+        'Precio' => $producto['Precio'], // Cambia a 'Precio' con 'P' mayúscula
+        'sabores' => [] // Aquí puedes agregar la lógica para los sabores si es necesario
     ];
-
-    // Redirigir al carrito o a una página de confirmación
-    header('Location: carrito.php'); // Asegúrate de que la página del carrito exista
-    exit();
 }
+
+// Redirigir de nuevo a helados_clientes.php
+header('Location: helados_clientes.php');
+exit();
 ?>
