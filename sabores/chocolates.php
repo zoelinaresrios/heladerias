@@ -8,11 +8,12 @@
     }
     .cajitamm {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adaptable a la pantalla */
     grid-gap: 110px;
-    margin: 50px auto; /* Centering the container */
+    margin: 50px auto; /* Centrar el contenedor */
     text-align: center;
-    max-width: 1200px; /* Set a maximum width */
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    padding: 10px 20px; /* Espaciado interno a los lados */
 }
 
 .cho {
@@ -20,24 +21,27 @@
     border: 6px solid #f4abba;
     background-color: #f4abba;
     padding: 40px 15px; 
-    margin: auto;
-    width: 80%; 
+    margin: auto; /* Asegura que la caja esté centrada dentro del contenedor */
+    width: 100%; /* Ajustar al 100% del ancho de la celda del grid */
     height: auto; 
     text-align: center;
 }
 
+.publi {
+    border-radius: 70%;
+    margin-bottom: 20px; /* Espacio entre imagen y descripción */
+}
 .desc {
-    display: none;
+    display: none; /* Oculta el texto inicialmente */
+    opacity: 0; /* Comienza con opacidad 0 */
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
 }
 
 .cho:hover .desc {
-    display: block;
+    display: block; /* Muestra el texto al pasar el cursor */
+    opacity: 1; /* Cambia la opacidad a 1 para que sea visible */
 }
 
-.publi {
-    border-radius: 100%;
-    margin-bottom: 20px; /* Space between image and description */
-}
 
 
     h2{
@@ -71,10 +75,14 @@
             }
     
             .header-info {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+}
+
+
     
             .header-info h1 {
                 margin: 0;
@@ -195,25 +203,33 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <header>
-        <nav>
-            <ul>
-                <li><a href="../index.php">Inicio</a></li>
-    
-                <li class="dropdown">
-                    <a href="#">Productos</a>
-                    <ul class="dropdown-content">
-                        <li><a href="../productos/helados.php">Helados</a></li>
-                        <li><a href="../productos/tortas.php">Tortas</a></li>
-                        <li><a href="../productos/paletas.php">Paletas</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-left">
+            <img class="logo" src="../img/logo.png" alt="logo">
+            <div class="header-info">
+                <h1>TENTACIONES HELADAS</h1>
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <a href="#">Productos</a>
+                        <ul class="dropdown-content">
+                            <li><a href="productos/helados.php">Helados</a></li>
+                            <li><a href="productos/tortas.php">Tortas</a></li>
+                            <li><a href="productos/paletas.php">Paletas</a></li>
+                        </ul>
+                    </div>
+                    <a href="../index.php">Inicio</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </div>
+      
+                </button>
+            </form>
+        </div>
+      
     </header>
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"> <h2>Chocolate Amargo</h2><img class="publi" src= "../img/fru.jpeg" height="250px"></br></br> </br><div class="desc">   - Un helado rico y cremoso, elaborado con cacao de alta calidad para un sabor intenso.
+     <div class="cho"><h2>chocolate amargo</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
      </div></div>
      <div class="cho"><h2>chocolate árabe</h2><img class="publi" src="../img/cho_arabe.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
      </div></div>
