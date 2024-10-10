@@ -361,6 +361,7 @@ footer{
                             <li><a href="productos/helados.php">Helados</a></li>
                             <li><a href="productos/tortas.php">Tortas</a></li>
                             <li><a href="productos/paletas.php">Paletas</a></li>
+                            <li><a href="productos/bombones.php">bombones</a></li>
                         </ul>
                     </div>
                     <a href="contacto.html">Contacto</a>
@@ -381,7 +382,7 @@ footer{
         </div>
         <div class="header-icons">
             <a href="logeo.php" title="Iniciar Sesión">I</a>
-            <a href="carrito.html" title="Carrito">C</a>
+            
         </div>
     </header>
 

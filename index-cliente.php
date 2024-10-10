@@ -358,9 +358,8 @@ footer{
                     <div class="dropdown">
                         <a href="#">Productos</a>
                         <ul class="dropdown-content">
-                            <li><a href="helados_clientes.php">Helados</a></li>
-                            <li><a href="productos/tortas.php">Tortas</a></li>
-                            <li><a href="productos/paletas.php">Paletas</a></li>
+                            <li><a href="helados_clientes.php">productos</a></li>
+                            
                         </ul>
                     </div>
                     <a href="contacto.html">Contacto</a>

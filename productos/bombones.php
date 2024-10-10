@@ -31,18 +31,6 @@
     border-radius: 70%;
     margin-bottom: 20px; /* Espacio entre imagen y descripción */
 }
-.desc {
-    display: none; /* Oculta el texto inicialmente */
-    opacity: 0; /* Comienza con opacidad 0 */
-    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
-}
-
-.cho:hover .desc {
-    display: block; /* Muestra el texto al pasar el cursor */
-    opacity: 1; /* Cambia la opacidad a 1 para que sea visible */
-}
-
-
 
     h2{
     
@@ -211,10 +199,11 @@
                     <div class="dropdown">
                         <a href="#">Productos</a>
                         <ul class="dropdown-content">
-                            <li><a href="productos/helados.php">Helados</a></li>
-                            <li><a href="productos/tortas.php">Tortas</a></li>
-                            <li><a href="productos/paletas.php">Paletas</a></li>
-                        </ul>
+                        <li><a href="../productos/helados.php">Helados</a></li>
+                            <li><a href="../productos/tortas.php">Tortas</a></li>
+                            <li><a href="../productos/paletas.php">Paletas</a></li>
+                            <li><a href="../productos/bombones.php">bombones</a></li>
+                      </ul>
                     </div>
                     <a href="../index.php">Inicio</a>
                     <a href="contacto.html">Contacto</a>
@@ -229,25 +218,13 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>chocolate amargo</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   <h4> - La intensidad pura del cacao en su máxima expresión, para los verdaderos amantes del chocolate fuerte.</h4>
+     <div class="cho"><h2>vainilla con chocolate</h2><img class="publi" src="../img/bombon_bainillin.jpeg" height="250px"> </br> <div> 
      </div></div>
-     <div class="cho"><h2>chocolate árabe</h2><img class="publi" src="../img/cho_arabe.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un sabor exótico y envolvente, con matices de especias que te transportan a tierras lejanas.</h4>
+     <div class="cho"><h2>dulce de leche</h2><img class="publi" src="../img/bombon_dulceleche.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>chocolate danette</h2><img class="publi" src="../img/cho_dsn.jpeg" height="250px"> </br><div class="desc">   <h4> -Pura cremosidad, como sumergirte en un postre de chocolate Danette pero en forma de helado.</h4>
+     <div class="cho"><h2>galleta</h2><img class="publi" src="../img/bombon_galle.jpeg" height="250px"> </br><div >   
      </div></div>
-     <div class="cho"><h2>chocolate asteroides</h2><img class="publi" src="../img/cho_asteroides.jpeg" height="250px"> </br> <div class="desc">   <h4> -  Una explosión de chocolate cósmica, con trozos crujientes que hacen de cada bocado una aventura.</h4>
-     </div></div>
-     <div class="cho"><h2>chocolate con naranja</h2><img class="publi" src="../img/cho_naranja.jpeg" height="250px"> </br> <div class="desc">   <h4> -  El balance perfecto entre el amargo del chocolate y el toque vibrante y refrescante de la naranja.</h4>
-     </div></div>
-     <div class="cho"><h2>chocolate con caramelo</h2><img class="publi" src="../img/chocar.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un torbellino de dulzura, donde el chocolate envuelve al caramelo en una danza irresistible.</h4>
-     </div></div>
-     <div class="cho"><h2>chocolate granizado</h2><img class="publi" src="../img/cho_granizado.jpeg" height="250px"> </br> <div class="desc">  <h4> -Suave crema de chocolate con delicados trozos crujientes que añaden una textura perfecta.</h4>
-     </div></div>
-     <div class="cho"><h2>choco chips</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   <h4> - El clásico favorito con generosos trozos de chocolate dispersos, para esos que no se cansan del cacao.</h4>
-     </div></div>
-     <div class="cho"><h2>chocolate blanco</h2><img class="publi" src="../img/cho_blan.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un viaje cremoso y dulce, tan delicado que se derrite en tu boca como el más suave algodón de azúcar.</h4>
-     </div></div>
-     
+
     </div>
     </body>
     </html>

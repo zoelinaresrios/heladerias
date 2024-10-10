@@ -85,8 +85,8 @@ $total = 0;
         $nombre = isset($producto['nombre']) ? $producto['nombre'] : 'Producto desconocido';
         $precio = isset($producto['Precio']) ? $producto['Precio'] : 0;
 
-        // Sumar al total
-        $total += $precio;
+        // Asegúrate de que $precio se trate como un número
+        $total += (float)$precio;
 
         echo "<tr>";
         echo "<td>$nombre</td>";
@@ -95,6 +95,11 @@ $total = 0;
         echo "</tr>";
     }
     ?>
+
+    <tr>
+        <td colspan="2" style="text-align: right;"><strong>Total:</strong></td>
+        <td>$$total</td>
+    </tr>
 </table>
 
 <button onclick="pagar()">Proceder a Pagar</button>

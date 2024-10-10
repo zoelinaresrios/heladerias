@@ -216,6 +216,7 @@
                             <li><a href="productos/paletas.php">Paletas</a></li>
                         </ul>
                     </div>
+                    <a href="../index.php">Inicio</a>
                     <a href="contacto.html">Contacto</a>
                 </div>
             </div>
@@ -228,23 +229,23 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>chocolate amargo</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
+     <div class="cho"><h2>franui</h2><img class="publi" src="../img/cho_franui.jpeg" height="250px"> </br> <div class="desc">    <h4> - El placer irresistible de frambuesas cubiertas de chocolate, ahora convertido en helado. Cada cucharada es una explosión de frescura y dulzura.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate árabe</h2><img class="publi" src="../img/cho_arabe.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
+     <div class="cho"><h2>san antonio</h2><img class="publi" src="../img/fr_antonio.jpeg" height="250px"> </br> <div class="desc">    <h4> -El equilibrio perfecto entre dulce de leche, chocolate y crocante, para los que buscan una experiencia indulgente y exquisita.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate danette</h2><img class="publi" src="../img/cho_dsn.jpeg" height="250px"> </br><div class="desc">   - Fresco y revitalizante, este helado une el chocolate con un toque de menta.
+     <div class="cho"><h2>vainilla con chocolate</h2><img class="publi" src="../img/cr_vaincho.jpeg" height="250px"> </br><div class="desc">    <h4> -El clásico eterno, la suavidad de la vainilla abrazada por el intenso sabor del chocolate. Puro confort en cada bocado.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate asteroides</h2><img class="publi" src="../img/cho_asteroides.jpeg" height="250px"> </br> <div class="desc">   - Un intenso sabor a chocolate con un toque de café, ideal para los amantes del café.
+     <div class="cho"><h2>navidad</h2><img class="publi" src="../img/cr_navidad.jpeg" height="250px"> </br> <div class="desc">    <h4> -Un sabor lleno de espíritu festivo, con notas de canela, nuez moscada y un toque dulce que te recuerda a los mejores momentos de la temporada.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate con naranja</h2><img class="publi" src="../img/cho_naranja.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+     <div class="cho"><h2>pico dulce</h2><img class="publi" src="../img/cr_picdul.jpeg" height="250px"> </br> <div class="desc">   <h4> -Dulce y chispeante, con el inconfundible sabor del clásico caramelo argentino, convertido en una experiencia cremosa y divertida.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate con caramelo</h2><img class="publi" src="../img/chocar.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+     <div class="cho"><h2>tricolor</h2><img class="publi" src="../img/cr_tricolor.jpeg" height="250px"> </br> <div class="desc">    <h4> -Tres sabores que se complementan a la perfección: fresa, vainilla y chocolate, una combinación que deleita a grandes y chicos.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate granizado</h2><img class="publi" src="../img/cho_granizado.jpeg" height="250px"> </br> <div class="desc">   - Crema de chocolate con trozos crujientes de almendra, una combinación perfecta.
+     <div class="cho"><h2>barbie</h2><img class="publi" src="../img/cr_barbie.jpeg" height="250px"> </br> <div class="desc">    <h4> -Un helado tan encantador como la muñeca, con colores vibrantes y un sabor dulce que hará que te sientas en un mundo de fantasía.</h4>
      </div></div>
-     <div class="cho"><h2>choco chips</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+     <div class="cho"><h2>capuchino</h2><img class="publi" src="../img/cr_capucchino.jpeg" height="250px"> </br> <div class="desc">    <h4> -La intensidad de un café capuchino cremoso en forma de helado. Perfecto para los amantes del café que buscan algo refrescante</h4>
      </div></div>
-     <div class="cho"><h2>chocolate blanco</h2><img class="publi" src="../img/cho_blan.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+     <div class="cho"><h2>chocolate blanco</h2><img class="publi" src="../img/cho_blan.jpeg" height="250px"> </br> <div class="desc">   <h4> -Dulce, suave y absolutamente decadente, el chocolate blanco en su versión más cremosa para los que buscan algo diferente y sofisticado.</h4>
      </div></div>
      
     </div>

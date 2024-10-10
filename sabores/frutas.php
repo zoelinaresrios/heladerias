@@ -229,25 +229,31 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>chocolate amargo</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
+     <div class="cho"><h2>anana</h2><img class="publi" src="../img/fr_anana.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un bocado refrescante de jugosa piña, con el equilibrio perfecto entre dulzura tropical y acidez vibrante.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate árabe</h2><img class="publi" src="../img/cho_arabe.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
+     <div class="cho"><h2>arandanos</h2><img class="publi" src="../img/fr_arandanos.jpeg" height="250px"> </br> <div class="desc">   <h4> -  Pequeñas joyas de sabor intenso que estallan en tu boca con cada cucharada. El toque ideal de frescura.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate danette</h2><img class="publi" src="../img/cho_dsn.jpeg" height="250px"> </br><div class="desc">   - Fresco y revitalizante, este helado une el chocolate con un toque de menta.
+     <div class="cho"><h2>durazno</h2><img class="publi" src="../img/fr_durazno.jpeg" height="250px"> </br><div class="desc">   <h4> - El auténtico sabor de los duraznos más jugosos y maduros, capturando el verano en cada bocado.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate asteroides</h2><img class="publi" src="../img/cho_asteroides.jpeg" height="250px"> </br> <div class="desc">   - Un intenso sabor a chocolate con un toque de café, ideal para los amantes del café.
+     <div class="cho"><h2>frambuesas</h2><img class="publi" src="../img/fr_frambuesaa.jpeg" height="250px"> </br> <div class="desc">    <h4> - Un estallido de sabor ácido y dulce que te lleva directo a una tarde cálida en el campo.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate con naranja</h2><img class="publi" src="../img/cho_naranja.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+     <div class="cho"><h2>limon con miel</h2><img class="publi" src="../img/fr_limmiel.jpeg" height="250px"> </br> <div class="desc">    <h4> - La acidez refrescante del limón, suavizada con el dulzor natural de la miel, creando un equilibrio que deleita.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate con caramelo</h2><img class="publi" src="../img/chocar.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+     <div class="cho"><h2>mango</h2><img class="publi" src="../img/fr_mango.jpeg" height="250px"> </br> <div class="desc">    <h4> - Un viaje tropical de sabores exóticos y cremosos que seduce tus papilas gustativas desde el primer momento.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate granizado</h2><img class="publi" src="../img/cho_granizado.jpeg" height="250px"> </br> <div class="desc">   - Crema de chocolate con trozos crujientes de almendra, una combinación perfecta.
+     <div class="cho"><h2>melon </h2><img class="publi" src="../img/fr_melon.jpeg" height="250px"> </br> <div class="desc">    <h4> -  Tan fresco y delicado como una tarde de verano, el sabor del melón te envuelve en una brisa dulce.</h4>
      </div></div>
-     <div class="cho"><h2>choco chips</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+     <div class="cho"><h2>fresa</h2><img class="publi" src="../img/fr_fresa.jpeg" height="250px"> </br> <div class="desc">    <h4> - El clásico sabor de las fresas frescas y dulces, con la textura perfecta para derretirse en tu boca.</h4>
      </div></div>
-     <div class="cho"><h2>chocolate blanco</h2><img class="publi" src="../img/cho_blan.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
+    <div class="cho"><h2>naranja</h2><img class="publi" src="../img/fr_naranja.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un torbellino cítrico lleno de energía que te despierta con cada cucharada.</h4>
      </div></div>
-     
+     <div class="cho"><h2>manzana</h2><img class="publi" src="../img/fr_manz.jpeg" height="250px"> </br> <div class="desc">    <h4> - Frescura crujiente en cada bocado, como morder una manzana madura bajo el sol.</h4>
+     </div></div>
+     <div class="cho"><h2>frambuesa</h2><img class="publi" src="../img/fr_frambuesa.jpeg" height="250px"> </br> <div class="desc">    <h4> - Un bocado refrescante de jugosa piña, con el equilibrio perfecto entre dulzura tropical y acidez vibrante.</h4>
+     </div></div>
+     <div class="cho"><h2>sandia</h2><img class="publi" src="../img/fr_sandia.jpeg" height="250px"> </br> <div class="desc">    <h4> - Pura frescura y dulzura en cada bocado, como si tomaras un trozo de verano eterno.</h4>
+     </div></div>
+   
     </div>
     </body>
     </html>

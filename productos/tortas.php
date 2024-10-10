@@ -6,23 +6,35 @@
         color: #000000;
         padding-left: 95px;
     }
-    .cajitamm{
-        align-items: center;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 60px;
-        margin: 75px;
-        text-align: center;
-    }
-    .cho{
-        border-radius: 8px;
-        border: 5px solid #f4abba;
-        background-color: #f4abba;
-    }
-    .cho{
-        text-align: center;
-    }
+    .cajitamm {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adaptable a la pantalla */
+    grid-gap: 110px;
+    margin: 50px auto; /* Centrar el contenedor */
+    text-align: center;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    padding: 10px 20px; /* Espaciado interno a los lados */
+}
+
+.cho {
+    border-radius: 18px;
+    border: 6px solid #f4abba;
+    background-color: #f4abba;
+    padding: 40px 15px; 
+    margin: auto; /* Asegura que la caja esté centrada dentro del contenedor */
+    width: 100%; /* Ajustar al 100% del ancho de la celda del grid */
+    height: auto; 
+    text-align: center;
+}
+
+.publi {
+    border-radius: 70%;
+    margin-bottom: 20px; /* Espacio entre imagen y descripción */
+}
+
+    h2{
     
+    }
     body {
                 font-family: Arial, sans-serif;
                 margin: 0;
@@ -51,10 +63,14 @@
             }
     
             .header-info {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+}
+
+
     
             .header-info h1 {
                 margin: 0;
@@ -164,50 +180,6 @@
     nav ul li .dropdown-content li a:hover {
         background-color: #8e6c;
     }
-
-    .contenedor{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    .torta{
-        width: 30%;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    .torta img{
-        max-width: 100%;
-        height: auto;
-        border: 4px solid #4c4c4c;
-        padding: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .torta p{
-        margin-top: 10px;
-        font-size: 1.1em;
-        color:#333;
-    }
-
-    #padding-CyD{
-        padding-top: 52px;
-        padding-bottom: 52px;
-    }
-    #padding-T{
-        padding-top: 48px;
-        padding-bottom: 47px;
-    }
-    #padding-CyD2{
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-    #padding-L{
-        padding-top: 29px;
-        padding-bottom: 29px;
-    }
-    
-    
 </style>
 
 <!DOCTYPE html>
@@ -219,51 +191,52 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <header>
-        <nav>
-            <ul>
-                <li><a href="../index.php">Inicio</a></li>
-    
-                <li class="dropdown">
-                    <a href="#">Productos</a>
-                    <ul class="dropdown-content">
-                        <li><a href="helados.php">Helados</a></li>
-                        <li><a href="tortas.php">Tortas</a></li>
-                        <li><a href="paletas.php">Paletas</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-left">
+            <img class="logo" src="../img/logo.png" alt="logo">
+            <div class="header-info">
+                <h1>TENTACIONES HELADAS</h1>
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <a href="#">Productos</a>
+                        <ul class="dropdown-content">
+                        <li><a href="../productos/helados.php">Helados</a></li>
+                            <li><a href="../productos/tortas.php">Tortas</a></li>
+                            <li><a href="../productos/paletas.php">Paletas</a></li>
+                            <li><a href="../productos/bombones.php">bombones</a></li>
+                         </ul>
+                    </div>
+                    <a href="../index.php">Inicio</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
+            </div>
+      
+                </button>
+            </form>
+        </div>
+      
     </header>
     <body>
-     <br>
-     <h1>Nuestras tortas</h1>
-     <br>
-     <div class="contenedor">
-     <div class="torta">
-        <a href=""><img id="padding-CyD" src="../img/torta_chocolate_dulce_de_leche.jpeg" alt=""></a>
-        <p>Torta Chocolate y dulce de leche</p><p>Precio: $5000</p>
-     </div>
-     <div class="torta">
-        <a href=""><img id="padding-T" src="../img/torta_tricolor.jpeg" alt=""></a>
-        <p>Torta Tricolor</p><p>Precio: $9000</p>
+     </br>
+     <div class=cajitamm>
+     
+     <div class="cho"><h2>oreo</h2><img class="publi" src="../img/torta_orreo.jpeg" height="250px"> </br> <div >  
+     </div></div>
+     <div class="cho"><h2>cereza</h2><img class="publi" src="../img/torta_cereza.jpeg" height="250px"> </br> <div >  
+     </div></div> 
+   
+     <div class="cho"><h2>choco granizado</h2><img class="publi" src="../img/torta_granizado.jpeg" height="250px"> </br> <div >  
+     </div></div>
+    
+     <div class="cho"><h2>oreo rosa</h2><img class="publi" src="../img/torta_oreo2.jpeg" height="250px"> </br> <div >  
+     </div></div>
+    
+     <div class="cho"><h2>mini helados</h2><img class="publi" src="../img/torta_helados.jpeg" height="250px"> </br> <div >  
+     </div></div>
+     
+     <div class="cho"><h2>chocolatosa</h2><img class="publi" src="../img/torta_chocolatosa.jpeg" height="250px"> </br> <div >  
+     </div></div>
+     
+    
     </div>
-    <div class="torta">
-        <a href=""><img src="../img/torta_frutilla.jpeg" alt=""></a>
-        <p>Torta de Frutilla</p><p>Precio: $10000</p>
-    </div>
-    <div class="torta">
-        <a href=""><img id="padding-L" src="../img/torta_limon.jpeg" alt=""></a>
-        <p>Torta de Limon</p><p>Precio: $6000</p>
-    </div>
-    <div class="torta">
-        <a href=""><img src="../img/torta_oreo.jpeg" alt=""></a>
-        <p>Torta Oreo</p><p>Precio: $7000</p>
-    </div>
-    <div class="torta">
-        <a href=""><img id="padding-CyD2" src="../img/torta_chocolate_dulce_de_leche.jpeg" alt=""></a>
-        <p>Torta Chocolate y dulce de leche</p><p>Precio: $5000</p>
-    </div>
-     </div>
-
     </body>
-</html>
+    </html>
