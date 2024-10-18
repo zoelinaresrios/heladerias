@@ -18,7 +18,7 @@ $result = $conn->query($query);
             background-color: #f4abba;
             color: #854831;
             margin: 0;
-            padding: 20px;
+            padding: 0;
         }
         header {
             background-color: #854831;
@@ -27,6 +27,7 @@ $result = $conn->query($query);
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
         .logo {
             max-width: 100px;
@@ -55,6 +56,7 @@ $result = $conn->query($query);
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
+            padding-bottom:6%;
         }
         .cho {
             border: 1px solid #854831;
@@ -68,6 +70,81 @@ $result = $conn->query($query);
             width: 100%;
             height: auto;
         }
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+/*:::::Pie de Pagina*/
+.pie-pagina{
+    padding:0%;
+    width: 100%;
+    background-color: #854831;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #f4abba;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #f4abba;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: aqua;
+}
+.pie-pagina .grupo-2{
+    background-color: #754831;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
     </style>
 </head>
 <body>
@@ -139,6 +216,34 @@ $result = $conn->query($query);
         }
         ?>
     </div>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="index-cliente.php">
+                        <img src="img/logo.png" alt="Logo">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ipsa?</p>
+            </div>
+            <div class="box">
+                <h2>CONTACTANOS</h2>
+                <div class="red-social">
+                    <a href="https://mail.google.com/mail/u/0/?hl=es_419#inbox?compose=jrjtXFBVMklrPLZrQRKPjrMpCPndXfTwPDLTTTvCtkkrXWflmpWpHCtqNgVwwbbGZkBvMKdG" class="fa fa-email"></a>
+                    <a href="https://www.instagram.com/tentacionesheladass/" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-x"></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 <b>Tentaciones Heladas</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
 </body>
 </html>
 

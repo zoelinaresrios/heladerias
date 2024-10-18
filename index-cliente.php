@@ -245,12 +245,13 @@ section {
 .cajon{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-    padding-right: 15%;
-    padding-left: 15%
+    gap:10%;
+    grid-gap: 5%;
+    padding-right: 25%;
+    padding-left: 25%
     max-width: 100%;
     margin: auto;
-    
+    margin-left:25%;
 }
 .textorosa{
     text-align: center;
@@ -298,12 +299,6 @@ section {
     border-radius: 8px;
     border: 5px solid #ff0099;
 }
-
-footer{
-    background-color: #854831;
-}
-
-
 
         /* CSS para el carrusel */
         .carrusel {
@@ -399,11 +394,7 @@ footer{
         <button class="next">❯</button>
     </div>
 
-    <div class="cajon">
-        <!-- Contenido (sin cambios) -->
-    </div>
-    
-    <footer> </footer>
+
 
     <script>
         let indiceImagen = 0; 
@@ -506,10 +497,5 @@ footer{
                 </nav>
             </div>
     </div>
-    <footer> </footer>
 </body>
-<<<<<<< HEAD
-</html>  
-=======
-</html>  
->>>>>>> f3984d7a8d43e8b92c8d2d67a98bca1a2008264b
+</html>
