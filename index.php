@@ -32,202 +32,12 @@
         .logo {
             max-width: 100px;
         }
-
         .header-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .header-info h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .nav-links a {
-            color: #f4abba;
-            text-decoration: none;
-            padding: 5px;
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #8e6c49;
-            top: 100%;
-            left: 0;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            min-width: 150px;
-            z-index: 1;
-        }
-
-        .dropdown-content li {
-            border-bottom: 1px solid #555;
-        }
-
-        .dropdown-content li a {
-            padding: 10px;
-            color: #fff;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content li a:hover {
-            background-color: #8e6c;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-
-        nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
-    position: relative;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-}
-
-nav ul li .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #8e6c49;
-    top: 100%;
-    left: 0;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    min-width: 150px;
-    z-index: 1;
-}
-
-nav ul li .dropdown-content li {
-    border-bottom: 1px solid #555;
-}
-
-nav ul li .dropdown-content li a {
-    padding: 10px;
-    color: #fff;
-}
-
-nav ul li:hover .dropdown-content {
-    display: block;
-}
-
-nav ul li .dropdown-content li a:hover {
-    background-color: #8e6c;
-}
-
-        .search-container {
-            flex: 2;
-            display: flex;
-            justify-content: center;
-            margin: 10px 0;
-        }
-
-        form {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            max-width: 500px; /* Ajusta el tamaño máximo del campo de búsqueda */
-        }
-
-        input[type="search"] {
-            border: 2px solid #e6007f; /* Color rosa para la barra de búsqueda */
-            border-radius: 5px;
-            padding: 8px;
-            outline: none;
-            color: #333;
-            width: 100%;
-        }
-
-        input[type="search"]:focus {
-            border-color: #d6007f;
-        }
-
-        button {
-            background-color: #e6007f;
-            border: none;
-            border-radius: 5px;
-            padding: 8px;
-            margin-left: 5px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        button svg {
-            fill: #fff;
-        }
-
-        .header-icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-left: auto;
-        }
-
-        .header-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #fff; /* Fondo blanco para el botón */
-            color: #000; /* Texto en negro */
-            border-radius: 50%;
-            border: 2px solid #f4abba; /* Borde rosa para visibilidad */
-            text-decoration: none;
-            font-size: 18px; /* Tamaño de la letra */
-            font-weight: bold;
+            flex-grow: 1;
             text-align: center;
-            line-height: 1;
-            box-sizing: border-box;
         }
 
-        .header-icons a:hover {
-            background-color: #f4abba; /* Cambia el fondo al pasar el ratón */
-            color: #000; /* Asegura que el texto siga siendo negro */
-        }
-
-        .header-icons a:hover svg {
-            filter: none; /* Mantiene el ícono visible en hover */
-        }
-
-        main {
-            padding: 20px;
-        }
+       
 
         .publicidad {
             display: block;
@@ -349,38 +159,20 @@ footer{
     </style>
 </head>
 <body>
+    
     <!-- Encabezado con logo y navegación -->
     <header>
         <div class="header-left">
-            <img class="logo" src="img/logo.png" alt="logo">
-            <div class="header-info">
-                <h1>TENTACIONES HELADAS</h1>
-                <div class="nav-links">
-                    <div class="dropdown">
-                        <a href="#">Productos</a>
-                        <ul class="dropdown-content">
-                            <li><a href="productos/helados.php">Helados</a></li>
-                            <li><a href="productos/tortas.php">Tortas</a></li>
-                            <li><a href="productos/paletas.php">Paletas</a></li>
-                            <li><a href="productos/bombones.php">bombones</a></li>
-                        </ul>
-                    </div>
-                    <a href="contacto.html">Contacto</a>
-                </div>
-            </div>
+            <img class="logo" src="../img/logo.png" alt="logo">
+            <a href="index-cliente.php">Inicio</a>
         </div>
-        <div class="search-container">
-            <form id="form" role="search" action="buscar.php" method="GET">
-                <input type="search" id="query" name="q" placeholder="Buscar..." aria-label="Search through site content" required>
-                <button type="submit">
-                    <svg width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.5 19a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"></path>
-                        <path d="M13.328 7.172A3.988 3.988 0 0 0 10.5 6a3.988 3.988 0 0 0-2.828 1.172"></path>
-                        <path d="m16.61 16.611 4.244 4.243"></path>
-                    </svg>
-                </button>
-            </form>
+        <div class="header-info">
+            <h1>TENTACIONES HELADAS</h1>
         </div>
+        <a href="carrito.php">
+            <button class="cart-button">C</button>
+        </a>
+ 
         <div class="header-icons">
             <a href="logeo.php" title="Iniciar Sesión">I</a>
             

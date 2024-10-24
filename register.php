@@ -1,37 +1,28 @@
 <?php
-include 'db.php'; // Asegúrate de que la ruta sea correcta
+include('db.php'); // Incluir la conexión a la base de datos con la variable $conn
 
-// Verificar si se envió el formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibir datos del formulario
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $email = $_POST['email'];
     $usuario = $_POST['usuario'];
-    $contraseña = $_POST['contraseña'];
+    $contraseña = password_hash($_POST['contraseña'], PASSWORD_BCRYPT); // Encriptar la contraseña
     $telefono = $_POST['telefono'];
     $direccion = $_POST['direccion'];
 
-    // Hashear la contraseña
-    $contraseña_hashed = password_hash($contraseña, PASSWORD_DEFAULT);
+    // Rol por defecto será 'cliente'
+    $rol = 'cliente';
 
-    // Preparar la consulta
-    $sql = "INSERT INTO Clientes (nombre, apellido, email, usuario, contraseña, telefono, direccion) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssss", $nombre, $apellido, $email, $usuario, $contraseña_hashed, $telefono, $direccion);
+    // Insertar nuevo usuario en la base de datos usando $conn en lugar de $conexion
+    $query = "INSERT INTO clientes (nombre, apellido, email, usuario, contraseña, telefono, direccion, rol) 
+              VALUES ('$nombre', '$apellido', '$email', '$usuario', '$contraseña', '$telefono', '$direccion', '$rol')";
 
-    // Ejecutar la consulta
-    if ($stmt->execute()) {
-        // Redirigir a index.php después de un registro exitoso
-        header("Location: index-cliente.php");
-        exit(); // Asegúrate de salir después de la redirección
+    if (mysqli_query($conn, $query)) {
+        // Registro exitoso, redirigir al login
+        header('Location: cliente/index-cliente.php');
+        exit(); // Detener la ejecución del script después de la redirección
     } else {
-        echo "Error: " . $stmt->error; // Manejo de errores
+        echo "Error: " . mysqli_error($conn);
     }
-
-    // Cerrar la conexión
-    $stmt->close();
 }
-
-$conn->close();
 ?>

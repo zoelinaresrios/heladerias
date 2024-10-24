@@ -346,14 +346,14 @@ section {
     <!-- Encabezado con logo y navegación -->
     <header>
         <div class="header-left">
-            <img class="logo" src="img/logo.png" alt="logo">
+            <img class="logo" src="../img/logo.png" alt="logo">
             <div class="header-info">
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
                     <div class="dropdown">
-                        <a href="#">Productos</a>
-                        <ul class="dropdown-content">
-                            <li><a href="helados_clientes.php">productos</a></li>
+                        <a href="productos-admin.php">Productos</a>
+                        
+                        
                             
                         </ul>
                     </div>
@@ -377,7 +377,7 @@ section {
 
           
 
-            <a href="carrito.html" title="Carrito">C</a>
+            <a href="carrito.php" title="Carrito">C</a>
         </div>
     </header>
 
@@ -386,9 +386,9 @@ section {
     <!-- Carrusel de imágenes -->
     <div class="carrusel">
         <div class="imagenes">
-            <img src="img/1.png" alt="Imagen 1" class="activo">
-            <img src="img/2.png" alt="Imagen 2">
-            <img src="img/3.png" alt="Imagen 3">
+            <img src="../img/1.png" alt="Imagen 1" class="activo">
+            <img src="../img/2.png" alt="Imagen 2">
+            <img src="../img/3.png" alt="Imagen 3">
         </div>
         <button class="prev">❮</button>
         <button class="next">❯</button>
@@ -437,62 +437,62 @@ section {
     <div class="cajon">
     
         <div class="a">
-            <a href="sabores/Chocolates.php"><img class="chocolate" src="img/chocolate.png" alt="chocolate" width="300px"></a>
+            <a href="../sabores/Chocolates.php"><img class="chocolate" src="../img/chocolate.png" alt="chocolate" width="300px"></a>
         </div>
         <div class="b">
-            <a href="sabores/Frutas.php"><img class="crema" src="img/crema.png" alt="crema" width="300px"></a>
+            <a href="../sabores/Frutas.php"><img class="crema" src="../img/crema.png" alt="crema" width="300px"></a>
         </div>
         <div class="c">
-            <a href="sabores/Cremas.php"><img class="cremas" src="img/cremas.png" alt="cremas" width="300px" ></a>
+            <a href="../sabores/Cremas.php"><img class="cremas" src="../img/cremas.png" alt="cremas" width="300px" ></a>
         </div>
         <div class="s">
             <nav>
                 <ul>
-                    <li><a href="sabores/Chocolates.php"><b>CHOCOLATES</b></a></li>
+                    <li><a href="../sabores/Chocolates.php"><b>CHOCOLATES</b></a></li>
                 </ul>
             </nav>
         </div>
         <div class="s1">
             <nav>
                 <ul>
-                    <li><a href="sabores/Frutas.php"><b>FRUTAS</b></a></li>
+                    <li><a href="../sabores/Frutas.php"><b>FRUTAS</b></a></li>
                 </ul>
             </nav>
         </div>
         <div class="s2">
             <nav>
                 <ul>
-                    <li><a href="sabores/Cremas.php"><b>CREMAS</b></a></li>
+                    <li><a href="../sabores/Cremas.php"><b>CREMAS</b></a></li>
                 </ul>
             </nav>
         </div>
             <div class="d">
-                <a href="sabores/Especiales.php"><img class="especiales" src="img/especiales.png" alt="especiales" width="300px"></a>
+                <a href="../sabores/Especiales.php"><img class="especiales" src="../img/especiales.png" alt="especiales" width="300px"></a>
             </div>
             <div class="e">
-                <a href="sabores/Vegano.php"><img class="veganos" src="img/veganos.png" alt="veganos" width="300px"></a>
+                <a href="../sabores/Vegano.php"><img class="veganos" src="../img/veganos.png" alt="veganos" width="300px"></a>
             </div>
             <div class="f">
-                <a href="sabores/Celiacos.php"><img class="celiacos" src="img/celiacos.png" alt="celiacos" width="300px"></a>
+                <a href="../sabores/Celiacos.php"><img class="celiacos" src="../img/celiacos.png" alt="celiacos" width="300px"></a>
             </div>
             <div class="s3">
                 <nav>
                     <ul>
-                        <li><a href="sabores/Especiales.php"><b>ESPECIALES</b></a></li>
+                        <li><a href="../sabores/Especiales.php"><b>ESPECIALES</b></a></li>
                     </ul>
                 </nav>
             </div>
             <div class="s4">
                 <nav>
                     <ul>
-                        <li><a href="sabores/Vegano.php"><b>VEGANOS</b></a></li>
+                        <li><a href="../sabores/Vegano.php"><b>VEGANOS</b></a></li>
                     </ul>
                 </nav>
             </div>
             <div class="s5">
                 <nav>
                     <ul>
-                        <li><a href="sabores/Celiacos.php"><b>CELIACOS</b></a></li>
+                        <li><a href="../sabores/Celiacos.php"><b>CELIACOS</b></a></li>
                     </ul>
                 </nav>
             </div>

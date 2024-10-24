@@ -1,5 +1,5 @@
 <?php
-include 'db.php'; // Asegúrate de que la ruta a db.php sea correcta
+include '../db.php'; // Asegúrate de que la ruta a db.php sea correcta
 
 // Verifica si se recibió el producto_id
 if (isset($_GET['producto_id'])) {
