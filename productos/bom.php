@@ -1,4 +1,4 @@
-<<style> 
+<style> 
 
 .s a{
         text-decoration: none;
@@ -180,6 +180,78 @@
     nav ul li .dropdown-content li a:hover {
         background-color: #8e6c;
     }
+
+    .pie-pagina {
+            padding: 0%;
+            width: 100%;
+            background-color: #754831;
+            margin-top: 20px;
+        }
+        .pie-pagina .grupo-1 {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 50px;
+            padding: 45px 0px;
+        }
+        .pie-pagina .grupo-1 .box h2 {
+            color: #f4abba;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+        .pie-pagina .grupo-1 .box p {
+            color: #efefef;
+            margin-bottom: 10px;
+        }
+        .pie-pagina .grupo-1 .red-social a {
+            display: inline-block;
+            text-decoration: none;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            color: #fff;
+            margin-right: 10px;
+            background-color: #f4abba;
+            text-align: center;
+            transition: all 300ms ease;
+        }
+        .pie-pagina .grupo-1 .red-social a:hover {
+            color: aqua;
+        }
+        .pie-pagina .grupo-2 {
+            background-color: #754831;
+            padding: 15px 10px;
+            text-align: center;
+            color: #fff;
+        }
+        .pie-pagina .grupo-2 small {
+            font-size: 15px;
+        }
+
+        /* Estilos del formulario de contacto */
+        .formulario-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .formulario-contacto input,
+        .formulario-contacto textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        @media screen and (max-width:800px) {
+            .pie-pagina .grupo-1 {
+                width: 90%;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 30px;
+                padding: 35px 0px;
+            }
+        }
 </style>
 
 <!DOCTYPE html>
@@ -203,10 +275,11 @@
                             <li><a href="../productos/tortas.php">Tortas</a></li>
                             <li><a href="../productos/paletas.php">Paletas</a></li>
                             <li><a href="../productos/bombones.php">bombones</a></li>
+                            <li><a href="../productos/bombones.php">bombones</a></li>
                       </ul>
                     </div>
                     <a href="../index.php">Inicio</a>
-                 
+              
                 </div>
             </div>
       
@@ -218,19 +291,33 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>naranja</h2><img class="publi" src="../img/paleta_agua.jpeg" height="250px"> </br> <div> 
+     <div class="cho"><h2>vainilla con chocolate</h2><img class="publi" src="../img/bombon_bainillin.jpeg" height="250px"> </br> <div> 
      </div></div>
-     <div class="cho"><h2>frutilla </h2><img class="publi" src="../img/paleta_agua2.jpeg" height="250px"> </br> <div >  
+     <div class="cho"><h2>dulce de leche</h2><img class="publi" src="../img/bombon_dulceleche.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>manzana verde </h2><img class="publi" src="../img/paleta_agua3.jpeg" height="250px"> </br><div >   
+     <div class="cho"><h2>galleta</h2><img class="publi" src="../img/bombon_galle.jpeg" height="250px"> </br><div >   
      </div></div>
-     <div class="cho"><h2>paleta bañada</h2><img class="publi" src="../img/paleta_bañada.jpeg" height="250px"> </br> <div > 
-     </div></div>
-     <div class="cho"><h2>frutilla</h2><img class="publi" src="../img/paleta_crema.jpeg" height="250px"> </br> <div >   
-     </div></div>
-     <div class="cho"><h2>frutos rojos</h2><img class="publi" src="../img/paleta_crema2.jpeg" height="250px"> </br> <div >    
-     </div></div>
-    
+
     </div>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <h2>Calidad del Producto</h2>
+                <p>En Tentaciones Heladas, garantizamos la frescura y calidad en cada uno de nuestros productos.</p>
+            </div>
+            <div class="box">
+                <h2>Contacto</h2>
+                <p>Teléfono: 123-456-7890</p>
+                <p>Email: info@tentacionesheladas.com</p>
+            </div>
+            <div class="box red-social">
+                <h2>Redes Sociales</h2>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
+        </div>
+    </footer>
     </body>
     </html>

@@ -214,10 +214,11 @@
                             <li><a href="productos/helados.php">Helados</a></li>
                             <li><a href="productos/tortas.php">Tortas</a></li>
                             <li><a href="productos/paletas.php">Paletas</a></li>
+                            <li><a href="productos/bombones.php">bombones</a></li>
                         </ul>
                     </div>
                     <a href="../index.php">Inicio</a>
-                    <a href="contacto.html">Contacto</a>
+              
                 </div>
             </div>
       

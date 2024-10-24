@@ -1,4 +1,4 @@
-<<style> 
+<style> 
 
 .s a{
         text-decoration: none;
@@ -203,10 +203,10 @@
                             <li><a href="../productos/tortas.php">Tortas</a></li>
                             <li><a href="../productos/paletas.php">Paletas</a></li>
                             <li><a href="../productos/bombones.php">bombones</a></li>
-                      </ul>
+                         </ul>
                     </div>
                     <a href="../index.php">Inicio</a>
-                 
+                
                 </div>
             </div>
       
@@ -218,18 +218,24 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>naranja</h2><img class="publi" src="../img/paleta_agua.jpeg" height="250px"> </br> <div> 
+     
+     <div class="cho"><h2>oreo</h2><img class="publi" src="../img/torta_orreo.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>frutilla </h2><img class="publi" src="../img/paleta_agua2.jpeg" height="250px"> </br> <div >  
+     <div class="cho"><h2>cereza</h2><img class="publi" src="../img/torta_cereza.jpeg" height="250px"> </br> <div >  
+     </div></div> 
+   
+     <div class="cho"><h2>choco granizado</h2><img class="publi" src="../img/torta_granizado.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>manzana verde </h2><img class="publi" src="../img/paleta_agua3.jpeg" height="250px"> </br><div >   
+    
+     <div class="cho"><h2>oreo rosa</h2><img class="publi" src="../img/torta_oreo2.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>paleta bañada</h2><img class="publi" src="../img/paleta_bañada.jpeg" height="250px"> </br> <div > 
+    
+     <div class="cho"><h2>mini helados</h2><img class="publi" src="../img/torta_helados.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>frutilla</h2><img class="publi" src="../img/paleta_crema.jpeg" height="250px"> </br> <div >   
+     
+     <div class="cho"><h2>chocolatosa</h2><img class="publi" src="../img/torta_chocolatosa.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>frutos rojos</h2><img class="publi" src="../img/paleta_crema2.jpeg" height="250px"> </br> <div >    
-     </div></div>
+     
     
     </div>
     </body>

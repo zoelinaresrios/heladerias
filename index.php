@@ -13,30 +13,98 @@
         }
 
         header {
-            background-color: #854831;
-            color: #f4abba;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+                background-color: #854831;
+                color: #f4abba;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+            .header-left {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex: 1;
+            }
+    
+            .logo {
+                max-width: 10%;
+            }
+    
+            .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+}
+.header-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+  
+}
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex: 1;
-        }
+    
+            
 
-        .logo {
-            max-width: 100px;
-        }
-        .header-info {
-            flex-grow: 1;
-            text-align: center;
-        }
-
+            .nav-links {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-top: 10px;
+            }
+    
+            .nav-links a {
+                color: #f4abba;
+                text-decoration: none;
+                padding: 5px;
+            }
+    
+            .nav-links a:hover {
+                text-decoration: underline;
+            }
+    
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+    
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #8e6c49;
+                top: 100%;
+                left: 0;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                min-width: 150px;
+                z-index: 1;
+            }
+    
+            .dropdown-content li {
+                border-bottom: 1px solid #555;
+            }
+    
+            .dropdown-content li a {
+                padding: 10px;
+                color: #fff;
+                text-decoration: none;
+                display: block;
+            }
+    
+            .dropdown-content li a:hover {
+                background-color: #8e6c;
+            }
+    
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
        
 
         .publicidad {
@@ -61,6 +129,7 @@ section {
     max-width: 100%;
     margin: auto;
     margin-left:21%;
+ 
 }
 .textorosa{
     text-align: center;
@@ -109,12 +178,6 @@ section {
     border: 5px solid #ff0099;
 }
 
-footer{
-    background-color: #854831;
-}
-
-
-
         /* CSS para el carrusel */
         .carrusel {
             position: relative;
@@ -154,30 +217,112 @@ footer{
         .next {
             right: 10px;
         }
-    2
+        .pie-pagina {
+            padding: 0%;
+            width: 100%;
+            background-color: #854831;
+            margin-top: 20px;
+        }
+        .pie-pagina .grupo-1 {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 50px;
+            padding: 45px 0px;
+        }
+        .pie-pagina .grupo-1 .box h2 {
+            color: #f4abba;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+        .pie-pagina .grupo-1 .box p {
+            color: #efefef;
+            margin-bottom: 10px;
+        }
+        .pie-pagina .grupo-1 .red-social a {
+            display: inline-block;
+            text-decoration: none;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            color: #fff;
+            margin-right: 10px;
+            background-color: #f4abba;
+            text-align: center;
+            transition: all 300ms ease;
+        }
+        .pie-pagina .grupo-1 .red-social a:hover {
+            color: aqua;
+        }
+        .pie-pagina .grupo-2 {
+            background-color: #754831;
+            padding: 15px 10px;
+            text-align: center;
+            color: #fff;
+        }
+        .pie-pagina .grupo-2 small {
+            font-size: 15px;
+        }
+
+        /* Estilos del formulario de contacto */
+        .formulario-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .formulario-contacto input,
+        .formulario-contacto textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        @media screen and (max-width:800px) {
+            .pie-pagina .grupo-1 {
+                width: 90%;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 30px;
+                padding: 35px 0px;
+            }
+        }
+
+      
 
     </style>
 </head>
 <body>
-    
-    <!-- Encabezado con logo y navegación -->
-    <header>
+<header>
         <div class="header-left">
-            <img class="logo" src="../img/logo.png" alt="logo">
-            <a href="index-cliente.php">Inicio</a>
-        </div>
-        <div class="header-info">
-            <h1>TENTACIONES HELADAS</h1>
-        </div>
-        <a href="carrito.php">
-            <button class="cart-button">C</button>
-        </a>
- 
-        <div class="header-icons">
-            <a href="logeo.php" title="Iniciar Sesión">I</a>
+            <img class="logo" src="img/logo.png"   alt="logo">
+            <div class="header-info">
+                <h1>TENTACIONES HELADAS</h1>
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <a href="#">Productos</a>
+                        <ul class="dropdown-content">
+                            <li><a href="productos/helados.php">Helados</a></li>
+                            <li><a href="productos/tortas.php">Tortas</a></li>
+                            <li><a href="productos/paletas.php">Paletas</a></li>
+                            <li><a href="productos/bombones.php">bombones</a></li>
+                        </ul>
+                    </div>
+                   
+                    <div class="header-icons">
+            <a href="logeo.php" title="Iniciar Sesión">Iniciar Sesión</a>
             
         </div>
+                </div>
+            </div>
+      
+                </button>
+            </form>
+        </div>
+      
     </header>
+ 
 
 
     <main>
@@ -193,11 +338,9 @@ footer{
     </div>
 
     <div class="cajon">
-        <!-- Contenido (sin cambios) -->
+    
     </div>
     
-    <footer> </footer>
-
     <script>
         let indiceImagen = 0; 
         const imagenes = document.querySelectorAll('.imagenes img');
@@ -272,10 +415,10 @@ footer{
                 <a href="sabores/Especiales.php"><img class="especiales" src="img/especiales.png" alt="especiales" width="300px"></a>
             </div>
             <div class="e">
-                <a href="sabores/diabeticos.php"><img class="veganos" src="img/veganos.png" alt="veganos" width="300px"></a>
+                <a href="sabores/Vegano.php"><img class="veganos" src="img/veganos.png" alt="veganos" width="300px"></a>
             </div>
             <div class="f">
-                <a href="sabores/Celiacos.php"><img class="celiacos" src="img/celiacos.png" alt="celiacos" width="300px"></a>
+                <a href="sabore/Celiacos.php"><img class="celiacos" src="img/celiacos.png" alt="celiacos" width="300px"></a>
             </div>
             <div class="s3">
                 <nav>
@@ -287,7 +430,7 @@ footer{
             <div class="s4">
                 <nav>
                     <ul>
-                        <li><a href="sabores/diabeticos.php"><b>DIABETICOS</b></a></li>
+                        <li><a href="sabores/Vegano.php"><b>VEGANOS</b></a></li>
                     </ul>
                 </nav>
             </div>
@@ -299,6 +442,6 @@ footer{
                 </nav>
             </div>
     </div>
-    <footer> </footer>
+
 </body>
 </html>  

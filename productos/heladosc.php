@@ -1,4 +1,4 @@
-<<style> 
+<style> 
 
 .s a{
         text-decoration: none;
@@ -199,14 +199,14 @@
                     <div class="dropdown">
                         <a href="#">Productos</a>
                         <ul class="dropdown-content">
-                        <li><a href="../productos/helados.php">Helados</a></li>
+                            <li><a href="../productos/helados.php">Helados</a></li>
                             <li><a href="../productos/tortas.php">Tortas</a></li>
                             <li><a href="../productos/paletas.php">Paletas</a></li>
                             <li><a href="../productos/bombones.php">bombones</a></li>
-                      </ul>
+                        </ul>
                     </div>
                     <a href="../index.php">Inicio</a>
-                 
+                
                 </div>
             </div>
       
@@ -218,17 +218,11 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>naranja</h2><img class="publi" src="../img/paleta_agua.jpeg" height="250px"> </br> <div> 
+     <div class="cho"><h2>1 kilo </h2><img class="publi" src="../img/1kg.jpeg" height="250px"> </br> <div> 
      </div></div>
-     <div class="cho"><h2>frutilla </h2><img class="publi" src="../img/paleta_agua2.jpeg" height="250px"> </br> <div >  
+     <div class="cho"><h2>1/2 kilo</h2><img class="publi" src="../img/12kg.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>manzana verde </h2><img class="publi" src="../img/paleta_agua3.jpeg" height="250px"> </br><div >   
-     </div></div>
-     <div class="cho"><h2>paleta bañada</h2><img class="publi" src="../img/paleta_bañada.jpeg" height="250px"> </br> <div > 
-     </div></div>
-     <div class="cho"><h2>frutilla</h2><img class="publi" src="../img/paleta_crema.jpeg" height="250px"> </br> <div >   
-     </div></div>
-     <div class="cho"><h2>frutos rojos</h2><img class="publi" src="../img/paleta_crema2.jpeg" height="250px"> </br> <div >    
+     <div class="cho"><h2>1/4 kilo</h2><img class="publi" src="../img/14kg.jpeg" height="250px"> </br><div >   
      </div></div>
     
     </div>
