@@ -207,6 +207,18 @@ while ($row = $result->fetch_assoc()) {
                 padding: 35px 0px;
             }
         }
+        .search-container{
+        text-align: center;
+        margin: 20px;
+        }
+
+        #searchInput{
+        width: 400px;
+        height: 40px;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -228,7 +240,11 @@ while ($row = $result->fetch_assoc()) {
             </form>
         </div>
     </header>
-
+    
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar productos...">
+        <button onclick="scrollToProduct()">Buscar</button>
+    </div>
     <main>
         <?php foreach ($categorias as $categoria): ?>
             <h2><?php echo $categoria['nombre']; ?></h2>
@@ -248,3 +264,6 @@ while ($row = $result->fetch_assoc()) {
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
+    </main>
+    <script src="js/script.js"></script>
+</body>
