@@ -1,5 +1,4 @@
-<style> 
-
+<style>    
 .s5 a{
         text-decoration: none;
         list-style: none;
@@ -47,7 +46,7 @@
             }
     
             .logo {
-                max-width: 100px;
+                max-width: 10%;
             }
     
             .header-info {
@@ -167,7 +166,6 @@
 </style>
 
 <style> 
-
 .s a{
         text-decoration: none;
         list-style: none;
@@ -209,12 +207,6 @@
     display: block; /* Muestra el texto al pasar el cursor */
     opacity: 1; /* Cambia la opacidad a 1 para que sea visible */
 }
-
-
-
-    h2{
-    
-    }
     body {
                 font-family: Arial, sans-serif;
                 margin: 0;
@@ -239,7 +231,7 @@
             }
     
             .logo {
-                max-width: 100px;
+                max-width: 10%;
             }
     
             .header-info {
@@ -467,14 +459,14 @@
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
                     <div class="dropdown">
-                        <a href="#">Productos</a>
+                        <a class="grande" href="#">Productos</a>
                         <ul class="dropdown-content">
                             <li><a href="productos/helados.php">Helados</a></li>
                             <li><a href="productos/tortas.php">Tortas</a></li>
                             <li><a href="productos/paletas.php">Paletas</a></li>
                         </ul>
                     </div>
-                    <a href="../cliente/index-cliente.php">Inicio</a>
+                    <a class="grande" href="../cliente/index-cliente.php">Inicio</a>
 
                 </div>
             </div>

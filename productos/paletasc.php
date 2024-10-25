@@ -1,4 +1,4 @@
-<<style> 
+<style> 
 
 .s a{
         text-decoration: none;
