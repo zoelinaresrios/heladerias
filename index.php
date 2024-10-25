@@ -463,10 +463,10 @@ section {
                 <a href="sabores/Especiales.php"><img class="especiales" src="img/especiales.png" alt="especiales" width="300px"></a>
             </div>
             <div class="e">
-                <a href="sabores/Vegano.php"><img class="veganos" src="img/veganos.png" alt="veganos" width="300px"></a>
+                <a href="sabores/diabeticos.php"><img class="veganos" src="img/veganos.png" alt="veganos" width="300px"></a>
             </div>
             <div class="f">
-                <a href="sabore/Celiacos.php"><img class="celiacos" src="img/celiacos.png" alt="celiacos" width="300px"></a>
+                <a href="sabores/Celiacos.php"><img class="celiacos" src="img/celiacos.png" alt="celiacos" width="300px"></a>
             </div>
             <div class="s3">
                 <nav>
@@ -478,14 +478,14 @@ section {
             <div class="s4">
                 <nav>
                     <ul>
-                        <li><a href="sabores/Vegano.php"><b>VEGANOS</b></a></li>
+                        <li><a href="sabores/diabeticos.php"><b>DIABETICOS</b></a></li>
                     </ul>
                 </nav>
             </div>
             <div class="s5">
                 <nav>
                     <ul>
-                        <li><a href="sabores/Celiacos.php"><b>CELIACOS</b></a></li>
+                        <li><a href="sabores/celiacos.php"><b>CELIACOS</b></a></li>
                     </ul>
                 </nav>
             </div>
