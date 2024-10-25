@@ -74,32 +74,123 @@ $stmt_factura = $conn->prepare($query_factura);
 $stmt_factura->bind_param("isi", $pedido_id, $fecha_pedido, $total);
 $stmt_factura->execute();
 
-// Mostrar la factura
-echo "<h1>Factura de Compra</h1>";
-echo "<p><strong>Nombre del Cliente:</strong> {$cliente['nombre']}</p>";
-echo "<p><strong>Dirección:</strong> {$cliente['direccion']}</p>";
-echo "<p><strong>Email:</strong> {$cliente['email']}</p>";
-echo "<p><strong>Fecha del Pedido:</strong> $fecha_pedido</p>";
-echo "<table border='1' style='width:100%; border-collapse: collapse;'>
-        <tr>
-            <th>Producto</th>
-            <th>Precio Unitario</th>
-            <th>Cantidad</th>
-            <th>Subtotal</th>
-        </tr>";
+// Mostrar la factura con estilo
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura de Compra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #ff0099;
+        }
+        .invoice-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .client-info, .invoice-details {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff0099;
+            padding-bottom: 10px;
+        }
+        .client-info p, .invoice-details p {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #ff0099;
+            color: #fff;
+        }
+        tfoot tr {
+            font-weight: bold;
+        }
+        .total {
+            text-align: right;
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
 
-foreach ($productos as $producto) {
-    echo "<tr>
-            <td>{$producto['producto_nombre']}</td>
-            <td>\${$producto['producto_precio']}</td>
-            <td>{$producto['producto_cantidad']}</td>
-            <td>\${$producto['subtotal']}</td>
-          </tr>";
-}
+<div class="invoice-container">
+    <h1>Factura de Compra</h1>
+    <div class="client-info">
+        <h2>Información del Cliente</h2>
+        <p><strong>Nombre:</strong> <?php echo $cliente['nombre']; ?></p>
+        <p><strong>Dirección:</strong> <?php echo $cliente['direccion']; ?></p>
+        <p><strong>Email:</strong> <?php echo $cliente['email']; ?></p>
+        <p><strong>Fecha del Pedido:</strong> <?php echo $fecha_pedido; ?></p>
+    </div>
 
-echo "</table>";
-echo "<p><strong>Total: \$$total</strong></p>";
+    <div class="invoice-details">
+        <h2>Detalles de la Compra</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($productos as $producto): ?>
+                <tr>
+                    <td><?php echo $producto['producto_nombre']; ?></td>
+                    <td>$<?php echo number_format($producto['producto_precio'], 2); ?></td>
+                    <td><?php echo $producto['producto_cantidad']; ?></td>
+                    <td>$<?php echo number_format($producto['subtotal'], 2); ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="total">Total</td>
+                    <td>$<?php echo number_format($total, 2); ?></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 
+<div class="footer">
+    &copy; 2024 Tentaciones Heladas. Todos los derechos reservados.
+</div>
+
+</body>
+</html>
+
+<?php
 // Limpiar el carrito después de la compra
 $query_eliminar_carrito = "DELETE FROM carrito WHERE cliente_id = ?";
 $stmt_eliminar_carrito = $conn->prepare($query_eliminar_carrito);
