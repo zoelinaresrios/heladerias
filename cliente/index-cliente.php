@@ -460,13 +460,13 @@ section {
             </nav>
         </div>
             <div class="d">
-                <a href="saboresc/Especialesc.php"><img class="especiales" src="../img/especiales.png" alt="especiales" width="300px"></a>
+                <a href="../saboresc/Especialesc.php"><img class="especiales" src="../img/especiales.png" alt="especiales" width="300px"></a>
             </div>
             <div class="e">
-                <a href="saboresc/Veganoc.php"><img class="veganos" src="../img/veganos.png" alt="veganos" width="300px"></a>
+                <a href="../saboresc/Diabeticosc.php"><img class="Diabeticos" src="../img/veganos.png" alt="Diabeticosc" width="300px"></a>
             </div>
             <div class="f">
-                <a href="saboresc/Celiacosc.php"><img class="celiacos" src="../img/celiacos.png" alt="celiacos" width="300px"></a>
+                <a href="../saboresc/Celiacosc.php"><img class="celiacos" src="../img/celiacos.png" alt="celiacos" width="300px"></a>
             </div>
             <div class="s3">
                 <nav>
@@ -478,7 +478,7 @@ section {
             <div class="s4">
                 <nav>
                     <ul>
-                        <li><a href="../saboresc/Veganoc.php"><b>VEGANOS</b></a></li>
+                        <li><a href="../saboresc/Diabeticosc.php"><b>DIABETICOS</b></a></li>
                     </ul>
                 </nav>
             </div>
