@@ -339,6 +339,10 @@ section {
 .grupo-2 small {
     font-size: 0.9em;
 }
+.header-info h1 {
+                margin: 0;
+                font-size: 24px;
+            }
     </style>
 </head>
 <body>

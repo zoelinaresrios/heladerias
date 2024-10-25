@@ -60,7 +60,10 @@
             .logo {
                 max-width: 10%;
             }
-    
+            .header-info h1 {
+                margin: 0;
+                font-size: 24px;
+            }
             .header-info {
     display: flex;
     flex-direction: column;

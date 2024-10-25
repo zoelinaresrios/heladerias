@@ -33,6 +33,10 @@
     text-align: center; /* Centrar el texto dentro del contenedor */
     width: 100%; /* Asegúrate de que ocupe el ancho completo */
 }
+.header-info h1 {
+                margin: 0;
+                font-size: 24px;
+            }
         .header-icons{
             display: flex;
     flex-direction: column;
