@@ -59,7 +59,7 @@
             }
     
             .logo {
-                max-width: 100px;
+                max-width: 10%;
             }
     
             .header-info {
@@ -69,14 +69,21 @@
     text-align: center; /* Centrar el texto dentro del contenedor */
     width: 100%; /* Asegúrate de que ocupe el ancho completo */
 }
+.header-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+  
+}
 
+.grande{
+    font-size:25px;
+}
 
     
-            .header-info h1 {
-                margin: 0;
-                font-size: 24px;
-            }
-    
+            
+
             .nav-links {
                 display: flex;
                 align-items: center;
@@ -131,55 +138,6 @@
                 display: block;
             }
             
-    
-            nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-    }
-    
-    nav ul li {
-        position: relative;
-        margin-right: 20px;
-    }
-    
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        padding: 10px;
-        display: block;
-    }
-    
-    nav ul li .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #8e6c49;
-        top: 100%;
-        left: 0;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        min-width: 150px;
-        z-index: 1;
-    }
-    
-    nav ul li .dropdown-content li {
-        border-bottom: 1px solid #555;
-    }
-    
-    nav ul li .dropdown-content li a {
-        padding: 10px;
-        color: #fff;
-    }
-    
-    nav ul li:hover .dropdown-content {
-        display: block;
-    }
-    
-    nav ul li .dropdown-content li a:hover {
-        background-color: #8e6c;
-    }
 
     .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
@@ -288,7 +246,7 @@
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
                     <div class="dropdown">
-                        <a href="#">Productos</a>
+                        <a class="grande" href="#">Productos</a>
                         <ul class="dropdown-content">
                         <li><a href="../productos/helados.php">Helados</a></li>
                             <li><a href="../productos/tortas.php">Tortas</a></li>
@@ -296,7 +254,7 @@
                             <li><a href="../productos/bombones.php">bombones</a></li>
                       </ul>
                     </div>
-                    <a href="../index.php">Inicio</a>
+                    <a class="grande" href="../index.php">Inicio</a>
                 
                 </div>
             </div>
