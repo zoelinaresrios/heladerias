@@ -245,78 +245,6 @@ section {
         .next {
             right: 10px;
         }
-        .pie-pagina {
-            padding: 0%;
-            width: 100%;
-            background-color: #854831;
-            margin-top: 20px;
-        }
-        .pie-pagina .grupo-1 {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 50px;
-            padding: 45px 0px;
-        }
-        .pie-pagina .grupo-1 .box h2 {
-            color: #f4abba;
-            margin-bottom: 25px;
-            font-size: 20px;
-        }
-        .pie-pagina .grupo-1 .box p {
-            color: #efefef;
-            margin-bottom: 10px;
-        }
-        .pie-pagina .grupo-1 .red-social a {
-            display: inline-block;
-            text-decoration: none;
-            width: 45px;
-            height: 45px;
-            line-height: 45px;
-            color: #fff;
-            margin-right: 10px;
-            background-color: #f4abba;
-            text-align: center;
-            transition: all 300ms ease;
-        }
-        .pie-pagina .grupo-1 .red-social a:hover {
-            color: aqua;
-        }
-        .pie-pagina .grupo-2 {
-            background-color: #754831;
-            padding: 15px 10px;
-            text-align: center;
-            color: #fff;
-        }
-        .pie-pagina .grupo-2 small {
-            font-size: 15px;
-        }
-
-        /* Estilos del formulario de contacto */
-        .formulario-contacto {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .formulario-contacto input,
-        .formulario-contacto textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        @media screen and (max-width:800px) {
-            .pie-pagina .grupo-1 {
-                width: 90%;
-                grid-template-columns: repeat(1, 1fr);
-                grid-gap: 30px;
-                padding: 35px 0px;
-            }
-        }
-
       
         .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
@@ -558,6 +486,7 @@ section {
                 </nav>
             </div>
     </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
