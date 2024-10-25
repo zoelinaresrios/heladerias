@@ -16,7 +16,6 @@
     padding: 10px 20px; /* Espaciado interno a los lados */
 }
 
-
 .cho {
     border-radius: 18px;
     border: 6px solid #f4abba;
