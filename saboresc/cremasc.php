@@ -502,8 +502,7 @@
                             <li><a href="productos/paletas.php">Paletas</a></li>
                         </ul>
                     </div>
-                    <a href="../index.php">Inicio</a>
-                    <a href="contacto.html">Contacto</a>
+                    <a href="../cliente/index-cliente.php">Inicio</a>
                 </div>
             </div>
       
