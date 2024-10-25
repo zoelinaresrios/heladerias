@@ -1,5 +1,7 @@
 <style> 
-
+.grande{
+    font-size:25px;
+}
 .s a{
         text-decoration: none;
         list-style: none;
@@ -299,7 +301,7 @@
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
                     <div class="dropdown">
-                        <a href="#">Productos</a>
+                        <a class="grande" href="#">Productos</a>
                         <ul class="dropdown-content">
                         <li><a href="../productos/helados.php">Helados</a></li>
                             <li><a href="../productos/tortas.php">Tortas</a></li>
@@ -307,7 +309,7 @@
                             <li><a href="../productos/bombones.php">Bombones</a></li>
                         </ul>
                     </div>
-                    <a href="../index.php">Inicio</a>
+                    <a class="grande" href="../index.php">Inicio</a>
                 </div>
             </div>
       
