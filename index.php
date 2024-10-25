@@ -127,13 +127,11 @@ section {
 .cajon{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10%;
-    padding-right: 25%;
-    padding-left: 25%
+    grid-gap: 12%;
+    padding-right: 85%;
     max-width: 100%;
     margin: auto;
-    margin-left:21%;
- 
+    margin-left:17%;
 }
 .textorosa{
     text-align: center;
@@ -228,7 +226,8 @@ section {
             display: block;
         }
 
-        button {
+        .prev {
+            left: 10px;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -238,12 +237,15 @@ section {
             cursor: pointer;
         }
 
-        .prev {
-            left: 10px;
-        }
-
         .next {
             right: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
       
         .pie-pagina {
@@ -491,20 +493,20 @@ section {
     <div class="grupo-1">
         <div class="box">
             <h2>Calidad del Producto</h2>
-            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. <br><br>
-                Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
-                cada bocado sea una experiencia deliciosa y satisfactoria. <br> <br>¡Déjate llevar por la 
+            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. 
+             <br> <br>  Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
+                cada bocado sea una experiencia deliciosa y satisfactoria. <br><br> ¡Déjate llevar por la 
                 frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
         </div>
         <div class="box">
             <h2>Contacto</h2>
             <p>Teléfono: 123-456-7890</p>
-            <p>Email: @tentacionesheladass.gmail.com</p>
+            <p>Email: info@tentacionesheladas.com</p>
             <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
         </div>
         <div class="box">
             <h2>Contáctanos</h2>
-            <form action="guardar_contacto.php" method="POST" class="contact-form">
+            <form action="../guardar_contacto.php" method="POST" class="contact-form">
                 <label for="nombre">Nombre </label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
 

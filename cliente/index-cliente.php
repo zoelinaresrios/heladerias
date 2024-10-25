@@ -226,7 +226,10 @@ section {
             display: block;
         }
 
-        button {
+        
+
+        .prev {
+            left: 10px;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -236,12 +239,15 @@ section {
             cursor: pointer;
         }
 
-        .prev {
-            left: 10px;
-        }
-
         .next {
             right: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
     header h1{
         
