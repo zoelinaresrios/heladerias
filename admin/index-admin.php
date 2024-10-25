@@ -244,15 +244,14 @@ section {
     margin-bottom: 20px;
 }
 .cajon{
+    margin-left:25%;
+    margin-right:25%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap:10%;
     grid-gap: 5%;
-    padding-right: 25%;
-    padding-left: 25%
     max-width: 100%;
-    margin: auto;
-    margin-left:25%;
+    
 }
 .textorosa{
     text-align: center;
@@ -323,7 +322,9 @@ section {
             display: block;
         }
 
-        button {
+        
+        .prev {
+            left: 10px;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -333,12 +334,15 @@ section {
             cursor: pointer;
         }
 
-        .prev {
-            left: 10px;
-        }
-
         .next {
             right: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
         .dropdown {
                 position: relative;
