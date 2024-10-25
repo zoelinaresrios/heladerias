@@ -1,48 +1,70 @@
 <?php
+include '../db.php'; // Incluye la conexión a la base de datos
+
 session_start();
-include '../db.php';
 
-$cliente_id = $_SESSION['cliente_id'];
-$fecha_pedido = date("Y-m-d H:i:s");
+// Verifica que el usuario haya iniciado sesión
+if (!isset($_SESSION['usuario_id'])) {
+    die("Debes iniciar sesión para continuar.");
+}
 
-// Calcula el total del carrito
-$total = 0;
-$select_query = "SELECT producto_id, cantidad, productos.precio FROM carrito JOIN productos ON carrito.producto_id = productos.ID WHERE carrito.cliente_id = ?";
-$stmt = $conn->prepare($select_query);
-$stmt->bind_param("i", $cliente_id);
+// Configuración de datos de factura
+$fecha = date("Y-m-d H:i:s");
+
+// Consulta SQL para obtener los datos del cliente y los productos en el carrito
+$query_factura = "
+    SELECT 
+        cl.nombre AS cliente_nombre,
+        cl.apellido AS cliente_apellido,
+        cl.direccion AS cliente_direccion,
+        cl.email AS cliente_email,
+        p.nombre AS producto_nombre,
+        p.precio AS producto_precio,
+        dp.cantidad AS producto_cantidad,
+        (p.precio * dp.cantidad) AS subtotal
+    FROM clientes AS cl
+    JOIN pedidos AS pd ON pd.cliente_id = cl.ID
+    JOIN detalle_pedido AS dp ON dp.pedido_id = pd.ID
+    JOIN productos AS p ON p.ID = dp.producto_id
+    WHERE cl.ID = ?
+";
+
+$stmt = $conn->prepare($query_factura);
+$stmt->bind_param("i", $_SESSION['usuario_id']);
 $stmt->execute();
-$result = $stmt->get_result();
+$result_factura = $stmt->get_result();
 
-while ($row = $result->fetch_assoc()) {
-    $total += $row['cantidad'] * $row['precio'];
-}
+// Imprimir detalles de la factura
+$cliente = $result_factura->fetch_assoc();
+echo "<h1>Factura de Compra</h1>";
+echo "<p>Fecha: $fecha</p>";
+echo "<p>Cliente: {$cliente['cliente_nombre']} {$cliente['cliente_apellido']}</p>";
+echo "<p>Dirección: {$cliente['cliente_direccion']}</p>";
+echo "<p>Email: {$cliente['cliente_email']}</p>";
 
-// Inserta en la tabla pedidos
-$insert_pedido = "INSERT INTO pedidos (cliente_id, fecha_pedido, total, estado) VALUES (?, ?, ?, 'pendiente')";
-$stmt = $conn->prepare($insert_pedido);
-$stmt->bind_param("isd", $cliente_id, $fecha_pedido, $total);
+echo "<table border='1'>
+        <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+        </tr>";
 
-if ($stmt->execute()) {
-    $pedido_id = $stmt->insert_id;
+$total = 0;
+do {
+    echo "<tr>
+            <td>{$cliente['producto_nombre']}</td>
+            <td>\${$cliente['producto_precio']}</td>
+            <td>{$cliente['producto_cantidad']}</td>
+            <td>\${$cliente['subtotal']}</td>
+          </tr>";
+    $total += $cliente['subtotal'];
+} while ($cliente = $result_factura->fetch_assoc());
 
-    // Inserta en detalle_pedido
-    $result->data_seek(0); // Reinicia el resultado
-    while ($row = $result->fetch_assoc()) {
-        $subtotal = $row['cantidad'] * $row['precio'];
-        $insert_detalle = "INSERT INTO detalle_pedido (pedido_id, producto_id, cantidad, subtotal) VALUES (?, ?, ?, ?)";
-        $stmt_detalle = $conn->prepare($insert_detalle);
-        $stmt_detalle->bind_param("iiid", $pedido_id, $row['producto_id'], $row['cantidad'], $subtotal);
-        $stmt_detalle->execute();
-    }
+echo "</table>";
+echo "<p><strong>Total: \$$total</strong></p>";
 
-    // Limpia el carrito después de la compra
-    $delete_carrito = "DELETE FROM carrito WHERE cliente_id = ?";
-    $stmt = $conn->prepare($delete_carrito);
-    $stmt->bind_param("i", $cliente_id);
-    $stmt->execute();
-
-    echo "Compra realizada exitosamente.";
-} else {
-    echo "Error al realizar la compra.";
-}
+// Cierra la conexión
+$stmt->close();
+$conn->close();
 ?>
