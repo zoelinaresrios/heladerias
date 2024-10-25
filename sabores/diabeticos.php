@@ -192,6 +192,96 @@
     nav ul li .dropdown-content li a:hover {
         background-color: #8e6c;
     }
+
+    .pie-pagina {
+    background-color: #854831; /* Fondo en tono marrón claro */
+    padding: 20px 0;
+    color: #FFFFFF; /* Texto marrón oscuro */
+}
+
+.grupo-1 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding-right: 50px;
+    font-size:15px;
+}
+
+.box {
+    width: 30%;
+    text-align: left;
+    padding-left: 70px;
+}
+
+.box h2 {
+    font-size: 1.5em;
+    color: #f4abba; /* Color rosa */
+    margin-bottom: 10px;
+}
+
+.box p, .box a {
+    font-size: 1em;
+    color: ##FFFFFF; /* Marrón oscuro */
+}
+
+.box a {
+    text-decoration: none;
+    color: #f4abba; /* Enlaces en rosa */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre campos */
+}
+
+.contact-form label {
+    font-size: 1em;
+    color: ##FFFFFF; /* Marrón oscuro */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ff0099; /* Bordes en rosa */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1em;
+    background-color: #fef5f9; /* Fondo claro */
+    color: #5d4037; /* Texto marrón oscuro */
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #a65380; /* Cambio de color al enfocar */
+}
+
+.contact-form button {
+    background-color: #ff0099; /* Fondo del botón rosa */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #a65380; /* Rosa oscuro al pasar el mouse */
+}
+
+.grupo-2 {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f4abba; /* Fondo marrón oscuro */
+    color: black;
+    padding: 10px 0;
+}
+
+.grupo-2 small {
+    font-size: 0.9em;
+}
 </style>
 
 <!DOCTYPE html>
@@ -239,6 +329,40 @@
     </div>
 
 
-    <br><br><br><br><br>
+    <footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <h2>Calidad del Producto</h2>
+            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. <br><br>
+                Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
+                cada bocado sea una experiencia deliciosa y satisfactoria. <br> <br>¡Déjate llevar por la 
+                frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
+        </div>
+        <div class="box">
+            <h2>Contacto</h2>
+            <p>Teléfono: 123-456-7890</p>
+            <p>Email: @tentacionesheladass.gmail.com</p>
+            <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
+        </div>
+        <div class="box">
+            <h2>Contáctanos</h2>
+            <form action="guardar_contacto.php" method="POST" class="contact-form">
+                <label for="nombre">Nombre </label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" required placeholder="Tu email">
+
+                <label for="mensaje">Mensaje </label>
+                <textarea id="mensaje" name="mensaje" required placeholder="Tu mensaje"></textarea>
+
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
+    </div>
+</footer>
     </body>
     </html>
