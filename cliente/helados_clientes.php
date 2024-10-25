@@ -207,18 +207,6 @@ while ($row = $result->fetch_assoc()) {
                 padding: 35px 0px;
             }
         }
-        .search-container{
-        text-align: center;
-        margin: 20px;
-        }
-
-        #searchInput{
-        width: 400px;
-        height: 40px;
-        font-size: 16px;
-        padding: 10px;
-        border-radius: 5px;
-        }
     </style>
 </head>
 <body>
@@ -227,10 +215,7 @@ while ($row = $result->fetch_assoc()) {
             <img class="logo" src="../img/logo.png" alt="logo">
             <h1>TENTACIONES HELADAS</h1>
         </div>
-        <div class="search-container">
-            <form id="form" role="search" action="buscar.php" method="GET">
-                <input type="search" id="query" name="q" placeholder="Buscar por categoría..." aria-label="Search through site content" required>
-                <button type="submit">
+        
                     <svg width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.5 19a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"></path>
                         <path d="M13.328 7.172A3.988 3.988 0 0 0 10.5 6a3.988 3.988 0 0 0-2.828 1.172"></path>
@@ -265,5 +250,4 @@ while ($row = $result->fetch_assoc()) {
             </div>
         <?php endforeach; ?>
     </main>
-    <script src="js/script.js"></script>
 </body>

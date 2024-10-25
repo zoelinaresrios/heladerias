@@ -182,9 +182,9 @@
     }
 
     .pie-pagina {
-    background-color: #fdf0e1; /* Fondo en tono marrón claro */
+    background-color: #854831; /* Fondo en tono marrón claro */
     padding: 20px 0;
-    color: #5d4037; /* Texto marrón oscuro */
+    color: #FFFFFF; /* Texto marrón oscuro */
 }
 
 .grupo-1 {
@@ -192,28 +192,30 @@
     justify-content: space-between;
     max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    padding-right: 50px;
+    font-size:15px;
 }
 
 .box {
     width: 30%;
     text-align: left;
+    padding-left: 70px;
 }
 
 .box h2 {
     font-size: 1.5em;
-    color: #ff0099; /* Color rosa */
+    color: #f4abba; /* Color rosa */
     margin-bottom: 10px;
 }
 
 .box p, .box a {
     font-size: 1em;
-    color: #5d4037; /* Marrón oscuro */
+    color: ##FFFFFF; /* Marrón oscuro */
 }
 
 .box a {
     text-decoration: none;
-    color: #ff0099; /* Enlaces en rosa */
+    color: #f4abba; /* Enlaces en rosa */
 }
 
 .contact-form {
@@ -224,7 +226,7 @@
 
 .contact-form label {
     font-size: 1em;
-    color: #5d4037; /* Marrón oscuro */
+    color: ##FFFFFF; /* Marrón oscuro */
 }
 
 .contact-form input, .contact-form textarea {
@@ -260,8 +262,8 @@
 .grupo-2 {
     text-align: center;
     margin-top: 20px;
-    background-color: #5d4037; /* Fondo marrón oscuro */
-    color: white;
+    background-color: #f4abba; /* Fondo marrón oscuro */
+    color: black;
     padding: 10px 0;
 }
 
@@ -320,7 +322,10 @@
     <div class="grupo-1">
         <div class="box">
             <h2>Calidad del Producto</h2>
-            <p>En Tentaciones Heladas, garantizamos la frescura y calidad en cada uno de nuestros productos.</p>
+            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. 
+                Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
+                cada bocado sea una experiencia deliciosa y satisfactoria. ¡Déjate llevar por la 
+                frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
         </div>
         <div class="box">
             <h2>Contacto</h2>
