@@ -109,6 +109,9 @@ while ($row = $result->fetch_assoc()) {
         main {
             padding: 20px;
         }
+        .add{
+            margin-left:16.5%;
+        }
 
         .cajitamm {
             display: flex;
@@ -239,7 +242,7 @@ while ($row = $result->fetch_assoc()) {
                         <h2><?php echo $producto['nombre']; ?></h2>
                         <img class='publi' src='../img/<?php echo $producto['imagen']; ?>' height='250px'><br> <!-- Ajusta la ruta de la imagen -->
                         <p>Precio: $<?php echo $producto['precio']; ?></p> <!-- Muestra el precio -->
-                        <form action='agregar_al_carrito.php' method='POST'> <!-- Botón de agregar al carrito -->
+                        <form class="add" action='agregar_al_carrito.php' method='POST'> <!-- Botón de agregar al carrito -->
                             <input type='hidden' name='producto_id' value='<?php echo $producto['id']; ?>'>
                             <button type='submit' class='select-button' style="background-color: #e6007f; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer; transition: all 0.3s ease;">
                                 Agregar al Carrito

@@ -10,18 +10,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $usuario = $_POST['usuario'];
     $contraseña = $_POST['contraseña'];
 
-    // Consultar el usuario en la base de datos
-    $query = "SELECT * FROM clientes WHERE usuario = '$usuario'";
-    $result = mysqli_query($conn, $query);
+    // Consultar el usuario en la base de datos con consultas preparadas
+    $query = "SELECT * FROM clientes WHERE usuario = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
     
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
+    if ($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
         
         // Verificar la contraseña
         if (password_verify($contraseña, $row['contraseña'])) {
             // Almacenar datos del usuario en la sesión
             $_SESSION['user_id'] = $row['ID'];
             $_SESSION['rol'] = $row['rol'];
+            $_SESSION['cliente_id'] = $row['ID']; // Establece cliente_id para acceso al carrito
 
             // Redirigir según el rol
             if ($row['rol'] == 'administrador') {
@@ -32,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit(); // Detener la ejecución después de redirigir
         } else {
             // Contraseña incorrecta
-            header('Location: logeo.php?error=1');
+            header('Location: login.php?error=1');
             exit();
         }
     } else {
         // Usuario no encontrado
-        header('Location: logeo.php?error=1');
+        header('Location: login.php?error=1');
         exit();
     }
 }
@@ -49,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <!-- Puedes incluir Bootstrap y otros estilos aquí -->
+
 </head>
 <body>
     <div class="contenedor">

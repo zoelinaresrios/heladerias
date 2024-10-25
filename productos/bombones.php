@@ -323,8 +323,8 @@
         <div class="box">
             <h2>Calidad del Producto</h2>
             <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. 
-                Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
-                cada bocado sea una experiencia deliciosa y satisfactoria. ¡Déjate llevar por la 
+             <br> <br>  Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
+                cada bocado sea una experiencia deliciosa y satisfactoria. <br><br> ¡Déjate llevar por la 
                 frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
         </div>
         <div class="box">
@@ -335,14 +335,14 @@
         </div>
         <div class="box">
             <h2>Contáctanos</h2>
-            <form action="guardar_contacto.php" method="POST" class="contact-form">
-                <label for="nombre">Nombre *</label>
+            <form action="../guardar_contacto.php" method="POST" class="contact-form">
+                <label for="nombre">Nombre </label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
 
-                <label for="email">Email *</label>
+                <label for="email">Email </label>
                 <input type="email" id="email" name="email" required placeholder="Tu email">
 
-                <label for="mensaje">Mensaje *</label>
+                <label for="mensaje">Mensaje </label>
                 <textarea id="mensaje" name="mensaje" required placeholder="Tu mensaje"></textarea>
 
                 <button type="submit">ENVIAR</button>
