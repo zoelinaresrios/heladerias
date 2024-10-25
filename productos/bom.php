@@ -274,7 +274,6 @@
                             <li><a href="../productos/tortas.php">Tortas</a></li>
                             <li><a href="../productos/paletas.php">Paletas</a></li>
                             <li><a href="../productos/bombones.php">bombones</a></li>
-                            <li><a href="../productos/bombones.php">bombones</a></li>
                       </ul>
                     </div>
                     <a class="grande" href="../index.php">Inicio</a>
