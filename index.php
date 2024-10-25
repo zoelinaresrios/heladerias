@@ -132,6 +132,7 @@ section {
     max-width: 100%;
     margin: auto;
     margin-left:17%;
+    margin-bottom:5%;
 }
 .textorosa{
     text-align: center;
@@ -250,7 +251,7 @@ section {
       
         .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
-    padding: 20px 0;
+    padding: 0%;
     color: #FFFFFF; /* Texto marrón oscuro */
 }
 
@@ -320,6 +321,7 @@ section {
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
+    width: 105%;
 }
 
 .contact-form button:hover {
