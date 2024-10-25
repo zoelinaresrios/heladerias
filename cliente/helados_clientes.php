@@ -63,6 +63,16 @@ while ($row = $result->fetch_assoc()) {
             flex-wrap: wrap;
         }
 
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-left h1 {
+            margin-left: 10px; /* Espacio entre logo y título */
+            font-size: 24px; /* Ajusta el tamaño del título */
+        }
+
         .search-container {
             flex: 1;
             display: flex;
@@ -110,7 +120,7 @@ while ($row = $result->fetch_assoc()) {
             padding: 20px;
         }
         .add{
-            margin-left:16.5%;
+            margin-left:16%;
         }
 
         .cajitamm {
@@ -219,20 +229,12 @@ while ($row = $result->fetch_assoc()) {
             <h1>TENTACIONES HELADAS</h1>
         </div>
         
-                    <svg width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.5 19a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"></path>
-                        <path d="M13.328 7.172A3.988 3.988 0 0 0 10.5 6a3.988 3.988 0 0 0-2.828 1.172"></path>
-                        <path d="m16.61 16.611 4.244 4.243"></path>
-                    </svg>
-                </button>
-            </form>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar productos...">
+            <button onclick="scrollToProduct()">Buscar</button>
         </div>
     </header>
     
-    <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Buscar productos...">
-        <button onclick="scrollToProduct()">Buscar</button>
-    </div>
     <main>
         <?php foreach ($categorias as $categoria): ?>
             <h2><?php echo $categoria['nombre']; ?></h2>
@@ -253,4 +255,46 @@ while ($row = $result->fetch_assoc()) {
             </div>
         <?php endforeach; ?>
     </main>
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <h2>Calidad del Producto</h2>
+                <p>En Tentaciones Heladas, garantizamos la frescura y calidad en cada uno de nuestros productos.</p>
+            </div>
+            <div class="box">
+                <h2>Contacto</h2>
+                <p>Teléfono: 123-456-7890</p>
+                <p>Email: info@tentacionesheladas.com</p>
+                <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToProduct() {
+            const input = document.getElementById('searchInput');
+            const searchTerm = input.value.toLowerCase();
+
+            // Iterar sobre todas las categorías y productos para buscar coincidencias
+            const productos = document.querySelectorAll('h2'); // Encuentra todas las cabeceras de productos
+            let found = false;
+
+            productos.forEach(producto => {
+                if (producto.textContent.toLowerCase().includes(searchTerm)) {
+                    // Si encuentra coincidencias, desplazar hacia el producto
+                    producto.scrollIntoView({ behavior: 'smooth' });
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                alert('No se encontraron productos que coincidan con "' + searchTerm + '"');
+            }
+        }
+    </script>
 </body>
+</html>
