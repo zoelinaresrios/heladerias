@@ -48,6 +48,10 @@
   
 }
 
+.grande{
+    font-size:25px;
+}
+
     
             
 
@@ -137,9 +141,33 @@ section {
         color: #ff0099;
     }
 }
+.s nav ul li{
+    margin:-15%;
+    list-style: none;
+}
+.s1 nav ul li{
+    margin:-16%;
+    list-style: none;
+}
+.s2 nav ul li{
+    margin:-15%;
+    list-style: none;
+}
+.s3 nav ul li{
+    margin:-15%;
+    list-style: none;
+}
+.s4 nav ul li{
+    margin:-15%;
+    list-style: none;
+}
+.s5 nav ul li{
+    margin:-15%;
+    list-style: none;
+}
+
 .s a{
     text-decoration: none;
-    list-style: none;
     color: #000000;
     padding-left: 95px;
 }
@@ -301,7 +329,7 @@ section {
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
                     <div class="dropdown">
-                        <a href="#">Productos</a>
+                        <a class="grande" href="#">Productos</a>
                         <ul class="dropdown-content">
                             <li><a href="productos/helados.php">Helados</a></li>
                             <li><a href="productos/tortas.php">Tortas</a></li>
@@ -311,7 +339,7 @@ section {
                     </div>
                    
                     <div class="header-icons">
-            <a href="logeo.php" title="Iniciar Sesión">Iniciar Sesión</a>
+            <a class="grande" href="logeo.php" title="Iniciar Sesión">Iniciar Sesión</a>
             
         </div>
                 </div>

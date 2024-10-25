@@ -13,36 +13,37 @@
         }
 
         header {
-            background-color: #854831;
-            color: #f4abba;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+                background-color: #854831;
+                color: #f4abba;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex: 1;
-        }
-
-        .logo {
-            max-width: 100px;
-        }
+            .logo {
+                max-width: 10%;
+            }
 
         .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+}
+        .header-icons{
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+}
 
-        .header-info h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+.grande{
+    font-size:25px;
+}
 
         .nav-links {
             display: flex;
@@ -339,45 +340,51 @@ section {
         .next {
             right: 10px;
         }
-
+        .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+    
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #8e6c49;
+                top: 100%;
+                left: 0;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                min-width: 150px;
+                z-index: 1;
+            }
+            .header-left {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex: 1;
+            }
     </style>
 </head>
 <body>
     <!-- Encabezado con logo y navegación -->
     <header>
-        <div class="header-left">
-            <img class="logo" src="../img/logo.png" alt="logo">
+    <div class="header-left">
+            <img class="logo" src="../img/logo.png"   alt="logo">
             <div class="header-info">
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
                     <div class="dropdown">
-                        <a href="productos-admin.php">Productos</a>
-                        
-                        
-                            
+                        <a class="grande" href="#">Productos</a>
+                        <ul class="dropdown-content">
+                            <li><a href="productos/helados.php">Helados</a></li>
+                            <li><a href="productos/tortas.php">Tortas</a></li>
+                            <li><a href="productos/paletas.php">Paletas</a></li>
+                            <li><a href="productos/bombones.php">bombones</a></li>
                         </ul>
                     </div>
-                    <a href="contacto.html">Contacto</a>
-                </div>
-            </div>
-        </div>
-        <div class="search-container">
-            <form id="form" role="search" action="buscar.php" method="GET">
-                <input type="search" id="query" name="q" placeholder="Buscar..." aria-label="Search through site content" required>
-                <button type="submit">
-                    <svg width="30" height="30" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.5 19a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"></path>
-                        <path d="M13.328 7.172A3.988 3.988 0 0 0 10.5 6a3.988 3.988 0 0 0-2.828 1.172"></path>
-                        <path d="m16.61 16.611 4.244 4.243"></path>
-                    </svg>
-                </button>
-            </form>
-        </div>
-        <div class="header-icons">
+       
 
-          
-
-            <a href="carrito.php" title="Carrito">C</a>
+            <a class="grande" href="carrito.php" title="Informes">Informes</a>
         </div>
     </header>
 
