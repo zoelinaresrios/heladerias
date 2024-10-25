@@ -1,115 +1,27 @@
 <?php
 session_start();
+include '../db.php';
 
-if (!isset($_SESSION['carrito'])) {
-    $_SESSION['carrito'] = [];
-}
+$cliente_id = $_SESSION['cliente_id'];
+$query = "SELECT carrito.producto_id, productos.nombre, productos.precio, carrito.cantidad
+          FROM carrito
+          JOIN productos ON carrito.producto_id = productos.ID
+          WHERE carrito.cliente_id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $cliente_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$total = 0;
-?>
+echo "<h1>Tu Carrito</h1>";
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #854831;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: left;
-        }
-        th {
-            background-color: #854831;
-            color: white;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        a {
-            color: #d9534f;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 12px 24px;
-            background-color: #854831;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #d99a8e;
-        }
-    </style>
-</head>
-<body>
-
-<h1>Carrito de Compras</h1>
-<table>
-    <tr>
-        <th>Producto</th>
-        <th>Precio</th>
-        <th>Eliminar</th>
-    </tr>
-
-    <?php
-    foreach ($_SESSION['carrito'] as $key => $producto) {
-        $nombre = isset($producto['nombre']) ? $producto['nombre'] : 'Producto desconocido';
-        $precio = isset($producto['Precio']) ? $producto['Precio'] : 0;
-
-        // Asegúrate de que $precio se trate como un número
-        $total += (float)$precio;
-
-        echo "<tr>";
-        echo "<td>$nombre</td>";
-        echo "<td>$$precio</td>";
-        echo "<td><a href='eliminar_producto.php?id=$key'>Eliminar</a></td>";
-        echo "</tr>";
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<p>{$row['nombre']} - Cantidad: {$row['cantidad']} - Precio: {$row['precio']}</p>";
     }
-    ?>
-
-    <tr>
-        <td colspan="2" style="text-align: right;"><strong>Total:</strong></td>
-        <td>$$total</td>
-    </tr>
-</table>
-
-<button onclick="pagar()">Proceder a Pagar</button>
-
-<script>
-function pagar() {
-    alert('Gracias por su compra!');
-    window.location.href = 'index.php';
+    echo '<form action="comprar.php" method="post">
+            <button type="submit" name="comprar">Comprar</button>
+          </form>';
+} else {
+    echo "Tu carrito está vacío.";
 }
-</script>
-
-</body>
-</html>
+?>

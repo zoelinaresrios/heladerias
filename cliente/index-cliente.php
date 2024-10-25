@@ -151,12 +151,11 @@ section {
 .cajon{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10%;
-    padding-right: 25%;
+    grid-gap: 12%;
+    padding-right: 85%;
     max-width: 100%;
     margin: auto;
-    margin-left:21%;
- 
+    margin-left:17%;
 }
 .textorosa{
     text-align: center;
