@@ -368,7 +368,6 @@ section {
     padding: 20px 0;
     color: #FFFFFF; /* Texto marrón oscuro */
 }
-
 .grupo-1 {
     display: flex;
     justify-content: space-between;
