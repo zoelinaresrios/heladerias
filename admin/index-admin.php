@@ -158,7 +158,6 @@ nav ul li .dropdown-content li a:hover {
 
         form {
             display: flex;
-            align-items: center;
             width: 100%;
             max-width: 500px; /* Ajusta el tamaño máximo del campo de búsqueda */
         }
@@ -243,16 +242,17 @@ nav ul li .dropdown-content li a:hover {
 section {
     margin-bottom: 20px;
 }
-.cajon{
-    margin-left:25%;
-    margin-right:25%;
+    .cajon{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap:10%;
-    grid-gap: 5%;
+    grid-gap: 12%;
+    padding-right: 85%;
     max-width: 100%;
-    
+    margin: auto;
+    margin-left:17%;
+    margin-bottom:5%;
 }
+
 .textorosa{
     text-align: center;
     h3{
@@ -369,7 +369,7 @@ section {
             }
             .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
-    padding: 20px 0;
+    padding: 0%;
     color: #FFFFFF; /* Texto marrón oscuro */
 }
 .grupo-1 {
@@ -438,6 +438,7 @@ section {
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
+    width: 105%;
 }
 
 .contact-form button:hover {
