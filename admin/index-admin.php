@@ -474,7 +474,7 @@ section {
                         <a class="grande" href="#">Herramientas</a>
                         <ul class="dropdown-content">
                             <li><a href="agregar_producto.php">Agregar</a></li>
-                            <li><a href="eliminar_producto.php">Eliminar</a></li>
+                        
                             <li><a href="productos-admin.php">Productos</a></li>
                         </ul>
                     </div>

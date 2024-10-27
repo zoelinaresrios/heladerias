@@ -64,7 +64,7 @@ if (isset($_GET['id'])) {
 <div class="container">
     <h1>Resultado</h1>
     <p><?php echo isset($mensaje) ? $mensaje : ''; ?></p>
-    <a href="index-admin.php">Regresar a la gestión de productos</a>
+    <a href="productos-admin.php">Regresar a la gestión de productos</a>
 </div>
 
 </body>

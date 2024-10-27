@@ -241,7 +241,9 @@
     text-align: center; /* Centrar el texto dentro del contenedor */
     width: 100%; /* Asegúrate de que ocupe el ancho completo */
 }
-
+.grande{
+    font-size:25px;
+}
 
     
             .header-info h1 {
@@ -266,43 +268,7 @@
                 text-decoration: underline;
             }
     
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-    
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #8e6c49;
-                top: 100%;
-                left: 0;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                min-width: 150px;
-                z-index: 1;
-            }
-    
-            .dropdown-content li {
-                border-bottom: 1px solid #555;
-            }
-    
-            .dropdown-content li a {
-                padding: 10px;
-                color: #fff;
-                text-decoration: none;
-                display: block;
-            }
-    
-            .dropdown-content li a:hover {
-                background-color: #8e6c;
-            }
-    
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-            
+       
     
             nav ul {
         list-style: none;
@@ -322,40 +288,11 @@
         padding: 10px;
         display: block;
     }
-    
-    nav ul li .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #8e6c49;
-        top: 100%;
-        left: 0;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        min-width: 150px;
-        z-index: 1;
-    }
-    
-    nav ul li .dropdown-content li {
-        border-bottom: 1px solid #555;
-    }
-    
-    nav ul li .dropdown-content li a {
-        padding: 10px;
-        color: #fff;
-    }
-    
-    nav ul li:hover .dropdown-content {
-        display: block;
-    }
-    
-    nav ul li .dropdown-content li a:hover {
-        background-color: #8e6c;
-    }
+  
 
     .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
-    padding: 20px 0;
+    padding: 0%;
     color: #FFFFFF; /* Texto marrón oscuro */
 }
 
@@ -425,6 +362,7 @@
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
+    width: 105%;
 }
 
 .contact-form button:hover {
@@ -442,6 +380,7 @@
 .grupo-2 small {
     font-size: 0.9em;
 }
+   
 </style>
 
 <!DOCTYPE html>
@@ -458,22 +397,12 @@
             <div class="header-info">
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
-                    <div class="dropdown">
-                        <a class="grande" href="#">Productos</a>
-                        <ul class="dropdown-content">
-                            <li><a href="productos/helados.php">Helados</a></li>
-                            <li><a href="productos/tortas.php">Tortas</a></li>
-                            <li><a href="productos/paletas.php">Paletas</a></li>
-                        </ul>
-                    </div>
+                
                     <a class="grande" href="../cliente/index-cliente.php">Inicio</a>
 
                 </div>
             </div>
       
-            <div >
-          <img class="logo" src="../img/tacc.jpeg" alt="tacc">
-        </div>
       
     </header>
     <body>

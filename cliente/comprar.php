@@ -69,7 +69,7 @@ foreach ($productos as $producto) {
 }
 
 // 5. Registrar la factura
-$query_factura = "INSERT INTO facturas (pedido_id, fecha_emisión, total) VALUES (?, ?, ?)";
+$query_factura = "INSERT INTO facturas (pedido_id, fecha_emision, total) VALUES (?, ?, ?)";
 $stmt_factura = $conn->prepare($query_factura);
 $stmt_factura->bind_param("isi", $pedido_id, $fecha_pedido, $total);
 $stmt_factura->execute();

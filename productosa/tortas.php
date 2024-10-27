@@ -138,7 +138,6 @@
                 display: block;
             }
             
-
     .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
     padding: 20px 0;
@@ -247,14 +246,14 @@
                     <div class="dropdown">
                         <a class="grande" href="#">Productos</a>
                         <ul class="dropdown-content">
-                            <li><a href="../productos/helados.php">Helados</a></li>
+                        <li><a href="../productos/helados.php">Helados</a></li>
                             <li><a href="../productos/tortas.php">Tortas</a></li>
                             <li><a href="../productos/paletas.php">Paletas</a></li>
                             <li><a href="../productos/bombones.php">bombones</a></li>
-                        </ul>
+                         </ul>
                     </div>
                     <a class="grande" href="../index.php">Inicio</a>
-                
+               
                 </div>
             </div>
       
@@ -266,15 +265,27 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>1 kilo </h2><img class="publi" src="../img/1kg.jpeg" height="250px"> </br> <div> 
+     
+     <div class="cho"><h2>oreo</h2><img class="publi" src="../img/torta_orreo.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>1/2 kilo</h2><img class="publi" src="../img/12kg.jpeg" height="250px"> </br> <div >  
-     </div></div>
-     <div class="cho"><h2>1/4 kilo</h2><img class="publi" src="../img/14kg.jpeg" height="250px"> </br><div >   
+     <div class="cho"><h2>cereza</h2><img class="publi" src="../img/torta_cereza.jpeg" height="250px"> </br> <div >  
+     </div></div> 
+   
+     <div class="cho"><h2>choco granizado</h2><img class="publi" src="../img/torta_granizado.jpeg" height="250px"> </br> <div >  
      </div></div>
     
+     <div class="cho"><h2>oreo rosa</h2><img class="publi" src="../img/torta_oreo2.jpeg" height="250px"> </br> <div >  
+     </div></div>
+    
+     <div class="cho"><h2>mini helados</h2><img class="publi" src="../img/torta_helados.jpeg" height="250px"> </br> <div >  
+     </div></div>
+     
+     <div class="cho"><h2>chocolatosa</h2><img class="publi" src="../img/torta_chocolatosa.jpeg" height="250px"> </br> <div >  
+     </div></div>
+     
+    
     </div>
-
+    
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">

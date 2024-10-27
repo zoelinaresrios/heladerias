@@ -1,5 +1,12 @@
 <?php
-include '../db.php'; // Asegúrate de que la ruta a db.php sea correcta
+session_start();
+include '../db.php'; // Asegúrate de que esta ruta sea correcta
+
+// Verifica si hay un mensaje de stock insuficiente y almacénalo en una variable JavaScript
+if (isset($_SESSION['mensaje_stock'])) {
+    echo "<script>alert('{$_SESSION['mensaje_stock']}');</script>";
+    unset($_SESSION['mensaje_stock']);
+}
 
 // Consulta para obtener las categorías y sus productos
 $query = "SELECT c.ID AS categoria_id, c.nombre AS categoria_nombre, p.ID AS producto_id, p.nombre AS producto_nombre, p.precio, p.imagen 
@@ -42,161 +49,136 @@ while ($row = $result->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentaciones Heladas</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4abba;
-            color: #854831;
-            margin: 0;
-            padding: 0;
+        /* Tus estilos CSS aquí */
+        body { font-family: Arial, sans-serif; background-color: #f4abba; color: #854831; margin: 0; padding: 0; }
+        .logo { max-width: 80px; }
+        header { background-color: #854831; color: #f4abba; padding: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+        .header-left { display: flex; align-items: center; }
+        .header-left h1 { margin-left: 10px; font-size: 24px; }
+        .search-container { flex: 1; display: flex; justify-content: center; margin: 10px 0; position: relative; }
+        input[type="search"] { 
+            border: 2px solid #e6007f; 
+            border-radius: 20px; 
+            padding: 8px 40px 8px 15px; 
+            outline: none; 
+            color: #333; 
+            width: 100%; 
+            max-width: 500px; 
+            transition: border-color 0.3s ease;
         }
-        .logo {
-            max-width: 80px; /* Tamaño más pequeño para el logo */
+        input[type="search"]:focus { border-color: #d5006d; }
+        .search-btn { 
+            background-color: transparent; 
+            border: none; 
+            cursor: pointer; 
+            margin-left: 10px; 
+            transition: transform 0.2s; 
         }
-
-        header {
-            background-color: #854831;
-            color: #f4abba;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+        .search-btn:hover { transform: scale(1.1); }
+        .home-button { 
+            background-color: #e6007f; 
+            border: none; 
+            border-radius: 5px; 
+            padding: 10px 15px; 
+            color: white; 
+            cursor: pointer; 
+            margin-right: 10px; 
         }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-left h1 {
-            margin-left: 10px; /* Espacio entre logo y título */
-            font-size: 24px; /* Ajusta el tamaño del título */
-        }
-
-        .search-container {
-            flex: 1;
-            display: flex;
-            justify-content: center; /* Centra la lupa de búsqueda */
-            margin: 10px 0;
-        }
-
-        form {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            max-width: 500px; /* Ajusta el tamaño máximo del campo de búsqueda */
-        }
-
-        input[type="search"] {
-            border: 2px solid #e6007f; /* Color rosa para la barra de búsqueda */
-            border-radius: 5px;
-            padding: 8px;
-            outline: none;
-            color: #333;
-            width: 100%;
-        }
-
-        input[type="search"]:focus {
-            border-color: #d6007f;
-        }
-
-        button {
-            background-color: #e6007f;
-            border: none;
-            border-radius: 5px;
-            padding: 8px;
-            margin-left: 5px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        button svg {
-            fill: #fff;
-        }
-
-        main {
-            padding: 20px;
-        }
-        .add{
-            margin-left:16%;
-        }
-
-        .cajitamm {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding-bottom: 6%;
-        }
-
-        .cho {
-            border: 1px solid #854831;
-            border-radius: 10px;
-            padding: 20px;
-            background-color: #ffffff;
-            width: 200px;
-            text-align: center;
-            display: flex; /* Habilita flexbox */
-            flex-direction: column; /* Organiza en columna */
-            justify-content: space-between; /* Espacia los elementos */
-        }
-
-        .publi {
-            width: 100%;
-            height: auto;
-        }
-
-        /*:::::Pie de Pagina*/
+        main { padding: 20px; }
+        .cajitamm { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding-bottom: 6%; }
+        .cho { border: 1px solid #854831; border-radius: 10px; padding: 20px; background-color: #ffffff; width: 200px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
+        .publi { width: 100%; height: auto; }
         .pie-pagina {
-            padding: 0%;
-            width: 100%;
-            background-color: #854831;
-            margin-top: 20px;
-        }
-        .pie-pagina .grupo-1 {
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 50px;
-            padding: 45px 0px;
-        }
-        .pie-pagina .grupo-1 .box h2 {
-            color: #f4abba;
-            margin-bottom: 25px;
-            font-size: 20px;
-        }
-        .pie-pagina .grupo-1 .box p {
-            color: #efefef;
-            margin-bottom: 10px;
-        }
-        .pie-pagina .grupo-1 .red-social a {
-            display: inline-block;
-            text-decoration: none;
-            width: 45px;
-            height: 45px;
-            line-height: 45px;
-            color: #fff;
-            margin-right: 10px;
-            background-color: #f4abba;
-            text-align: center;
-            transition: all 300ms ease;
-        }
-        .pie-pagina .grupo-1 .red-social a:hover {
-            color: aqua;
-        }
-        .pie-pagina .grupo-2 {
-            background-color: #754831;
-            padding: 15px 10px;
-            text-align: center;
-            color: #fff;
-        }
-        .pie-pagina .grupo-2 small {
-            font-size: 15px;
-        }
+    background-color: #854831; /* Fondo en tono marrón claro */
+    padding: 0%;
+    color: #FFFFFF; /* Texto marrón oscuro */
+}
+
+.grupo-1 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding-right: 50px;
+    font-size:15px;
+}
+
+.box {
+    width: 30%;
+    text-align: left;
+    padding-left: 70px;
+}
+
+.box h2 {
+    font-size: 1.5em;
+    color: #f4abba; /* Color rosa */
+    margin-bottom: 10px;
+}
+
+.box p, .box a {
+    font-size: 1em;
+    color: ##FFFFFF; /* Marrón oscuro */
+}
+
+.box a {
+    text-decoration: none;
+    color: #f4abba; /* Enlaces en rosa */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre campos */
+}
+
+.contact-form label {
+    font-size: 1em;
+    color: ##FFFFFF; /* Marrón oscuro */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ff0099; /* Bordes en rosa */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1em;
+    background-color: #fef5f9; /* Fondo claro */
+    color: #5d4037; /* Texto marrón oscuro */
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #a65380; /* Cambio de color al enfocar */
+}
+
+.contact-form button {
+    background-color: #ff0099; /* Fondo del botón rosa */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: 105%;
+}
+
+.contact-form button:hover {
+    background-color: #a65380; /* Rosa oscuro al pasar el mouse */
+}
+
+.grupo-2 {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f4abba; /* Fondo marrón oscuro */
+    color: black;
+    padding: 10px 0;
+}
+
+.grupo-2 small {
+    font-size: 0.9em;
+}
+   
 
         /* Estilos del formulario de contacto */
         .formulario-contacto {
@@ -228,11 +210,13 @@ while ($row = $result->fetch_assoc()) {
             <img class="logo" src="../img/logo.png" alt="logo">
             <h1>TENTACIONES HELADAS</h1>
         </div>
-        
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Buscar productos...">
-            <button onclick="scrollToProduct()">Buscar</button>
+            <input type="search" id="searchInput" placeholder="Buscar productos...">
+            <button class="search-btn" onclick="scrollToProduct()">
+                <img src="../img/lupa.webp" alt="Buscar" style="width: 24px; height: 24px;">
+            </button>
         </div>
+        <button class="home-button" onclick="location.href='index-cliente.php'">Inicio</button>
     </header>
     
     <main>
@@ -240,52 +224,68 @@ while ($row = $result->fetch_assoc()) {
             <h2><?php echo $categoria['nombre']; ?></h2>
             <div class="cajitamm">
                 <?php foreach ($categoria['productos'] as $producto): ?>
-                    <div class='cho'>
+                    <div class="cho">
                         <h2><?php echo $producto['nombre']; ?></h2>
-                        <img class='publi' src='../img/<?php echo $producto['imagen']; ?>' height='250px'><br> <!-- Ajusta la ruta de la imagen -->
-                        <p>Precio: $<?php echo $producto['precio']; ?></p> <!-- Muestra el precio -->
-                        <form class="add" action='agregar_al_carrito.php' method='POST'> <!-- Botón de agregar al carrito -->
-                            <input type='hidden' name='producto_id' value='<?php echo $producto['id']; ?>'>
-                            <button type='submit' class='select-button' style="background-color: #e6007f; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer; transition: all 0.3s ease;">
+                        <img class="publi" src="../img/<?php echo $producto['imagen']; ?>" height="250px"><br>
+                        <p>Precio: $<?php echo $producto['precio']; ?></p>
+                        <form class="add" action="agregar_al_carrito.php" method="POST">
+                            <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
+                            <button type="submit" class="select-button" style="background-color: #e6007f; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer; transition: all 0.3s ease;">
                                 Agregar al Carrito
                             </button>
+                          
                         </form>
                     </div>
                 <?php endforeach; ?>
             </div>
         <?php endforeach; ?>
     </main>
-
     <footer class="pie-pagina">
-        <div class="grupo-1">
-            <div class="box">
-                <h2>Calidad del Producto</h2>
-                <p>En Tentaciones Heladas, garantizamos la frescura y calidad en cada uno de nuestros productos.</p>
-            </div>
-            <div class="box">
-                <h2>Contacto</h2>
-                <p>Teléfono: 123-456-7890</p>
-                <p>Email: info@tentacionesheladas.com</p>
-                <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
-            </div>
+    <div class="grupo-1">
+        <div class="box">
+            <h2>Calidad del Producto</h2>
+            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. <br><br>
+                Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
+                cada bocado sea una experiencia deliciosa y satisfactoria. <br> <br>¡Déjate llevar por la 
+                frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
         </div>
-        <div class="grupo-2">
-            <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
+        <div class="box">
+            <h2>Contacto</h2>
+            <p>Teléfono: 123-456-7890</p>
+            <p>Email: @tentacionesheladass.gmail.com</p>
+            <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
         </div>
-    </footer>
+        <div class="box">
+            <h2>Contáctanos</h2>
+            <form action="../guardar_contacto.php" method="POST" class="contact-form">
+                <label for="nombre">Nombre </label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" required placeholder="Tu email">
+
+                <label for="mensaje">Mensaje </label>
+                <textarea id="mensaje" name="mensaje" required placeholder="Tu mensaje"></textarea>
+
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
+    </div>
+</footer>
+    
 
     <script>
         function scrollToProduct() {
             const input = document.getElementById('searchInput');
             const searchTerm = input.value.toLowerCase();
-
-            // Iterar sobre todas las categorías y productos para buscar coincidencias
-            const productos = document.querySelectorAll('h2'); // Encuentra todas las cabeceras de productos
+            const productos = document.querySelectorAll('h2');
             let found = false;
 
             productos.forEach(producto => {
                 if (producto.textContent.toLowerCase().includes(searchTerm)) {
-                    // Si encuentra coincidencias, desplazar hacia el producto
                     producto.scrollIntoView({ behavior: 'smooth' });
                     found = true;
                 }
@@ -294,6 +294,11 @@ while ($row = $result->fetch_assoc()) {
             if (!found) {
                 alert('No se encontraron productos que coincidan con "' + searchTerm + '"');
             }
+        }
+        
+        function searchProduct(productId) {
+            alert('Buscando el producto con ID: ' + productId);
+            // Aquí puedes agregar la lógica para buscar el producto específico
         }
     </script>
 </body>

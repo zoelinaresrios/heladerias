@@ -229,28 +229,6 @@
     font-size: 0.9em;
 }
 
-        /* Estilos del formulario de contacto */
-        .formulario-contacto {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .formulario-contacto input,
-        .formulario-contacto textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        @media screen and (max-width:800px) {
-            .pie-pagina .grupo-1 {
-                width: 90%;
-                grid-template-columns: repeat(1, 1fr);
-                grid-gap: 30px;
-                padding: 35px 0px;
-            }
-        }
 </style>
 
 <!DOCTYPE html>
@@ -277,7 +255,7 @@
                       </ul>
                     </div>
                     <a class="grande" href="../index.php">Inicio</a>
-              
+                
                 </div>
             </div>
       
@@ -297,24 +275,25 @@
      </div></div>
 
     </div>
+
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
             <h2>Calidad del Producto</h2>
-            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. <br><br>
-                Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
-                cada bocado sea una experiencia deliciosa y satisfactoria. <br> <br>¡Déjate llevar por la 
+            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. 
+             <br> <br>  Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
+                cada bocado sea una experiencia deliciosa y satisfactoria. <br><br> ¡Déjate llevar por la 
                 frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
         </div>
         <div class="box">
             <h2>Contacto</h2>
             <p>Teléfono: 123-456-7890</p>
-            <p>Email: @tentacionesheladass.gmail.com</p>
+            <p>Email: info@tentacionesheladas.com</p>
             <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
         </div>
         <div class="box">
             <h2>Contáctanos</h2>
-            <form action="guardar_contacto.php" method="POST" class="contact-form">
+            <form action="../guardar_contacto.php" method="POST" class="contact-form">
                 <label for="nombre">Nombre </label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
 
@@ -332,5 +311,7 @@
         <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
     </div>
 </footer>
+
+
     </body>
     </html>

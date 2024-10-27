@@ -1,35 +1,54 @@
 <?php
 session_start();
-include '../db.php';
+include '../db.php'; // Asegúrate de que la ruta a db.php sea correcta
 
-$producto_id = $_POST['producto_id']; // Asumiendo que este ID se envía desde un formulario
-$cliente_id = $_SESSION['cliente_id'];
-
-// Verificar si el producto ya existe en el carrito
-$query = "SELECT cantidad FROM carrito WHERE cliente_id = ? AND producto_id = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("ii", $cliente_id, $producto_id);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-    // Si existe, actualizamos la cantidad
-    $row = $result->fetch_assoc();
-    $nueva_cantidad = $row['cantidad'] + 1; // Aumentamos la cantidad
-    $update_query = "UPDATE carrito SET cantidad = ? WHERE cliente_id = ? AND producto_id = ?";
-    $update_stmt = $conn->prepare($update_query);
-    $update_stmt->bind_param("iii", $nueva_cantidad, $cliente_id, $producto_id);
-    $update_stmt->execute();
-} else {
-    // Si no existe, insertamos el nuevo producto
-    $insert_query = "INSERT INTO carrito (cliente_id, producto_id, cantidad) VALUES (?, ?, ?)";
-    $insert_stmt = $conn->prepare($insert_query);
-    $cantidad = 1; // La cantidad inicial es 1
-    $insert_stmt->bind_param("iii", $cliente_id, $producto_id, $cantidad);
-    $insert_stmt->execute();
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['cliente_id'])) {
+    header("Location: login.php");
+    exit();
 }
 
-header("Location: carrito.php"); // Redirige al carrito
-exit();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $producto_id = $_POST['producto_id'];
+    $cliente_id = $_SESSION['cliente_id'];
 
-?>
+    // Consulta para obtener el stock actual del producto
+    $query = "SELECT stock FROM productos WHERE ID = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $producto_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $producto = $result->fetch_assoc();
+
+    if ($producto) {
+        $stock_actual = $producto['stock'];
+
+        if ($stock_actual > 0) {
+            // Agrega el producto al carrito
+            $query_insert = "INSERT INTO carrito (cliente_id, producto_id, cantidad, fecha_agregado) VALUES (?, ?, 1, NOW())";
+            $stmt_insert = $conn->prepare($query_insert);
+            $stmt_insert->bind_param("ii", $cliente_id, $producto_id);
+            $stmt_insert->execute();
+
+            // Resta el stock
+            $nuevo_stock = $stock_actual - 1;
+            $query_update = "UPDATE productos SET stock = ? WHERE ID = ?";
+            $stmt_update = $conn->prepare($query_update);
+            $stmt_update->bind_param("ii", $nuevo_stock, $producto_id);
+            $stmt_update->execute();
+
+            // Redirige al carrito después de agregar el producto
+            header("Location: carrito.php");
+            exit();
+        } else {
+            // Si no hay suficiente stock, almacena el mensaje en la sesión
+            $_SESSION['mensaje_stock'] = "No hay suficiente stock para agregar este producto.";
+            header("Location: helados_clientes.php"); // Redirige a la página de helados para clientes
+            exit();
+        }
+    } else {
+        echo "Producto no encontrado.";
+    }
+} else {
+    echo "Método no permitido.";
+}

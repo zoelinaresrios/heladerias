@@ -13,10 +13,11 @@ if (isset($_GET['id'])) {
         $nombre = $_POST['nombre'];
         $categoria_id = $_POST['categoria_id'];
         $precio = $_POST['precio'];
+        $stock = $_POST['stock']; // Agregar la variable stock
         
         // Actualiza el producto en la base de datos
-        $stmt = $conn->prepare("UPDATE productos SET nombre = ?, categoria_id = ?, Precio = ? WHERE ID = ?");
-        $stmt->bind_param("sidi", $nombre, $categoria_id, $precio, $id);
+        $stmt = $conn->prepare("UPDATE productos SET nombre = ?, categoria_id = ?, Precio = ?, stock = ? WHERE ID = ?");
+        $stmt->bind_param("sidii", $nombre, $categoria_id, $precio, $stock, $id); // Añadir stock a la lista de parámetros
         $stmt->execute();
         $stmt->close();
         echo "Producto actualizado exitosamente.";
@@ -80,9 +81,159 @@ if (isset($_GET['id'])) {
             text-align: center;
             margin-top: 20px;
         }
+
+
+        header {
+                background-color: #854831;
+                color: #f4abba;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+            .header-left {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex: 1;
+            }
+    
+            .logo {
+                max-width: 10%;
+            }
+            .header-info h1 {
+                margin: 0;
+                font-size: 24px;
+            }
+            .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+}
+.header-icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+  
+}
+
+.pie-pagina {
+    background-color: #854831; /* Fondo en tono marrón claro */
+    padding: 0%;
+    color: #FFFFFF; /* Texto marrón oscuro */
+}
+
+.grupo-1 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding-right: 50px;
+    font-size:15px;
+}
+
+.box {
+    width: 30%;
+    text-align: left;
+    padding-left: 70px;
+}
+
+.box h2 {
+    font-size: 1.5em;
+    color: #f4abba; /* Color rosa */
+    margin-bottom: 10px;
+}
+
+.box p, .box a {
+    font-size: 1em;
+    color: ##FFFFFF; /* Marrón oscuro */
+}
+
+.box a {
+    text-decoration: none;
+    color: #f4abba; /* Enlaces en rosa */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre campos */
+}
+
+.contact-form label {
+    font-size: 1em;
+    color: ##FFFFFF; /* Marrón oscuro */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ff0099; /* Bordes en rosa */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1em;
+    background-color: #fef5f9; /* Fondo claro */
+    color: #5d4037; /* Texto marrón oscuro */
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: #a65380; /* Cambio de color al enfocar */
+}
+
+.contact-form button {
+    background-color: #ff0099; /* Fondo del botón rosa */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: 105%;
+}
+
+.contact-form button:hover {
+    background-color: #a65380; /* Rosa oscuro al pasar el mouse */
+}
+
+.grupo-2 {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f4abba; /* Fondo marrón oscuro */
+    color: black;
+    padding: 10px 0;
+}
+
+.grupo-2 small {
+    font-size: 0.9em;
+}
+            
     </style>
 </head>
 <body>
+<header>
+        <div class="header-left">
+            <img class="logo" src="../img/logo.png"   alt="logo">
+            <div class="header-info">
+                <h1>TENTACIONES HELADAS</h1>
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <a class="grande" href="index.admin.php">Inicio</a>
+                
+                    </div>
+            </div>
+            </div>
+      
+                </button>
+            </form>
+        </div>
+      
+    </header>
     <div class="form-container">
         <h2>Editar Producto</h2>
         <form action="editar_producto.php?id=<?php echo $id; ?>" method="POST">
@@ -92,9 +243,47 @@ if (isset($_GET['id'])) {
             <input type="number" id="categoria_id" name="categoria_id" value="<?php echo htmlspecialchars($producto['categoria_id']); ?>" required>
             <label for="precio">Precio:</label>
             <input type="text" id="precio" name="precio" value="<?php echo htmlspecialchars($producto['Precio']); ?>" required>
+            <label for="stock">Stock:</label> <!-- Agregar campo de stock -->
+            <input type="number" id="stock" name="stock" value="<?php echo htmlspecialchars($producto['stock']); ?>" required> <!-- Agregar input para stock -->
             <input type="submit" value="Actualizar">
         </form>
-        <a class="back-link" href="index-admin.php">Regresar a la gestión de productos</a>
+        <a class="back-link" href="productos-admin.php">Regresar a la gestión de productos</a>
     </div>
+
+    <footer class="pie-pagina">
+    <div class="grupo-1">
+        <div class="box">
+            <h2>Calidad del Producto</h2>
+            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. <br><br>
+                Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
+                cada bocado sea una experiencia deliciosa y satisfactoria. <br> <br>¡Déjate llevar por la 
+                frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
+        </div>
+        <div class="box">
+            <h2>Contacto</h2>
+            <p>Teléfono: 123-456-7890</p>
+            <p>Email: @tentacionesheladass.gmail.com</p>
+            <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
+        </div>
+        <div class="box">
+            <h2>Contáctanos</h2>
+            <form action="guardar_contacto.php" method="POST" class="contact-form">
+                <label for="nombre">Nombre </label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" required placeholder="Tu email">
+
+                <label for="mensaje">Mensaje </label>
+                <textarea id="mensaje" name="mensaje" required placeholder="Tu mensaje"></textarea>
+
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    <div class="grupo-2">
+        <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
+    </div>
+</footer>
 </body>
 </html>

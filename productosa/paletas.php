@@ -247,14 +247,14 @@
                     <div class="dropdown">
                         <a class="grande" href="#">Productos</a>
                         <ul class="dropdown-content">
-                            <li><a href="../productos/helados.php">Helados</a></li>
+                        <li><a href="../productos/helados.php">Helados</a></li>
                             <li><a href="../productos/tortas.php">Tortas</a></li>
                             <li><a href="../productos/paletas.php">Paletas</a></li>
                             <li><a href="../productos/bombones.php">bombones</a></li>
-                        </ul>
+                      </ul>
                     </div>
                     <a class="grande" href="../index.php">Inicio</a>
-            
+                 
                 </div>
             </div>
       
@@ -266,39 +266,46 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>1 kilo </h2><img class="publi" src="../img/1kg.jpeg" height="250px"> </br> <div> 
+     <div class="cho"><h2>naranja</h2><img class="publi" src="../img/paleta_agua.jpeg" height="250px"> </br> <div> 
      </div></div>
-     <div class="cho"><h2>1/2 kilo</h2><img class="publi" src="../img/12kg.jpeg" height="250px"> </br> <div >  
+     <div class="cho"><h2>frutilla </h2><img class="publi" src="../img/paleta_agua2.jpeg" height="250px"> </br> <div >  
      </div></div>
-     <div class="cho"><h2>1/4 kilo</h2><img class="publi" src="../img/14kg.jpeg" height="250px"> </br><div >   
+     <div class="cho"><h2>manzana verde </h2><img class="publi" src="../img/paleta_agua3.jpeg" height="250px"> </br><div >   
+     </div></div>
+     <div class="cho"><h2>paleta bañada</h2><img class="publi" src="../img/paleta_bañada.jpeg" height="250px"> </br> <div > 
+     </div></div>
+     <div class="cho"><h2>frutilla</h2><img class="publi" src="../img/paleta_crema.jpeg" height="250px"> </br> <div >   
+     </div></div>
+     <div class="cho"><h2>frutos rojos</h2><img class="publi" src="../img/paleta_crema2.jpeg" height="250px"> </br> <div >    
      </div></div>
     
     </div>
+
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
             <h2>Calidad del Producto</h2>
-            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. 
+            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. <br><br>
                 Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
-                cada bocado sea una experiencia deliciosa y satisfactoria. ¡Déjate llevar por la 
+                cada bocado sea una experiencia deliciosa y satisfactoria. <br> <br>¡Déjate llevar por la 
                 frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
         </div>
         <div class="box">
             <h2>Contacto</h2>
             <p>Teléfono: 123-456-7890</p>
-            <p>Email: info@tentacionesheladas.com</p>
+            <p>Email: @tentacionesheladass.gmail.com</p>
             <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
         </div>
         <div class="box">
             <h2>Contáctanos</h2>
             <form action="guardar_contacto.php" method="POST" class="contact-form">
-                <label for="nombre">Nombre *</label>
+                <label for="nombre">Nombre </label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
 
-                <label for="email">Email *</label>
+                <label for="email">Email </label>
                 <input type="email" id="email" name="email" required placeholder="Tu email">
 
-                <label for="mensaje">Mensaje *</label>
+                <label for="mensaje">Mensaje </label>
                 <textarea id="mensaje" name="mensaje" required placeholder="Tu mensaje"></textarea>
 
                 <button type="submit">ENVIAR</button>
