@@ -31,6 +31,18 @@
     border-radius: 70%;
     margin-bottom: 20px; /* Espacio entre imagen y descripción */
 }
+.desc {
+    display: none; /* Oculta el texto inicialmente */
+    opacity: 0; /* Comienza con opacidad 0 */
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+}
+
+.cho:hover .desc {
+    display: block; /* Muestra el texto al pasar el cursor */
+    opacity: 1; /* Cambia la opacidad a 1 para que sea visible */
+}
+
+
 
     h2{
     
@@ -41,6 +53,7 @@
                 padding: 0;
             }
     
+       
             header {
                 background-color: #854831;
                 color: #f4abba;
@@ -69,21 +82,15 @@
     text-align: center; /* Centrar el texto dentro del contenedor */
     width: 100%; /* Asegúrate de que ocupe el ancho completo */
 }
-.header-icons{
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar elementos hijos horizontalmente */
-    text-align: center; /* Centrar el texto dentro del contenedor */
-  
-}
-
 .grande{
     font-size:25px;
 }
 
     
-            
-
+            .header-info h1 {
+                margin: 0;
+                font-size: 24px;
+            }
             .nav-links {
                 display: flex;
                 align-items: center;
@@ -101,47 +108,62 @@
                 text-decoration: underline;
             }
     
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
+       
     
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #8e6c49;
-                top: 100%;
-                left: 0;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                min-width: 150px;
-                z-index: 1;
-            }
+          
     
-            .dropdown-content li {
-                border-bottom: 1px solid #555;
-            }
+            nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
     
-            .dropdown-content li a {
-                padding: 10px;
-                color: #fff;
-                text-decoration: none;
-                display: block;
-            }
+    nav ul li {
+        position: relative;
+        margin-right: 20px;
+    }
     
-            .dropdown-content li a:hover {
-                background-color: #8e6c;
-            }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
     
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-            
+    nav ul li .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #8e6c49;
+        top: 100%;
+        left: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 150px;
+        z-index: 1;
+    }
+    
+    nav ul li .dropdown-content li {
+        border-bottom: 1px solid #555;
+    }
+    
+    nav ul li .dropdown-content li a {
+        padding: 10px;
+        color: #fff;
+    }
+    
+    nav ul li:hover .dropdown-content {
+        display: block;
+    }
+    
+    nav ul li .dropdown-content li a:hover {
+        background-color: #8e6c;
+    }
 
     .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
-    padding: 20px 0;
+    padding: 0%;
     color: #FFFFFF; /* Texto marrón oscuro */
 }
 
@@ -211,6 +233,7 @@
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
+    width: 105%;
 }
 
 .contact-form button:hover {
@@ -228,7 +251,7 @@
 .grupo-2 small {
     font-size: 0.9em;
 }
-
+   
 </style>
 
 <!DOCTYPE html>
@@ -245,17 +268,8 @@
             <div class="header-info">
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
-                    <div class="dropdown">
-                        <a class="grande" href="#">Productos</a>
-                        <ul class="dropdown-content">
-                        <li><a href="../productos/helados.php">Helados</a></li>
-                            <li><a href="../productos/tortas.php">Tortas</a></li>
-                            <li><a href="../productos/paletas.php">Paletas</a></li>
-                            <li><a href="../productos/bombones.php">bombones</a></li>
-                      </ul>
-                    </div>
-                    <a class="grande" href="../index.php">Inicio</a>
-                
+                  
+                <a class="grande" href="../admin/index-admin.php">Inicio</a>
                 </div>
             </div>
       
@@ -267,33 +281,50 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>vainilla con chocolate</h2><img class="publi" src="../img/bombon_bainillin.jpeg" height="250px"> </br> <div> 
+     <div class="cho"><h2>anana</h2><img class="publi" src="../img/fr_anana.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un bocado refrescante de jugosa piña, con el equilibrio perfecto entre dulzura tropical y acidez vibrante.</h4>
      </div></div>
-     <div class="cho"><h2>dulce de leche</h2><img class="publi" src="../img/bombon_dulceleche.jpeg" height="250px"> </br> <div >  
+     <div class="cho"><h2>arandanos</h2><img class="publi" src="../img/fr_arandanos.jpeg" height="250px"> </br> <div class="desc">   <h4> -  Pequeñas joyas de sabor intenso que estallan en tu boca con cada cucharada. El toque ideal de frescura.</h4>
      </div></div>
-     <div class="cho"><h2>galleta</h2><img class="publi" src="../img/bombon_galle.jpeg" height="250px"> </br><div >   
+     <div class="cho"><h2>durazno</h2><img class="publi" src="../img/fr_durazno.jpeg" height="250px"> </br><div class="desc">   <h4> - El auténtico sabor de los duraznos más jugosos y maduros, capturando el verano en cada bocado.</h4>
      </div></div>
-
+     <div class="cho"><h2>frambuesas</h2><img class="publi" src="../img/fr_frambuesaa.jpeg" height="250px"> </br> <div class="desc">    <h4> - Un estallido de sabor ácido y dulce que te lleva directo a una tarde cálida en el campo.</h4>
+     </div></div>
+     <div class="cho"><h2>limon con miel</h2><img class="publi" src="../img/fr_limmiel.jpeg" height="250px"> </br> <div class="desc">    <h4> - La acidez refrescante del limón, suavizada con el dulzor natural de la miel, creando un equilibrio que deleita.</h4>
+     </div></div>
+     <div class="cho"><h2>mango</h2><img class="publi" src="../img/fr_mango.jpeg" height="250px"> </br> <div class="desc">    <h4> - Un viaje tropical de sabores exóticos y cremosos que seduce tus papilas gustativas desde el primer momento.</h4>
+     </div></div>
+     <div class="cho"><h2>melon </h2><img class="publi" src="../img/fr_melon.jpeg" height="250px"> </br> <div class="desc">    <h4> -  Tan fresco y delicado como una tarde de verano, el sabor del melón te envuelve en una brisa dulce.</h4>
+     </div></div>
+     <div class="cho"><h2>fresa</h2><img class="publi" src="../img/fr_fresa.jpeg" height="250px"> </br> <div class="desc">    <h4> - El clásico sabor de las fresas frescas y dulces, con la textura perfecta para derretirse en tu boca.</h4>
+     </div></div>
+    <div class="cho"><h2>naranja</h2><img class="publi" src="../img/fr_naranja.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un torbellino cítrico lleno de energía que te despierta con cada cucharada.</h4>
+     </div></div>
+     <div class="cho"><h2>manzana</h2><img class="publi" src="../img/fr_manz.jpeg" height="250px"> </br> <div class="desc">    <h4> - Frescura crujiente en cada bocado, como morder una manzana madura bajo el sol.</h4>
+     </div></div>
+     <div class="cho"><h2>frambuesa</h2><img class="publi" src="../img/fr_frambuesa.jpeg" height="250px"> </br> <div class="desc">    <h4> - Un bocado refrescante de jugosa piña, con el equilibrio perfecto entre dulzura tropical y acidez vibrante.</h4>
+     </div></div>
+     <div class="cho"><h2>sandia</h2><img class="publi" src="../img/fr_sandia.jpeg" height="250px"> </br> <div class="desc">    <h4> - Pura frescura y dulzura en cada bocado, como si tomaras un trozo de verano eterno.</h4>
+     </div></div>
+   
     </div>
-
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
             <h2>Calidad del Producto</h2>
-            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. 
-             <br> <br>  Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
-                cada bocado sea una experiencia deliciosa y satisfactoria. <br><br> ¡Déjate llevar por la 
+            <p>En Tentaciones Heladas, nos dedicamos a ofrecerte helados artesanales de la más alta calidad. <br><br>
+                Utilizamos ingredientes frescos y naturales, seleccionados cuidadosamente para garantizar que 
+                cada bocado sea una experiencia deliciosa y satisfactoria. <br> <br>¡Déjate llevar por la 
                 frescura y la calidad que solo Tentaciones Heladas puede ofrecer!</p>
         </div>
         <div class="box">
             <h2>Contacto</h2>
             <p>Teléfono: 123-456-7890</p>
-            <p>Email: info@tentacionesheladas.com</p>
+            <p>Email: @tentacionesheladass.gmail.com</p>
             <a href="https://www.instagram.com/tentacionesheladass/?hl=es">Instagram</a>
         </div>
         <div class="box">
             <h2>Contáctanos</h2>
-            <form action="../guardar_contacto.php" method="POST" class="contact-form">
+            <form action="guardar_contacto.php" method="POST" class="contact-form">
                 <label for="nombre">Nombre </label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
 
@@ -311,7 +342,5 @@
         <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
     </div>
 </footer>
-
-
     </body>
     </html>

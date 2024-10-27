@@ -360,7 +360,10 @@ section {
                         <a class="grande" href="helados_clientes.php">Productos</a>
                 
                     </div>
-                   
+                    <div class="header-icons">
+            <a class="grande" href="historial.php" title="historial">Historial</a>
+            
+        </div>
                     <div class="header-icons">
             <a class="grande" href="carrito.php" title="Carrito">Carrito</a>
             

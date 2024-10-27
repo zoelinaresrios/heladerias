@@ -212,6 +212,25 @@ if (isset($_GET['id'])) {
 .grupo-2 small {
     font-size: 0.9em;
 }
+.nav-links {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-top: 10px;
+            }
+    
+            .nav-links a {
+                color: #f4abba;
+                text-decoration: none;
+                padding: 5px;
+            }
+    
+            .nav-links a:hover {
+                text-decoration: underline;
+            } 
+            .grande{
+    font-size:25px;
+}
             
     </style>
 </head>
@@ -223,7 +242,7 @@ if (isset($_GET['id'])) {
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
                     <div class="dropdown">
-                        <a class="grande" href="index.admin.php">Inicio</a>
+                        <a class="grande" href="index-admin.php">Inicio</a>
                 
                     </div>
             </div>

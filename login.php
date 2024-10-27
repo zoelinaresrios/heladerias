@@ -36,38 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit(); // Detener la ejecución después de redirigir
         } else {
             // Contraseña incorrecta
-            header('Location: login.php?error=1');
+            header('Location: logeo.php?error=1');
             exit();
         }
     } else {
         // Usuario no encontrado
-        header('Location: login.php?error=1');
+        header('Location: logeo.php?error=1');
         exit();
     }
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-
-</head>
-<body>
-    <div class="contenedor">
-        <h1>Iniciar Sesión</h1>
-        <?php if ($error == '1'): ?>
-            <div style="color: red; text-align: center;">
-                Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.
-            </div>
-        <?php endif; ?>
-        <form action="login.php" method="post">
-            <input type="text" name="usuario" placeholder="Usuario" required>
-            <input type="password" name="contraseña" placeholder="Contraseña" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
-</body>
-</html>

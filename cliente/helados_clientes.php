@@ -51,7 +51,7 @@ while ($row = $result->fetch_assoc()) {
     <style>
         /* Tus estilos CSS aquí */
         body { font-family: Arial, sans-serif; background-color: #f4abba; color: #854831; margin: 0; padding: 0; }
-        .logo { max-width: 80px; }
+        .logo { max-width: 130px; }
         header { background-color: #854831; color: #f4abba; padding: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
         .header-left { display: flex; align-items: center; }
         .header-left h1 { margin-left: 10px; font-size: 24px; }
@@ -85,7 +85,9 @@ while ($row = $result->fetch_assoc()) {
             margin-right: 10px; 
         }
         main { padding: 20px; }
+
         .cajitamm { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding-bottom: 6%; }
+      
         .cho { border: 1px solid #854831; border-radius: 10px; padding: 20px; background-color: #ffffff; width: 200px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; }
         .publi { width: 100%; height: auto; }
         .pie-pagina {

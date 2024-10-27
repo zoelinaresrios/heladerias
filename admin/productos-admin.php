@@ -57,7 +57,7 @@ while ($producto = mysqli_fetch_assoc($result)) {
             background-color: #f4f4f4;
         }
          body { font-family: Arial, sans-serif; background-color: #f4abba; color: #854831; margin: 0; padding: 0; }
-        .logo { max-width: 80px; }
+        .logo { max-width: 130px; }
         header { background-color: #854831; color: #f4abba; padding: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
         .header-left { display: flex; align-items: center; }
         .header-left h1 { margin-left: 10px; font-size: 24px; }
@@ -167,10 +167,9 @@ while ($producto = mysqli_fetch_assoc($result)) {
         }
         .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
-    padding: 20px 0;
+    padding: 0%;
     color: #FFFFFF; /* Texto marrón oscuro */
 }
-
 .grupo-1 {
     display: flex;
     justify-content: space-between;
@@ -237,6 +236,7 @@ while ($producto = mysqli_fetch_assoc($result)) {
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
+    width: 105%;
 }
 
 .contact-form button:hover {
@@ -249,13 +249,14 @@ while ($producto = mysqli_fetch_assoc($result)) {
     background-color: #f4abba; /* Fondo marrón oscuro */
     color: black;
     padding: 10px 0;
+}   .grande{
+    font-size:25px;
 }
+  
 
 .grupo-2 small {
     font-size: 0.9em;
 }
-
-
         /* Estilos del formulario de contacto */
         .formulario-contacto {
             display: flex;

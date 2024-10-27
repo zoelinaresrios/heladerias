@@ -260,7 +260,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 min-width: 150px;
                 z-index: 1;
             }
-     
+            .nav-links {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-top: 10px;
+            }
+    
+            .nav-links a {
+                color: #f4abba;
+                text-decoration: none;
+                padding: 5px;
+            }
+            .grande{
+    font-size:25px;
+}
+  
+            .nav-links a:hover {
+                text-decoration: underline;
+            }
     </style>
 </head>
 <body>

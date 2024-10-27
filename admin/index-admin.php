@@ -478,9 +478,17 @@ section {
                             <li><a href="productos-admin.php">Productos</a></li>
                         </ul>
                     </div>
-       
+                    <div class="dropdown">
+                        <a class="grande" href="#">Informes</a>
+                        <ul class="dropdown-content">
+                            <li><a href="ventas.php"> registro ventas</a></li>
+                            <li><a href="analisis_venta.php">analisis ventas</a></li>
+                            <li><a href="productos_mven.php">productos mas vendidos</a></li>
+                            <li><a href="cliente_frecuente.php">clientes frecuentes</a></li>
+                        </ul>
+                    </div>
 
-            <a class="grande" href="../cliente/carrito.php" title="Informes">Informes</a>
+            
         </div>
     </header>
 
@@ -540,62 +548,62 @@ section {
     <div class="cajon">
     
         <div class="a">
-            <a href="../sabores/Chocolates.php"><img class="chocolate" src="../img/chocolate.png" alt="chocolate" width="300px"></a>
+            <a href="../saboresa/Chocolatesa.php"><img class="chocolate" src="../img/chocolate.png" alt="chocolate" width="300px"></a>
         </div>
         <div class="b">
-            <a href="../sabores/Frutas.php"><img class="crema" src="../img/crema.png" alt="crema" width="300px"></a>
+            <a href="../saboresa/Frutasa.php"><img class="crema" src="../img/crema.png" alt="crema" width="300px"></a>
         </div>
         <div class="c">
-            <a href="../sabores/Cremas.php"><img class="cremas" src="../img/cremas.png" alt="cremas" width="300px" ></a>
+            <a href="../saboresa/Cremasa.php"><img class="cremas" src="../img/cremas.png" alt="cremas" width="300px" ></a>
         </div>
         <div class="s">
             <nav>
                 <ul>
-                    <li><a href="../sabores/Chocolates.php"><b>CHOCOLATES</b></a></li>
+                    <li><a href="../saboresa/Chocolatesa.php"><b>CHOCOLATES</b></a></li>
                 </ul>
             </nav>
         </div>
         <div class="s1">
             <nav>
                 <ul>
-                    <li><a href="../sabores/Frutas.php"><b>FRUTAS</b></a></li>
+                    <li><a href="../saboresa/Frutasa.php"><b>FRUTAS</b></a></li>
                 </ul>
             </nav>
         </div>
         <div class="s2">
             <nav>
                 <ul>
-                    <li><a href="../sabores/Cremas.php"><b>CREMAS</b></a></li>
+                    <li><a href="../saboresa/Cremasa.php"><b>CREMAS</b></a></li>
                 </ul>
             </nav>
         </div>
             <div class="d">
-                <a href="../sabores/Especiales.php"><img class="especiales" src="../img/especiales.png" alt="especiales" width="300px"></a>
+                <a href="../saboresa/Especialesa.php"><img class="especiales" src="../img/especiales.png" alt="especiales" width="300px"></a>
             </div>
             <div class="e">
-                <a href="../sabores/Vegano.php"><img class="veganos" src="../img/veganos.png" alt="veganos" width="300px"></a>
+                <a href="../saboresa/diabeticosa.php"><img class="diabeticos" src="../img/veganos.png" alt="veganos" width="300px"></a>
             </div>
             <div class="f">
-                <a href="../sabores/Celiacos.php"><img class="celiacos" src="../img/celiacos.png" alt="celiacos" width="300px"></a>
+                <a href="../saboresa/Celiacosa.php"><img class="celiacos" src="../img/celiacos.png" alt="celiacos" width="300px"></a>
             </div>
             <div class="s3">
                 <nav>
                     <ul>
-                        <li><a href="../sabores/Especiales.php"><b>ESPECIALES</b></a></li>
+                        <li><a href="../saboresa/Especialesa.php"><b>ESPECIALES</b></a></li>
                     </ul>
                 </nav>
             </div>
             <div class="s4">
                 <nav>
                     <ul>
-                        <li><a href="../sabores/Vegano.php"><b>VEGANOS</b></a></li>
+                        <li><a href="../saboresa/diabeticosa.php"><b>DIABETICOS</b></a></li>
                     </ul>
                 </nav>
             </div>
             <div class="s5">
                 <nav>
                     <ul>
-                        <li><a href="../sabores/Celiacos.php"><b>CELIACOS</b></a></li>
+                        <li><a href="../saboresa/Celiacosa.php"><b>CELIACOS</b></a></li>
                     </ul>
                 </nav>
             </div>

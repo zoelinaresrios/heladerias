@@ -4,15 +4,31 @@ include('../db.php'); // Asegúrate de que la ruta sea correcta
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     
-    // Elimina el producto de la base de datos
-    $stmt = $conn->prepare("DELETE FROM productos WHERE ID = ?");
-    $stmt->bind_param("i", $id);
-    if ($stmt->execute()) {
-        $mensaje = "Producto eliminado exitosamente.";
-    } else {
-        $mensaje = "Error al eliminar el producto.";
+    // Iniciar una transacción para evitar datos inconsistentes en caso de error
+    $conn->begin_transaction();
+
+    try {
+        // Primero elimina los registros relacionados en detalle_pedido
+        $stmtDetalle = $conn->prepare("DELETE FROM detalle_pedido WHERE producto_id = ?");
+        $stmtDetalle->bind_param("i", $id);
+        $stmtDetalle->execute();
+        $stmtDetalle->close();
+
+        // Luego elimina el producto en la tabla productos
+        $stmtProducto = $conn->prepare("DELETE FROM productos WHERE ID = ?");
+        $stmtProducto->bind_param("i", $id);
+        $stmtProducto->execute();
+        $stmtProducto->close();
+
+        // Si todo es exitoso, confirmamos la transacción
+        $conn->commit();
+        
+        $mensaje = "Producto y registros asociados eliminados exitosamente.";
+    } catch (mysqli_sql_exception $exception) {
+        // Si algo falla, revertimos todos los cambios realizados en la transacción
+        $conn->rollback();
+        $mensaje = "Error al eliminar el producto y sus registros: " . $exception->getMessage();
     }
-    $stmt->close();
 }
 ?>
 

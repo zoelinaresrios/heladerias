@@ -31,6 +31,18 @@
     border-radius: 70%;
     margin-bottom: 20px; /* Espacio entre imagen y descripción */
 }
+.desc {
+    display: none; /* Oculta el texto inicialmente */
+    opacity: 0; /* Comienza con opacidad 0 */
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+}
+
+.cho:hover .desc {
+    display: block; /* Muestra el texto al pasar el cursor */
+    opacity: 1; /* Cambia la opacidad a 1 para que sea visible */
+}
+
+
 
     h2{
     
@@ -69,21 +81,15 @@
     text-align: center; /* Centrar el texto dentro del contenedor */
     width: 100%; /* Asegúrate de que ocupe el ancho completo */
 }
-.header-icons{
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar elementos hijos horizontalmente */
-    text-align: center; /* Centrar el texto dentro del contenedor */
-  
-}
-
 .grande{
     font-size:25px;
 }
 
     
-            
-
+            .header-info h1 {
+                margin: 0;
+                font-size: 24px;
+            }
             .nav-links {
                 display: flex;
                 align-items: center;
@@ -101,47 +107,62 @@
                 text-decoration: underline;
             }
     
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
+       
     
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #8e6c49;
-                top: 100%;
-                left: 0;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                min-width: 150px;
-                z-index: 1;
-            }
+           
     
-            .dropdown-content li {
-                border-bottom: 1px solid #555;
-            }
+            nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
     
-            .dropdown-content li a {
-                padding: 10px;
-                color: #fff;
-                text-decoration: none;
-                display: block;
-            }
+    nav ul li {
+        position: relative;
+        margin-right: 20px;
+    }
     
-            .dropdown-content li a:hover {
-                background-color: #8e6c;
-            }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
     
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-            
+    nav ul li .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #8e6c49;
+        top: 100%;
+        left: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 150px;
+        z-index: 1;
+    }
+    
+    nav ul li .dropdown-content li {
+        border-bottom: 1px solid #555;
+    }
+    
+    nav ul li .dropdown-content li a {
+        padding: 10px;
+        color: #fff;
+    }
+    
+    nav ul li:hover .dropdown-content {
+        display: block;
+    }
+    
+    nav ul li .dropdown-content li a:hover {
+        background-color: #8e6c;
+    }
 
     .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
-    padding: 20px 0;
+    padding: 0%;
     color: #FFFFFF; /* Texto marrón oscuro */
 }
 
@@ -211,6 +232,7 @@
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
+    width: 105%;
 }
 
 .contact-form button:hover {
@@ -228,7 +250,7 @@
 .grupo-2 small {
     font-size: 0.9em;
 }
-
+   
 </style>
 
 <!DOCTYPE html>
@@ -245,17 +267,8 @@
             <div class="header-info">
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
-                    <div class="dropdown">
-                        <a class="grande" href="#">Productos</a>
-                        <ul class="dropdown-content">
-                            <li><a href="../productos/helados.php">Helados</a></li>
-                            <li><a href="../productos/tortas.php">Tortas</a></li>
-                            <li><a href="../productos/paletas.php">Paletas</a></li>
-                            <li><a href="../productos/bombones.php">bombones</a></li>
-                        </ul>
-                    </div>
-                    <a class="grande" href="../index.php">Inicio</a>
-                   
+                  
+                <a class="grande" href="../admin/index-admin.php">Inicio</a>
                 </div>
             </div>
       
@@ -267,15 +280,26 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>1 kilo </h2><img class="publi" src="../img/1kg.jpeg" height="250px"> </br> <div> 
+     <div class="cho"><h2>franui</h2><img class="publi" src="../img/cho_franui.jpeg" height="250px"> </br> <div class="desc">    <h4> - El placer irresistible de frambuesas cubiertas de chocolate, ahora convertido en helado. Cada cucharada es una explosión de frescura y dulzura.</h4>
      </div></div>
-     <div class="cho"><h2>1/2 kilo</h2><img class="publi" src="../img/12kg.jpeg" height="250px"> </br> <div >  
+     <div class="cho"><h2>san antonio</h2><img class="publi" src="../img/fr_antonio.jpeg" height="250px"> </br> <div class="desc">    <h4> -El equilibrio perfecto entre dulce de leche, chocolate y crocante, para los que buscan una experiencia indulgente y exquisita.</h4>
      </div></div>
-     <div class="cho"><h2>1/4 kilo</h2><img class="publi" src="../img/14kg.jpeg" height="250px"> </br><div >   
+     <div class="cho"><h2>vainilla con chocolate</h2><img class="publi" src="../img/cr_vaincho.jpeg" height="250px"> </br><div class="desc">    <h4> -El clásico eterno, la suavidad de la vainilla abrazada por el intenso sabor del chocolate. Puro confort en cada bocado.</h4>
      </div></div>
-    
+     <div class="cho"><h2>navidad</h2><img class="publi" src="../img/cr_navidad.jpeg" height="250px"> </br> <div class="desc">    <h4> -Un sabor lleno de espíritu festivo, con notas de canela, nuez moscada y un toque dulce que te recuerda a los mejores momentos de la temporada.</h4>
+     </div></div>
+     <div class="cho"><h2>pico dulce</h2><img class="publi" src="../img/cr_picdul.jpeg" height="250px"> </br> <div class="desc">   <h4> -Dulce y chispeante, con el inconfundible sabor del clásico caramelo argentino, convertido en una experiencia cremosa y divertida.</h4>
+     </div></div>
+     <div class="cho"><h2>tricolor</h2><img class="publi" src="../img/cr_tricolor.jpeg" height="250px"> </br> <div class="desc">    <h4> -Tres sabores que se complementan a la perfección: fresa, vainilla y chocolate, una combinación que deleita a grandes y chicos.</h4>
+     </div></div>
+     <div class="cho"><h2>barbie</h2><img class="publi" src="../img/cr_barbie.jpeg" height="250px"> </br> <div class="desc">    <h4> -Un helado tan encantador como la muñeca, con colores vibrantes y un sabor dulce que hará que te sientas en un mundo de fantasía.</h4>
+     </div></div>
+     <div class="cho"><h2>capuchino</h2><img class="publi" src="../img/cr_capucchino.jpeg" height="250px"> </br> <div class="desc">    <h4> -La intensidad de un café capuchino cremoso en forma de helado. Perfecto para los amantes del café que buscan algo refrescante</h4>
+     </div></div>
+     <div class="cho"><h2>chocolate blanco</h2><img class="publi" src="../img/cho_blan.jpeg" height="250px"> </br> <div class="desc">   <h4> -Dulce, suave y absolutamente decadente, el chocolate blanco en su versión más cremosa para los que buscan algo diferente y sofisticado.</h4>
+     </div></div>
+     
     </div>
-
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">

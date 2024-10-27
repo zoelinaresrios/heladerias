@@ -13,16 +13,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Rol por defecto será 'cliente'
     $rol = 'cliente';
 
-    // Insertar nuevo usuario en la base de datos usando $conn en lugar de $conexion
-    $query = "INSERT INTO clientes (nombre, apellido, email, usuario, contraseña, telefono, direccion, rol) 
-              VALUES ('$nombre', '$apellido', '$email', '$usuario', '$contraseña', '$telefono', '$direccion', '$rol')";
+    // Preparar la consulta para verificar si el correo electrónico ya está registrado
+    $checkEmailQuery = $conn->prepare("SELECT * FROM clientes WHERE email = ?");
+    $checkEmailQuery->bind_param("s", $email);
+    $checkEmailQuery->execute();
+    $result = $checkEmailQuery->get_result();
 
-    if (mysqli_query($conn, $query)) {
+    if ($result->num_rows > 0) {
+        // El correo ya está registrado
+        echo "<script>
+                alert('El correo electrónico ya está registrado. Por favor, use otro correo.');
+                window.location.href = 'logeo.php';
+              </script>";
+        exit();
+    }
+
+    // Preparar la consulta para insertar un nuevo usuario
+    $insertQuery = $conn->prepare("INSERT INTO clientes (nombre, apellido, email, usuario, contraseña, telefono, direccion, rol) 
+                                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $insertQuery->bind_param("sssssiss", $nombre, $apellido, $email, $usuario, $contraseña, $telefono, $direccion, $rol);
+
+    if ($insertQuery->execute()) {
         // Registro exitoso, redirigir al login
         header('Location: cliente/index-cliente.php');
         exit(); // Detener la ejecución del script después de la redirección
     } else {
-        echo "Error: " . mysqli_error($conn);
+        echo "Error: " . $insertQuery->error;
     }
 }
 ?>

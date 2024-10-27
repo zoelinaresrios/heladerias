@@ -31,6 +31,18 @@
     border-radius: 70%;
     margin-bottom: 20px; /* Espacio entre imagen y descripción */
 }
+.desc {
+    display: none; /* Oculta el texto inicialmente */
+    opacity: 0; /* Comienza con opacidad 0 */
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+}
+
+.cho:hover .desc {
+    display: block; /* Muestra el texto al pasar el cursor */
+    opacity: 1; /* Cambia la opacidad a 1 para que sea visible */
+}
+
+
 
     h2{
     
@@ -69,21 +81,16 @@
     text-align: center; /* Centrar el texto dentro del contenedor */
     width: 100%; /* Asegúrate de que ocupe el ancho completo */
 }
-.header-icons{
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar elementos hijos horizontalmente */
-    text-align: center; /* Centrar el texto dentro del contenedor */
-  
-}
-
 .grande{
     font-size:25px;
 }
 
     
-            
-
+            .header-info h1 {
+                margin: 0;
+                font-size: 24px;
+            }
+    
             .nav-links {
                 display: flex;
                 align-items: center;
@@ -101,47 +108,60 @@
                 text-decoration: underline;
             }
     
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
+       
     
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #8e6c49;
-                top: 100%;
-                left: 0;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                min-width: 150px;
-                z-index: 1;
-            }
+            nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
     
-            .dropdown-content li {
-                border-bottom: 1px solid #555;
-            }
+    nav ul li {
+        position: relative;
+        margin-right: 20px;
+    }
     
-            .dropdown-content li a {
-                padding: 10px;
-                color: #fff;
-                text-decoration: none;
-                display: block;
-            }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
     
-            .dropdown-content li a:hover {
-                background-color: #8e6c;
-            }
+    nav ul li .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #8e6c49;
+        top: 100%;
+        left: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 150px;
+        z-index: 1;
+    }
     
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-            
+    nav ul li .dropdown-content li {
+        border-bottom: 1px solid #555;
+    }
+    
+    nav ul li .dropdown-content li a {
+        padding: 10px;
+        color: #fff;
+    }
+    
+    nav ul li:hover .dropdown-content {
+        display: block;
+    }
+    
+    nav ul li .dropdown-content li a:hover {
+        background-color: #8e6c;
+    }
 
     .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
-    padding: 20px 0;
+    padding: 0%;
     color: #FFFFFF; /* Texto marrón oscuro */
 }
 
@@ -211,6 +231,7 @@
     cursor: pointer;
     font-size: 1.1em;
     transition: background-color 0.3s ease;
+    width: 105%;
 }
 
 .contact-form button:hover {
@@ -228,6 +249,7 @@
 .grupo-2 small {
     font-size: 0.9em;
 }
+   
 </style>
 
 <!DOCTYPE html>
@@ -244,17 +266,9 @@
             <div class="header-info">
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
-                    <div class="dropdown">
-                        <a class="grande" href="#">Productos</a>
-                        <ul class="dropdown-content">
-                        <li><a href="../productos/helados.php">Helados</a></li>
-                            <li><a href="../productos/tortas.php">Tortas</a></li>
-                            <li><a href="../productos/paletas.php">Paletas</a></li>
-                            <li><a href="../productos/bombones.php">bombones</a></li>
-                      </ul>
-                    </div>
-                    <a class="grande" href="../index.php">Inicio</a>
-                 
+                   
+              
+                <a class="grande" href="../admin/index-admin.php">Inicio</a>
                 </div>
             </div>
       
@@ -266,21 +280,26 @@
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>naranja</h2><img class="publi" src="../img/paleta_agua.jpeg" height="250px"> </br> <div> 
+     <div class="cho"><h2>chocolate amargo</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   <h4> - La intensidad pura del cacao en su máxima expresión, para los verdaderos amantes del chocolate fuerte.</h4>
      </div></div>
-     <div class="cho"><h2>frutilla </h2><img class="publi" src="../img/paleta_agua2.jpeg" height="250px"> </br> <div >  
+     <div class="cho"><h2>chocolate árabe</h2><img class="publi" src="../img/cho_arabe.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un sabor exótico y envolvente, con matices de especias que te transportan a tierras lejanas.</h4>
      </div></div>
-     <div class="cho"><h2>manzana verde </h2><img class="publi" src="../img/paleta_agua3.jpeg" height="250px"> </br><div >   
+     <div class="cho"><h2>chocolate danette</h2><img class="publi" src="../img/cho_dsn.jpeg" height="250px"> </br><div class="desc">   <h4> -Pura cremosidad, como sumergirte en un postre de chocolate Danette pero en forma de helado.</h4>
      </div></div>
-     <div class="cho"><h2>paleta bañada</h2><img class="publi" src="../img/paleta_bañada.jpeg" height="250px"> </br> <div > 
+     <div class="cho"><h2>chocolate asteroides</h2><img class="publi" src="../img/cho_asteroides.jpeg" height="250px"> </br> <div class="desc">   <h4> -  Una explosión de chocolate cósmica, con trozos crujientes que hacen de cada bocado una aventura.</h4>
      </div></div>
-     <div class="cho"><h2>frutilla</h2><img class="publi" src="../img/paleta_crema.jpeg" height="250px"> </br> <div >   
+     <div class="cho"><h2>chocolate con naranja</h2><img class="publi" src="../img/cho_naranja.jpeg" height="250px"> </br> <div class="desc">   <h4> -  El balance perfecto entre el amargo del chocolate y el toque vibrante y refrescante de la naranja.</h4>
      </div></div>
-     <div class="cho"><h2>frutos rojos</h2><img class="publi" src="../img/paleta_crema2.jpeg" height="250px"> </br> <div >    
+     <div class="cho"><h2>chocolate con caramelo</h2><img class="publi" src="../img/chocar.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un torbellino de dulzura, donde el chocolate envuelve al caramelo en una danza irresistible.</h4>
      </div></div>
-    
+     <div class="cho"><h2>chocolate granizado</h2><img class="publi" src="../img/cho_granizado.jpeg" height="250px"> </br> <div class="desc">  <h4> -Suave crema de chocolate con delicados trozos crujientes que añaden una textura perfecta.</h4>
+     </div></div>
+     <div class="cho"><h2>choco chips</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   <h4> - El clásico favorito con generosos trozos de chocolate dispersos, para esos que no se cansan del cacao.</h4>
+     </div></div>
+     <div class="cho"><h2>chocolate blanco</h2><img class="publi" src="../img/cho_blan.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un viaje cremoso y dulce, tan delicado que se derrite en tu boca como el más suave algodón de azúcar.</h4>
+     </div></div>
+     
     </div>
-
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">

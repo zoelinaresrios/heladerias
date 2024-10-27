@@ -80,8 +80,7 @@ if ($historial && mysqli_num_rows($historial) > 0) {
 mysqli_close($conn);
 ?>
 <br><br><br>
-
-    <div class="grupo-2">
+<div class="grupo-2">
         <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
     </div>
 </footer>  
@@ -146,6 +145,10 @@ mysqli_close($conn);
     text-align: center; /* Centrar el texto dentro del contenedor */
   
 }
+.grande{
+    font-size:25px;
+}
+
 
    
 .dropdown {
@@ -185,19 +188,20 @@ mysqli_close($conn);
                 display: block;
             }
             
-        
+            .grupo-2 {
+            text-align: center;
+            margin-top: auto; /* Empujar el footer hacia el fondo */
+            background-color: #f4abba; /* Fondo marrón claro */
+            color: black;
+            padding: 10px 0;
+        }
+
+        .grupo-2 small {
+            font-size: 0.9em;
+        }  
 
 
-.grupo-2 {
-    text-align: center;
-    margin-top: 20px;
-    background-color: #f4abba; /* Fondo marrón oscuro */
-    color: black;
-    padding: 10px 0;
-}
 
-.grupo-2 small {
-    font-size: 0.9em;
-}</style>
+</style>
 </body>
 </html>

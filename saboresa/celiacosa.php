@@ -1,54 +1,27 @@
-<style> 
-.grande{
-    font-size:25px;
-}
-.s a{
+<style>    
+.s5 a{
         text-decoration: none;
         list-style: none;
         color: #000000;
         padding-left: 95px;
     }
-    .cajitamm {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adaptable a la pantalla */
-    grid-gap: 110px;
-    margin: 50px auto; /* Centrar el contenedor */
-    text-align: center;
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    padding: 10px 20px; /* Espaciado interno a los lados */
-}
-
-.cho {
-    border-radius: 18px;
-    border: 6px solid #f4abba;
-    background-color: #f4abba;
-    padding: 40px 15px; 
-    margin: auto; /* Asegura que la caja esté centrada dentro del contenedor */
-    width: 100%; /* Ajustar al 100% del ancho de la celda del grid */
-    height: auto; 
-    text-align: center;
-}
-
-.publi {
-    border-radius: 70%;
-    margin-bottom: 20px; /* Espacio entre imagen y descripción */
-}
-.desc {
-    display: none; /* Oculta el texto inicialmente */
-    opacity: 0; /* Comienza con opacidad 0 */
-    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
-}
-
-.cho:hover .desc {
-    display: block; /* Muestra el texto al pasar el cursor */
-    opacity: 1; /* Cambia la opacidad a 1 para que sea visible */
-}
-
-
-
-    h2{
-    
+    .cajitamm{
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 60px;
+        margin: 75px;
+        text-align: center;
     }
+    .cho{
+        border-radius: 8px;
+        border: 5px solid #f4abba;
+        background-color: #f4abba;
+    }
+    .cho{
+        text-align: center;
+    }
+    
     body {
                 font-family: Arial, sans-serif;
                 margin: 0;
@@ -73,18 +46,14 @@
             }
     
             .logo {
-                max-width: 100px;
+                max-width: 10%;
             }
     
             .header-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar elementos hijos horizontalmente */
-    text-align: center; /* Centrar el texto dentro del contenedor */
-    width: 100%; /* Asegúrate de que ocupe el ancho completo */
-}
-
-
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
     
             .header-info h1 {
                 margin: 0;
@@ -194,6 +163,132 @@
     nav ul li .dropdown-content li a:hover {
         background-color: #8e6c;
     }
+</style>
+
+<style> 
+.s a{
+        text-decoration: none;
+        list-style: none;
+        color: #000000;
+        padding-left: 95px;
+    }
+    .cajitamm {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adaptable a la pantalla */
+    grid-gap: 110px;
+    margin: 50px auto; /* Centrar el contenedor */
+    text-align: center;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    padding: 10px 20px; /* Espaciado interno a los lados */
+}
+
+.cho {
+    border-radius: 18px;
+    border: 6px solid #f4abba;
+    background-color: #f4abba;
+    padding: 40px 15px; 
+    margin: auto; /* Asegura que la caja esté centrada dentro del contenedor */
+    width: 100%; /* Ajustar al 100% del ancho de la celda del grid */
+    height: auto; 
+    text-align: center;
+}
+
+.publi {
+    border-radius: 70%;
+    margin-bottom: 20px; /* Espacio entre imagen y descripción */
+}
+.desc {
+    display: none; /* Oculta el texto inicialmente */
+    opacity: 0; /* Comienza con opacidad 0 */
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+}
+
+.cho:hover .desc {
+    display: block; /* Muestra el texto al pasar el cursor */
+    opacity: 1; /* Cambia la opacidad a 1 para que sea visible */
+}
+    body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+    
+            header {
+                background-color: #854831;
+                color: #f4abba;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+    
+            .header-left {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex: 1;
+            }
+    
+            .logo {
+                max-width: 10%;
+            }
+    
+            .header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+}
+.grande{
+    font-size:25px;
+}
+
+    
+            .header-info h1 {
+                margin: 0;
+                font-size: 24px;
+            }
+    
+            .nav-links {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-top: 10px;
+            }
+    
+            .nav-links a {
+                color: #f4abba;
+                text-decoration: none;
+                padding: 5px;
+            }
+    
+            .nav-links a:hover {
+                text-decoration: underline;
+            }
+    
+       
+    
+            nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        position: relative;
+        margin-right: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+  
 
     .pie-pagina {
     background-color: #854831; /* Fondo en tono marrón claro */
@@ -302,48 +397,36 @@
             <div class="header-info">
                 <h1>TENTACIONES HELADAS</h1>
                 <div class="nav-links">
-                    <div class="dropdown">
-                        <a class="grande" href="#">Productos</a>
-                        <ul class="dropdown-content">
-                        <li><a href="../productos/helados.php">Helados</a></li>
-                            <li><a href="../productos/tortas.php">Tortas</a></li>
-                            <li><a href="../productos/paletas.php">Paletas</a></li>
-                            <li><a href="../productos/bombones.php">Bombones</a></li>
-                        </ul>
-                    </div>
-                    <a class="grande" href="../index.php">Inicio</a>
+                
+                <a class="grande" href="../admin/index-admin.php">Inicio</a>
                 </div>
             </div>
       
-                </button>
-            </form>
-        </div>
       
     </header>
     <body>
      </br>
      <div class=cajitamm>
-     <div class="cho"><h2>chocolate amargo</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   <h4> - La intensidad pura del cacao en su máxima expresión, para los verdaderos amantes del chocolate fuerte.</h4>
+     <div class="cho"><h2>brownie</h2><img class="publi" src="../img/brownie.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
      </div></div>
-     <div class="cho"><h2>chocolate árabe</h2><img class="publi" src="../img/cho_arabe.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un sabor exótico y envolvente, con matices de especias que te transportan a tierras lejanas.</h4>
+     <div class="cho"><h2>chocolate cadbury</h2><img class="publi" src="../img/cr_ cadbury.jpeg" height="250px"> </br> <div class="desc">   - Combina el chocolate oscuro con notas cítricas de naranja para una fusión deliciosa.
      </div></div>
-     <div class="cho"><h2>chocolate danette</h2><img class="publi" src="../img/cho_dsn.jpeg" height="250px"> </br><div class="desc">   <h4> -Pura cremosidad, como sumergirte en un postre de chocolate Danette pero en forma de helado.</h4>
+     <div class="cho"><h2>crema americana</h2><img class="publi" src="../img/cr_americana.jpeg" height="250px"> </br><div class="desc">   - Fresco y revitalizante, este helado une el chocolate con un toque de menta.
      </div></div>
-     <div class="cho"><h2>chocolate asteroides</h2><img class="publi" src="../img/cho_asteroides.jpeg" height="250px"> </br> <div class="desc">   <h4> -  Una explosión de chocolate cósmica, con trozos crujientes que hacen de cada bocado una aventura.</h4>
+     <div class="cho"><h2>flan</h2><img class="publi" src="../img/cr_flan.jpeg" height="250px"> </br> <div class="desc">   - Un intenso sabor a chocolate con un toque de café, ideal para los amantes del café.
      </div></div>
-     <div class="cho"><h2>chocolate con naranja</h2><img class="publi" src="../img/cho_naranja.jpeg" height="250px"> </br> <div class="desc">   <h4> -  El balance perfecto entre el amargo del chocolate y el toque vibrante y refrescante de la naranja.</h4>
+     <div class="cho"><h2>chocolate con naranja</h2><img class="publi" src="../img/cho_naranja.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
      </div></div>
-     <div class="cho"><h2>chocolate con caramelo</h2><img class="publi" src="../img/chocar.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un torbellino de dulzura, donde el chocolate envuelve al caramelo en una danza irresistible.</h4>
+     <div class="cho"><h2>crema cafe</h2><img class="publi" src="../img/cr_cafe.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
      </div></div>
-     <div class="cho"><h2>chocolate granizado</h2><img class="publi" src="../img/cho_granizado.jpeg" height="250px"> </br> <div class="desc">  <h4> -Suave crema de chocolate con delicados trozos crujientes que añaden una textura perfecta.</h4>
+     <div class="cho"><h2>limon</h2><img class="publi" src="../img/fr_limonn.jpeg" height="250px"> </br> <div class="desc">   - Crema de chocolate con trozos crujientes de almendra, una combinación perfecta.
      </div></div>
-     <div class="cho"><h2>choco chips</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   <h4> - El clásico favorito con generosos trozos de chocolate dispersos, para esos que no se cansan del cacao.</h4>
+     <div class="cho"><h2>choco chips</h2><img class="publi" src="../img/fru.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
      </div></div>
-     <div class="cho"><h2>chocolate blanco</h2><img class="publi" src="../img/cho_blan.jpeg" height="250px"> </br> <div class="desc">   <h4> - Un viaje cremoso y dulce, tan delicado que se derrite en tu boca como el más suave algodón de azúcar.</h4>
+     <div class="cho"><h2>bananita dolca</h2><img class="publi" src="../img/cr_bananita.jpeg" height="250px"> </br> <div class="desc">   - La combinación de chocolate intenso con un toque de sal marina crea un equilibrio perfecto.
      </div></div>
      
     </div>
-
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
