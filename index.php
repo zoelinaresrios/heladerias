@@ -128,10 +128,10 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 12%;
-    padding-right: 85%;
+    padding-right: 45%;
     max-width: 100%;
     margin: auto;
-    margin-left:17%;
+    margin-left:22%;
     margin-bottom:5%;
 }
 .textorosa{
