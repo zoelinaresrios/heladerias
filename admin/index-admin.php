@@ -473,6 +473,7 @@ section {
                     <div class="dropdown">
                         <a class="grande" href="#">Herramientas</a>
                         <ul class="dropdown-content">
+                        <li><a href="estado.php">Pedidos para actualizar</a></li>
                             <li><a href="agregar_producto.php">Agregar</a></li>
                         
                             <li><a href="productos-admin.php">Productos</a></li>
