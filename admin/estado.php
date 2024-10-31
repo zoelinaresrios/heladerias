@@ -32,7 +32,7 @@ echo "<!DOCTYPE html>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4abba;
+            background-color: #fffff;
             color: #854831;
             margin: 0;
             padding: 20px;
@@ -66,8 +66,76 @@ echo "<!DOCTYPE html>
         .btn:hover {
             background-color: #d99a8e; /* Cambio de color al pasar el mouse */
         }
+
+
+        
+        header {
+            background-color: #854831;
+            color: #f4abba;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .logo {
+            max-width: 10%;
+        }
+
+        .header-info h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .nav-links a {
+            color: #f4abba;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+.grande{
+font-size:25px;
+}
     </style>
 </head>
+<header>
+    <div class='header-left'>
+        <img class='logo' src='../img/logo.png' alt='logo'>
+        <div class='header-info'>
+            <h1>TENTACIONES HELADAS</h1>
+            <div class='nav-links'>
+                <a class='grande' href='index-admin.php'>Inicio</a>
+            </div>
+        </div>
+    </div>
+</header>
 <body>";
 
 echo "<h1>Lista de Pedidos</h1>";
