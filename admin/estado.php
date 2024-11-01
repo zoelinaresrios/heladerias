@@ -72,11 +72,7 @@ echo "<!DOCTYPE html>
         header {
             background-color: #854831;
             color: #f4abba;
-            padding: 10px;
-            display: flex;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
         }
 
         .header-left {
@@ -123,6 +119,12 @@ echo "<!DOCTYPE html>
 .grande{
 font-size:25px;
 }
+.grupo-2 {
+    text-align: center;
+    margin-top:auto; /* Empujar el footer hacia el fondo */
+    background-color: #f4abba; /* Fondo marrón claro */
+    color: black;
+    padding: 10px 0;
     </style>
 </head>
 <header>
@@ -163,6 +165,10 @@ if ($result_pedidos->num_rows > 0) {
 }
 
 echo "</table>";
-echo "</body></html>";
+echo "<footer>
+<div class='grupo-2'>
+        <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
+    </div>
+</footer> </body></html>";
 
 $conn->close();

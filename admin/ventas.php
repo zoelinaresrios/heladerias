@@ -80,11 +80,12 @@ if ($historial && mysqli_num_rows($historial) > 0) {
 mysqli_close($conn);
 ?>
 <br><br><br>
+<footer>
 <div class="grupo-2">
         <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
     </div>
 </footer>  
-<style>     
+<style>  
   body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -190,7 +191,7 @@ mysqli_close($conn);
             
             .grupo-2 {
             text-align: center;
-            margin-top: auto; /* Empujar el footer hacia el fondo */
+            margin-top:16.5%; /* Empujar el footer hacia el fondo */
             background-color: #f4abba; /* Fondo marrón claro */
             color: black;
             padding: 10px 0;
