@@ -437,6 +437,7 @@ section {
 
 
     <script>
+        
         let indiceImagen = 0; 
         const imagenes = document.querySelectorAll('.imagenes img');
         const totalImagenes = imagenes.length;
