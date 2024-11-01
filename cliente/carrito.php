@@ -346,7 +346,7 @@ $result = $stmt->get_result();
           
                     <div class="nav-links" class="dropdown">
                         <a class="grande" href="index-cliente.php">Inicio</a>
-                        <a class="grande" href="helados_clientes.php">Productos</a>
+                        <a class="grande" href="helados_clientes.php">seguir comprando</a>
                     </div>
        
 
