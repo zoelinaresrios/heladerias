@@ -389,48 +389,47 @@ section {
     font-size: 0.9em;
 }
 
-.home-button { 
-            background-color: #e6007f; 
+.cerrar-sesion {
+    background-color: #e6007f; 
             border: none; 
             border-radius: 8px; 
             padding: 10px 15px; 
             color: white; 
             cursor: pointer; 
-            margin-right: 15px; 
-        }
+            margin-right:5%;
+    order: 2; /* Esto asegura que el botón esté al final del header */
+}
     </style>
 </head>
 <body>
-    <!-- Encabezado con logo y navegación -->
-    <header>
+<header>
     <div class="header-left">
-            <img class="logo" src="../img/logo.png"   alt="logo">
-            <div class="header-info">
-                <h1>TENTACIONES HELADAS</h1>
-                <div class="nav-links">
-                    <div class="dropdown">
-                        <a class="grande" href="#">Herramientas</a>
-                        <ul class="dropdown-content">
+        <img class="logo" src="../img/logo.png" alt="logo">
+        <div class="header-info">
+            <h1>TENTACIONES HELADAS</h1>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a class="grande" href="#">Herramientas</a>
+                    <ul class="dropdown-content">
                         <li><a href="estado.php">Pedidos para actualizar</a></li>
-                            <li><a href="agregar_producto.php">Agregar</a></li>
-                        
-                            <li><a href="productos-admin.php">Productos</a></li>
-                        </ul>
-                    </div>
-                    <div class="dropdown">
-                        <a class="grande" href="#">Informes</a>
-                        <ul class="dropdown-content">
-                            <li><a href="ventas.php"> registro ventas</a></li>
-                            <li><a href="analisis_venta.php">analisis ventas</a></li>
-                            <li><a href="productos_mven.php">productos mas vendidos</a></li>
-                            <li><a href="cliente_frecuente.php">clientes frecuentes</a></li>
-                        </ul>
-                    </div>
+                        <li><a href="agregar_producto.php">Agregar</a></li>
+                        <li><a href="productos-admin.php">Productos</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <a class="grande" href="#">Informes</a>
+                    <ul class="dropdown-content">
+                        <li><a href="ventas.php">Registro ventas</a></li>
+                        <li><a href="analisis_venta.php">Análisis ventas</a></li>
+                        <li><a href="productos_mven.php">Productos más vendidos</a></li>
+                        <li><a href="cliente_frecuente.php">Clientes frecuentes</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <button class="home-button" onclick="location.href='../index.php'">cerrar session</button>
-    </header>
-
-
+    </div>
+    <button class="home-button cerrar-sesion" onclick="location.href='../index.php'">Cerrar sesión</button>
+</header>
     <main>
     <!-- Carrusel de imágenes -->
     <div class="carrusel">

@@ -354,7 +354,7 @@ section {
             padding: 10px 15px; 
             color: white; 
             cursor: pointer; 
-            margin-right: 15px; 
+            margin-right:5%;
         }
     </style>
 </head>
@@ -383,7 +383,7 @@ section {
                 </button>
             </form>
         </div>
-        <button class="home-button" onclick="location.href='../index.php'">cerrar session</button>
+        <button class="home-button" onclick="location.href='../index.php'">Cerrar sesión</button>
     </header>
  
 
