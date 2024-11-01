@@ -389,6 +389,7 @@ section {
     font-size: 0.9em;
 }
 
+<<<<<<< HEAD
 .cerrar-sesion {
     background-color: #e6007f; 
             border: none; 
@@ -398,6 +399,16 @@ section {
             cursor: pointer; 
             margin-right:5%;
     order: 2; /* Esto asegura que el botón esté al final del header */
+=======
+.home-button { 
+    background-color: #e6007f; 
+    border: none; 
+    border-radius: 8px; 
+    padding: 10px 15px; 
+    color: white; 
+    cursor: pointer; 
+    margin-right: 15px; 
+>>>>>>> 3bfae0f4138666d36c8b838e432d2f090d36db61
 }
     </style>
 </head>
@@ -445,7 +456,6 @@ section {
 
 
     <script>
-        
         let indiceImagen = 0; 
         const imagenes = document.querySelectorAll('.imagenes img');
         const totalImagenes = imagenes.length;
