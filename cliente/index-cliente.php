@@ -347,6 +347,15 @@ section {
 .grupo-2 small {
     font-size: 0.9em;
 }
+.home-button { 
+            background-color: #e6007f; 
+            border: none; 
+            border-radius: 8px; 
+            padding: 10px 15px; 
+            color: white; 
+            cursor: pointer; 
+            margin-right: 15px; 
+        }
     </style>
 </head>
 <body>
@@ -374,7 +383,7 @@ section {
                 </button>
             </form>
         </div>
-      
+        <button class="home-button" onclick="location.href='../index.php'">cerrar session</button>
     </header>
  
 
