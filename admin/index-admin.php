@@ -426,8 +426,6 @@ section {
                             <li><a href="cliente_frecuente.php">clientes frecuentes</a></li>
                         </ul>
                     </div>
-
-            
         </div>
         <button class="home-button" onclick="location.href='../index.php'">cerrar session</button>
     </header>

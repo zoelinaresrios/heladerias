@@ -238,7 +238,30 @@ while ($row = $result->fetch_assoc()) {
             </div>
         <?php endforeach; ?>
     </main>
+    <script>
+        function scrollToProduct() {
+            const input = document.getElementById('searchInput');
+            const searchTerm = input.value.toLowerCase();
+            const productos = document.querySelectorAll('h2');
+            let found = false;
 
+            productos.forEach(producto => {
+                if (producto.textContent.toLowerCase().includes(searchTerm)) {
+                    producto.scrollIntoView({ behavior: 'smooth' });
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                alert('No se encontraron productos que coincidan con "' + searchTerm + '"');
+            }
+        }
+        
+        function searchProduct(productId) {
+            alert('Buscando el producto con ID: ' + productId);
+            // Aquí puedes agregar la lógica para buscar el producto específico
+        }
+    </script>
     <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
