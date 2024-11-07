@@ -1,6 +1,8 @@
 <?php
 include '../db.php'; // Asegúrate de que la ruta a db.php sea correcta
 
+$mensaje = ""; // Variable para el mensaje de confirmación
+
 // Verifica si hay un ID de pedido y un nuevo estado
 if (isset($_GET['pedido_id']) && isset($_GET['nuevo_estado'])) {
     $pedido_id = $_GET['pedido_id'];
@@ -12,9 +14,9 @@ if (isset($_GET['pedido_id']) && isset($_GET['nuevo_estado'])) {
     $stmt->bind_param("si", $nuevo_estado, $pedido_id);
 
     if ($stmt->execute()) {
-        echo "Pedido actualizado a '$nuevo_estado' exitosamente.";
+        $mensaje = "Pedido actualizado a '$nuevo_estado' exitosamente.";
     } else {
-        echo "Error al actualizar el pedido: " . $stmt->error;
+        $mensaje = "Error al actualizar el pedido: " . $stmt->error;
     }
     $stmt->close();
 }
@@ -32,7 +34,7 @@ echo "<!DOCTYPE html>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fffff;
+            background-color: #ffffff;
             color: #854831;
             margin: 0;
             padding: 20px;
@@ -64,9 +66,8 @@ echo "<!DOCTYPE html>
             transition: background-color 0.3s;
         }
         .btn:hover {
-            background-color: #d99a8e; /* Cambio de color al pasar el mouse */
+            background-color: #d99a8e;
         }
-        
         
         header {
             background-color: #854831;
@@ -119,10 +120,57 @@ echo "<!DOCTYPE html>
             text-decoration: underline;
         }
 
-.grande{
-font-size:25px;
-}
+        .grande {
+            font-size: 25px;
+        }
+
+        /* Estilos del modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            color: #854831;
+            margin: 15% auto;
+            padding: 20px;
+            border: 2px solid #854831;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .modal-content .btn-ok {
+            background-color: #854831;
+            color: #f4abba;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .modal-content .btn-ok:hover {
+            background-color: #d99a8e;
+        }
     </style>
+    <script>
+        function mostrarModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 </head>
 <header>
     <div class='header-left'>
@@ -135,8 +183,7 @@ font-size:25px;
         </div>
     </div>
 </header>
-    
-</head>
+
 <body>";
 
 echo "<h1>Lista de Pedidos</h1>";
@@ -164,6 +211,20 @@ if ($result_pedidos->num_rows > 0) {
 }
 
 echo "</table>";
+
+// Modal de confirmación si hay mensaje
+if (!empty($mensaje)) {
+    echo "
+    <div id='modal' class='modal'>
+        <div class='modal-content'>
+            <p>$mensaje</p>
+            <button class='btn-ok' onclick='cerrarModal()'>OK</button>
+        </div>
+    </div>
+    <script>mostrarModal();</script>";
+}
+
 echo "</body></html>";
 
 $conn->close();
+?>
