@@ -166,6 +166,7 @@ if ($result_pedidos->num_rows > 0) {
 
 echo "</table>";
 echo "<br><br><br><br><br><br><br>";
+
 echo "<footer>
 <div class='grupo-2'>
         <small>&copy; 2024 Tentaciones Heladas - Todos los derechos reservados.</small>
